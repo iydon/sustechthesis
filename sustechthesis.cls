@@ -30,22 +30,17 @@
 \ProcessOptions
 
 % body
-\ifsustech@chinese
-    \LoadClass[zihao=-4]{ctexart}
-\else
-    \LoadClass{article}
-\fi
+\LoadClass[zihao=-4]{ctexart}
 \RequirePackage{geometry}
 \geometry{a4paper,top=2.5cm,bottom=2.0cm,left=3.0cm,right=2.5cm}
-\RequirePackage{enumerate}
+\RequirePackage{amssymb}
+\RequirePackage{setspace}
 
 % fonts
-\ifsustech@chinese
-    \RequirePackage{xeCJK}
-    % choose `kaiming' as punctation style
-    % \xeCJKsetup{PunctStyle=kaiming}
-    \setCJKmainfont{SimSun}
-\fi
+\RequirePackage{xeCJK}
+% choose `kaiming' as punctation style
+% \xeCJKsetup{PunctStyle=kaiming}
+\setCJKmainfont{SimSun}
 \RequirePackage{fontspec}
 \setmainfont{Times New Roman}
 % math font
@@ -70,8 +65,10 @@
 \newcommand{\小五}{\fontsize{9pt}    {\baselineskip}\selectfont}
 \newcommand{\六号}{\fontsize{7.875pt}{\baselineskip}\selectfont}
 \newcommand{\七号}{\fontsize{5.25pt} {\baselineskip}\selectfont}
-\setCJKfamilyfont{zhsong}[AutoFakeBold={2.17}]{SimSun} % fake bold
+\setCJKfamilyfont{zhsong}[AutoFakeBold={2.5}]{SimSun} % fake bold
 \newcommand{\粗宋}{\bfseries\CJKfamily{zhsong}}
+\setCJKfamilyfont{bftimes}[AutoFakeBold={2.5}]{Times New Roman} % fake bold
+\newcommand{\粗英}{\bfseries\CJKfamily{bftimes}}
 
 % cover
 % ref: sustcthesis.cls
@@ -82,7 +79,7 @@
 \newcommand\编号[1]{\def\sustech@编号{#1}}
 \newcommand\UDC[1]{\def\sustech@UDC{#1}}
 \newcommand\密级[1]{\def\sustech@密级{#1}}
-\newcommand\题目[1]{\def\sustech@题目{#1}}
+\newcommand\题目[2]{\def\sustech@大题目{#1}\def\sustech@小题目{#2}}
 \newcommand\姓名[1]{\def\sustech@姓名{#1}}
 \newcommand\学号[1]{\def\sustech@学号{#1}}
 \newcommand\系别[1]{\def\sustech@系别{#1}}
@@ -90,8 +87,13 @@
 \newcommand\指导老师[1]{\def\sustech@指导老师{#1}}
 \newcommand\日期[1]{\def\sustech@日期{#1}}
 
-\renewcommand\maketitle{\make@entitle\make@zhcommitment}
-\newcommand\make@entitle{%
+\ifsustech@chinese
+    \renewcommand\maketitle{\make@zhtitle\make@zhcommitment}
+\else
+    \renewcommand\maketitle{\make@entitle\make@encommitment}
+\fi
+
+\newcommand\make@zhtitle{%
     \newgeometry{%
     top=2.25cm,bottom=2.25cm,
     left=2.54cm,right=2.48cm}
@@ -102,70 +104,98 @@
             分类号  \sustech@underline[2.3cm]{\sustech@分类号}\hspace{0.45\textwidth}        & 编号\sustech@underline[2.3cm]{\sustech@编号} \\[5pt]
             U\hfill D\hfill C\sustech@underline[2.3cm]{\sustech@UDC}\hspace{0.45\textwidth} & 密级\sustech@underline[2.3cm]{\sustech@密级}
         \end{tabular}\vskip 1.35cm
-        \includegraphics[width=0.85\textwidth]{Figures/logos/SUSTech_Logo.pdf}\vskip 0.5cm
+        \includegraphics[width=0.85\textwidth]{Figures/logos/SUSTech_Logo_zh.pdf}\vskip 0.5cm
         {\粗宋\小初 本科生毕业设计（论文）}
-        \vskip 2.5cm
-        \粗宋\三号
+        \vskip 2.7cm
+        {\粗宋\三号
         \begin{tabular}{lc}
-            姓\hfill 名：& \sustech@underline[7cm]{\sustech@姓名}\\[7pt]
-            学\hfill 号：& \sustech@underline[7cm]{\sustech@学号}\\[7pt]
-            系\hfill 别：& \sustech@underline[7cm]{\sustech@系别}\\[7pt]
-            专\hfill 业：& \sustech@underline[7cm]{\sustech@专业}\\[7pt]
-            指导老师：& \sustech@underline[7cm]{\sustech@指导老师}\\[7pt]
-            日期：& \sustech@underline[6cm]{\sustech@日期}%需要修改
-        \end{tabular}
+            题\hfill 目: & \sustech@underline[9cm]{\sustech@大题目}\\[12pt]
+            & \sustech@underline[9cm]{\sustech@小题目}\\[2.4cm]
+            姓\hfill 名：& \sustech@underline[9cm]{\sustech@姓名}\\[12pt]
+            学\hfill 号：& \sustech@underline[9cm]{\sustech@学号}\\[12pt]
+            系\hfill 别：& \sustech@underline[9cm]{\sustech@系别}\\[12pt]
+            专\hfill 业：& \sustech@underline[9cm]{\sustech@专业}\\[12pt]
+            指导教师：& \sustech@underline[9cm]{\sustech@指导老师}\\[12pt]
+        \end{tabular}}\vskip 2.25cm
+        \宋体\三号\sustech@日期
     \end{center}
     \clearpage
     \restoregeometry
 }
-\newcommand\make@zhcommitment{
-\thispagestyle{empty}
-\五号
-\ \\
-\begin{center}
-	{\黑体\二号 诚信承诺书}
-\end{center}
-\宋体\四号
-\ \\
-\ \\
 
-1.本人郑重承诺所呈交的毕业设计（论文），是在导师的指导下，独立进行研究工作所取得的成果，所有数据、图片资料均真实可靠。
-
-2.除文中已经注明引用的内容外，本论文不包含任何其他人或集体已经发表或撰写过的作品或成果。对本论文的研究作出重要贡献的个人和集体，均已在文中以明确的方式标明。
-
-3.本人承诺在毕业论文（设计）选题和研究内容过程中没有抄袭他人研究成果和伪造相关数据等行为。
-
-4.在毕业论文（设计）中对侵犯任何方面知识产权的行为，由本人承担相应的法律责任。
-
-\ \\ \ \\ \ \\ \ \\
-
-\hspace*{\fill}作者签名：\phantom{xxxx月xxxx日}
-
-\hspace*{\fill}\underline{\phantom{yyxxxxxxxx}}年\underline{\phantom{xxxx}}月\underline{\phantom{xxxx}}日
-\clearpage
+\newcommand\make@entitle{%
+    \newgeometry{%
+    top=2.54cm,bottom=2.75cm,
+    left=2.54cm,right=2.48cm}
+    \cleardoublepage
+    \thispagestyle{empty}
+    \begin{center}
+        CLC  \sustech@underline[2.3cm]{\sustech@分类号} \hfill Number\sustech@underline[2.3cm]{\sustech@编号}\\[5pt]
+        UDC\sustech@underline[2.3cm]{\sustech@UDC} \hfill Available for reference~\quad$\square$Yes~\quad$\square$No
+        \vskip 1.8cm
+        \includegraphics[width=0.9\textwidth]{Figures/logos/SUSTech_Logo_en.pdf}\vskip 1.6cm
+        {\小初 Undergraduate Thesis}
+        \vskip 2.7cm
+        {\粗英\三号
+        \begin{tabular}{rr}
+            Thesis Title:& \sustech@underline[9cm]{\sustech@大题目}\\[9pt]
+            & \sustech@underline[9cm]{\sustech@小题目}\\[2.1cm]
+            Student Name:& \sustech@underline[9cm]{\sustech@姓名}\\[9pt]
+            Student ID:& \sustech@underline[9cm]{\sustech@学号}\\[9pt]
+            Department:& \sustech@underline[9cm]{\sustech@系别}\\[9pt]
+            Program:& \sustech@underline[9cm]{\sustech@专业}\\[9pt]
+            Thesis Advisor:& \sustech@underline[9cm]{\sustech@指导老师}\\[10pt]
+        \end{tabular}}\vskip 2.1cm
+        \三号 Date: \sustech@日期
+    \end{center}
+    \clearpage\restoregeometry
 }
+
+\newcommand\make@zhcommitment{
+    \newgeometry{%
+    top=3.6cm,bottom=2.75cm,
+    left=2.54cm,right=2.48cm}
+    \thispagestyle{empty}
+    \begin{center}
+        \黑体\二号 诚信承诺书
+    \end{center}\vskip 1.8cm
+
+    \begin{spacing}{1.45}
+    \宋体\四号
+    1.本人郑重承诺所呈交的毕业设计（论文），是在导师的指导下，独立进行研究工作所取得的成果，所有数据、图片资料均真实可靠。\par
+    2.除文中已经注明引用的内容外，本论文不包含任何其他人或集体已经发表或撰写过的作品或成果。对本论文的研究作出重要贡献的个人和集体，均已在文中以明确的方式标明。\par
+    3.本人承诺在毕业论文（设计）选题和研究内容过程中没有抄袭他人研究成果和伪造相关数据等行为。\par
+    4.在毕业论文（设计）中对侵犯任何方面知识产权的行为，由本人承担相应的法律责任。
+    \vskip 4.5cm
+
+    \hfill 作者签名:\phantom{xxxx月xxxx日}
+
+    \hfill\sustech@underline[1.6cm]{}年\sustech@underline[1cm]{}月\sustech@underline[1cm]{}日
+    \end{spacing}
+    \clearpage\restoregeometry
+}
+
 \newcommand\make@encommitment{
-\thispagestyle{empty}
-\begin{center}
-	{\Huge COMMITMENT OF HONESTY}
-\end{center}
-\setlength{\parindent}{0pt}
-\fontsize{15.75pt}{\baselineskip}\selectfont
-\ \\
-\ \\
-1. I solemnly promise that the paper presented comes from my independent research work under my supervisor's supervision. All statistics and images are real and reliable.
+    \newgeometry{%
+    top=2.75cm,bottom=2.75cm,
+    left=2.54cm,right=2.48cm}
+    \thispagestyle{empty}
+    \begin{center}
+        \huge COMMITMENT OF HONESTY
+    \end{center}
+    \vskip 0.9cm
+    \begin{spacing}{1.45}
+    \三号\noindent
+    1. I solemnly promise that the paper presented comes from my independent research work under my supervisor's supervision. All statistics and images are real and reliable.\\
+    2. Except for the annotated reference, the paper contents no other published work or achievement by person or group. All people making important contributions to the study of the paper have been indicated clearly in the paper.\\
+    3. I promise that I did not plagiarize other people's research achievement or forge related data in the process of designing topic and research content.\\
+    4. If there is violation of any intellectual property right, I will take legal responsibility myself.
+    \vskip 3.63cm
+    \hfill Signature:\phantom{abcdefghijklmn}
 
-2. Except for the annotated reference, the paper contents no other published work or achievement by person or group. All people making important contributions to the study of the paper have been indicated clearly in the paper.
-
-3. I promise that I did not plagiarize other people's research achievement or forge related data in the process of designing topic and research content.
-
-4. If there is violation of any intellectual property right, I will take legal responsibility myself.
-
-\ \\ \ \\ \ \\ \ \\
-\hspace*{\fill}Signature:\phantom{will take legal}
-
-\hspace*{\fill}Date:\phantom{will take legalature}
-\clearpage
+    \hfill Date:\phantom{abcdefghijklmnopqr}
+    \end{spacing}
+    \clearpage\restoregeometry
 }
 
 \endinput
