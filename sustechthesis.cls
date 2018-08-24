@@ -37,6 +37,7 @@
 \fi
 \RequirePackage{geometry}
 \geometry{a4paper,top=2.5cm,bottom=2.0cm,left=3.0cm,right=2.5cm}
+\RequirePackage{enumerate}
 
 % fonts
 \ifsustech@chinese
@@ -89,7 +90,7 @@
 \newcommand\指导老师[1]{\def\sustech@指导老师{#1}}
 \newcommand\日期[1]{\def\sustech@日期{#1}}
 
-\renewcommand\maketitle{\make@entitle}
+\renewcommand\maketitle{\make@entitle\make@zhcommitment}
 \newcommand\make@entitle{%
     \newgeometry{%
     top=2.25cm,bottom=2.25cm,
@@ -111,13 +112,38 @@
             系\hfill 别：& \sustech@underline[7cm]{\sustech@系别}\\[7pt]
             专\hfill 业：& \sustech@underline[7cm]{\sustech@专业}\\[7pt]
             指导老师：& \sustech@underline[7cm]{\sustech@指导老师}\\[7pt]
-            日期：& \sustech@underline[6cm]{\sustech@日期}
+            日期：& \sustech@underline[6cm]{\sustech@日期}%需要修改
         \end{tabular}
     \end{center}
     \clearpage
     \restoregeometry
 }
+\newcommand\make@zhcommitment{
+\thispagestyle{empty}
+\五号
+\ \\
+\begin{center}
+	{\黑体\二号 诚信承诺书}
+\end{center}
+\宋体\四号
+\ \\
+\ \\
 
+1.本人郑重承诺所呈交的毕业设计（论文），是在导师的指导下，独立进行研究工作所取得的成果，所有数据、图片资料均真实可靠。
+
+2.除文中已经注明引用的内容外，本论文不包含任何其他人或集体已经发表或撰写过的作品或成果。对本论文的研究作出重要贡献的个人和集体，均已在文中以明确的方式标明。
+
+3.本人承诺在毕业论文（设计）选题和研究内容过程中没有抄袭他人研究成果和伪造相关数据等行为。
+
+4.在毕业论文（设计）中对侵犯任何方面知识产权的行为，由本人承担相应的法律责任。
+
+\ \\ \ \\ \ \\ \ \\
+
+\hspace*{\fill}作者签名：\phantom{xxxx月xxxx日}
+
+\hspace*{\fill}\underline{\phantom{yyxxxxxxxx}}年\underline{\phantom{xxxx}}月\underline{\phantom{xxxx}}日
+\clearpage
+}
 
 
 
