@@ -4,7 +4,7 @@
 % Version 0.1 (2018/08/16)
 %
 % author:
-% Iydon inspired by a template by ywg@USTC and whzecomjm@SUSTC
+% Iydon and Zhangzj inspired by a template by ywg@USTC and whzecomjm@SUSTC
 %
 % License:
 % CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
@@ -144,24 +144,29 @@
 \hspace*{\fill}\underline{\phantom{yyxxxxxxxx}}年\underline{\phantom{xxxx}}月\underline{\phantom{xxxx}}日
 \clearpage
 }
+\newcommand\make@encommitment{
+\thispagestyle{empty}
+\begin{center}
+	{\Huge COMMITMENT OF HONESTY}
+\end{center}
+\setlength{\parindent}{0pt}
+\fontsize{15.75pt}{\baselineskip}\selectfont
+\ \\
+\ \\
+1. I solemnly promise that the paper presented comes from my independent research work under my supervisor's supervision. All statistics and images are real and reliable.
 
+2. Except for the annotated reference, the paper contents no other published work or achievement by person or group. All people making important contributions to the study of the paper have been indicated clearly in the paper.
 
+3. I promise that I did not plagiarize other people's research achievement or forge related data in the process of designing topic and research content.
 
+4. If there is violation of any intellectual property right, I will take legal responsibility myself.
 
+\ \\ \ \\ \ \\ \ \\
+\hspace*{\fill}Signature:\phantom{will take legal}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+\hspace*{\fill}Date:\phantom{will take legalature}
+\clearpage
+}
 
 \endinput
 %%
