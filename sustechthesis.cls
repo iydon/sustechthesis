@@ -70,6 +70,26 @@
 \setCJKfamilyfont{bftimes}[AutoFakeBold={2.5}]{Times New Roman} % fake bold
 \newcommand{\粗英}{\bfseries\CJKfamily{bftimes}}
 
+%set section title format
+\CTEXsetup[name = {{},.},format = {\黑体\三号\centering}]{section}
+\CTEXsetup[format = {\黑体\四号\raggedright}]{subsection}
+\CTEXsetup[format = {\黑体\小四\raggedright}]{subsubsection}
+
+%set content table format
+\RequirePackage{tocloft}
+\renewcommand\cfttoctitlefont{\hfill\黑体\小二}
+\renewcommand\cftaftertoctitle{\hfill}
+\renewcommand\cftsecfont{\粗宋\四号}
+\renewcommand\cftsecpagefont{\粗宋\四号}
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+\renewcommand\cftsubsecfont{\宋体\四号}
+\renewcommand\cftsubsecpagefont{\宋体\四号}
+\renewcommand\cftsubsubsecfont{\宋体\四号}
+\renewcommand\cftsubsubsecpagefont{\宋体\四号}
+\setlength\cftparskip{21pt}
+\setlength\cftsubsecindent{0pt}
+\setlength\cftsubsubsecindent{0pt}
+
 % cover
 % ref: sustcthesis.cls
 \newcommand\sustech@underline[2][6em]{\hskip1pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip3pt}
