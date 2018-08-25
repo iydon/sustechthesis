@@ -1,0 +1,27 @@
+% !Mode:: "TeX:UTF-8"
+\section{数学符号测试}
+\subsection{行间公式}
+根据WinEdt的\TeX{} Symbols：$\sum_{i=1}^{n}
+\prod_{j=1}^{m}\oint\sqrt[k]{\aleph^\hbar_\imath\times\frac{\nabla\jmath}{\ell}}$
+\subsection{行内公式}
+同理根据WinEdt的\TeX{} Symbols：\par
+首先使用\verb|$$|：$$\sum_{i=1}^{n}
+\prod_{j=1}^{m}\oint\sqrt[k]{\aleph^\hbar_\imath\times\frac{\nabla\jmath}{\ell}}$$
+
+其次使用\verb|\[\]|：\[\sum_{i=1}^{n}
+\prod_{j=1}^{m}\oint\sqrt[k]{\aleph^\hbar_\imath\times\frac{\nabla\jmath}{\ell}}\]
+\subsubsection{EQUATION环境}
+\begin{equation}\label{eq:test_input:1}
+\sum_{i=1}^{n}
+\prod_{j=1}^{m}\oint\sqrt[k]{\aleph^\hbar_\imath\times\frac{\nabla\jmath}{\ell}}
+\end{equation}
+根据式\eqref{eq:test_input:1}可以知道，……。
+\subsubsection{ALIGN环境}
+\begin{align}
+\min_{\substack{1\leq i\leq n \\ 1\leq j\leq m}}\quad \Gamma\Delta\Theta\Lambda\Xi\Pi\Sigma\Upsilon\Phi\Psi\Omega \label{eq:test_input:2} \\
+s.t.\begin{cases}
+      1, & \mbox{if i==j,}\\
+      0, & \mbox{otherwise}.
+    \end{cases}\label{eq:test_input:3}
+\end{align}
+由式\eqref{eq:test_input:2}和式\eqref{eq:test_input:3}可以知道，……。

@@ -1,0 +1,11 @@
+% !Mode:: "TeX:UTF-8"
+% Preamble
+% ------------------------
+% Math
+\usepackage{amsmath,amssymb,amsthm}
+% equation label
+% \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\numberwithin{equation}{section}
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother

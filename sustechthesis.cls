@@ -32,8 +32,8 @@
 % body
 \LoadClass[zihao=-4]{ctexart}
 \RequirePackage{geometry}
-\geometry{a4paper,top=2.5cm,bottom=2.0cm,left=3.0cm,right=2.5cm}
-\RequirePackage{amsmath,amssymb}
+\geometry{a4paper,top=2.54cm,bottom=2.54cm,left=3.18cm,right=3.18cm}
+\RequirePackage{amssymb}
 \RequirePackage{setspace}
 
 % fonts
@@ -86,21 +86,11 @@
 \newcommand\专业[1]{\def\sustech@专业{#1}}
 \newcommand\指导老师[1]{\def\sustech@指导老师{#1}}
 \newcommand\日期[1]{\def\sustech@日期{#1}}
-\newcommand\摘要[1]{\def\sustech@摘要{#1}}
-\renewcommand\abstract[1]{\def\sustech@abstract{#1}}
-\newcommand\关键词[1]{\def\sustech@关键词{#1}}
-\newcommand\keywords[1]{\def\sustech@keywords{#1}}
 
 \ifsustech@chinese
     \renewcommand\maketitle{\make@zhtitle\make@zhcommitment}
-    \newcommand\abstractpage{%
-        \make@abtitle\make@zhabstract\make@enabstract
-        }
 \else
     \renewcommand\maketitle{\make@entitle\make@encommitment}
-    \newcommand\abstractpage{%
-        \make@abtitle\make@enabstract\make@zhabstract
-        }
 \fi
 
 \newcommand\make@zhtitle{%
@@ -191,7 +181,7 @@
     left=2.54cm,right=2.48cm}
     \thispagestyle{empty}
     \begin{center}
-        \LARGE COMMITMENT OF HONESTY
+        \huge COMMITMENT OF HONESTY
     \end{center}
     \vskip 0.9cm
     \begin{spacing}{1.45}
@@ -203,55 +193,70 @@
     \vskip 3.63cm
     \hfill Signature:\phantom{abcdefghijklmn}
 
-    \hfill Date:\phantom{Sbcdefghijklmnopqr}
+    \hfill Date:\phantom{abcdefghijklmnopqr}
     \end{spacing}
     \clearpage\restoregeometry
 }
 
-\newcommand\make@abtitle{
+\newcommand\摘要标题{
     \begin{center}
         \黑体\二号
-        \sustech@大题目\\
-        \hspace*{\fill}\小二
-        ——\sustech@小题目\\
+        \sustech@大题目\vskip 3pt
+        \hfill\小二---\sustech@小题目\vskip 3pt
         \宋体\四号
-        \sustech@姓名\\
-        \楷书\小四
+        \sustech@姓名\\[-1cm]
         \ifsustech@chinese
-            （\sustech@系别 系\phantom{空}指导教师：\sustech@指导老师）\\
+            （\楷书\小四\sustech@系别\phantom{空}指导教师： \sustech@指导老师）
         \else
-            (Department of \sustech@系别  Advisor: \sustech@指导老师)\\
+            (\小四\sustech@系别  Advisor: \sustech@指导老师)
         \fi
     \end{center}
 }
 
-\newcommand\make@zhabstract{
+\newenvironment{摘要}{
     \begin{spacing}{1.45}
         \noindent\黑体\三号
-        [摘要]：
-        \宋体\四号
-        \sustech@摘要\par
+        [摘要]：\宋体\四号
+}{
     \end{spacing}
-    \noindent\黑体\三号
-    [关键词]：
-    \宋体\四号
-    \sustech@关键词\par
+}
+
+\renewenvironment{abstract}{
+    \begin{spacing}{1.3}
+        \noindent\三号
+        [ABSTRACT]:\四号
+}{
+    \end{spacing}
+}
+
+\newcommand\关键词[1]{
+	\begin{spacing}{1.45}
+    \noindent\黑体\三号[关键词]：
+    \宋体\四号 #1
+    \end{spacing}
     \clearpage
 }
 
-\newcommand\make@enabstract{
-    \begin{spacing}{1.3}
-        \noindent\三号
-        [ABSTRACT]: 
-        \四号
-        \sustech@abstract\par
+\newcommand\keywords[1]{
+	\begin{spacing}{1.3}
+    \noindent\三号{}[Keywords]: 
+    \四号 #1
     \end{spacing}
-    \noindent\三号
-    [Keywords]: 
-    \四号
-    \sustech@keywords\par
     \clearpage
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 \endinput
 %%
 %% End of file `sustechthesis.cls'.
