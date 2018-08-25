@@ -191,7 +191,7 @@
     left=2.54cm,right=2.48cm}
     \thispagestyle{empty}
     \begin{center}
-        \huge COMMITMENT OF HONESTY
+        \LARGE COMMITMENT OF HONESTY
     \end{center}
     \vskip 0.9cm
     \begin{spacing}{1.45}
@@ -203,7 +203,7 @@
     \vskip 3.63cm
     \hfill Signature:\phantom{abcdefghijklmn}
 
-    \hfill Date:\phantom{abcdefghijklmnopqr}
+    \hfill Date:\phantom{Sbcdefghijklmnopqr}
     \end{spacing}
     \clearpage\restoregeometry
 }
@@ -213,24 +213,25 @@
         \黑体\二号
         \sustech@大题目\\
         \hspace*{\fill}\小二
-        ---\sustech@小题目\\
+        ——\sustech@小题目\\
         \宋体\四号
         \sustech@姓名\\
         \楷书\小四
         \ifsustech@chinese
             （\sustech@系别 系\phantom{空}指导教师：\sustech@指导老师）\\
         \else
-            (Department of \sustech@系别  Tutor: \sustech@指导老师)\\
+            (Department of \sustech@系别  Advisor: \sustech@指导老师)\\
         \fi
     \end{center}
 }
 
 \newcommand\make@zhabstract{
-    \noindent\黑体\三号
-    [摘要]：
-    \宋体\四号
-    {\setlength{\baselineskip}{25pt}
-    \sustech@摘要\par}
+    \begin{spacing}{1.45}
+        \noindent\黑体\三号
+        [摘要]：
+        \宋体\四号
+        \sustech@摘要\par
+    \end{spacing}
     \noindent\黑体\三号
     [关键词]：
     \宋体\四号
@@ -239,10 +240,12 @@
 }
 
 \newcommand\make@enabstract{
-    \noindent\三号
-    [ABSTRACT]: 
-    \四号
-    \sustech@abstract\par
+    \begin{spacing}{1.3}
+        \noindent\三号
+        [ABSTRACT]: 
+        \四号
+        \sustech@abstract\par
+    \end{spacing}
     \noindent\三号
     [Keywords]: 
     \四号
