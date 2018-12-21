@@ -54,19 +54,19 @@
 \let\黑体\heiti
 \let\仿宋\fangsong
 \let\楷书\kaishu
-\newcommand{\初号}{\fontsize{42pt}   {\baselineskip}\selectfont}
-\newcommand{\小初}{\fontsize{36pt}   {\baselineskip}\selectfont}
-\newcommand{\一号}{\fontsize{28pt}   {\baselineskip}\selectfont}
-\newcommand{\二号}{\fontsize{21pt}   {\baselineskip}\selectfont}
-\newcommand{\小二}{\fontsize{18pt}   {\baselineskip}\selectfont}
-\newcommand{\三号}{\fontsize{15.75pt}{\baselineskip}\selectfont}
-\newcommand{\小三}{\fontsize{15pt}   {\baselineskip}\selectfont}
-\newcommand{\四号}{\fontsize{14pt}   {\baselineskip}\selectfont}
-\newcommand{\小四}{\fontsize{12pt}   {\baselineskip}\selectfont}
-\newcommand{\五号}{\fontsize{10.5pt} {\baselineskip}\selectfont}
-\newcommand{\小五}{\fontsize{9pt}    {\baselineskip}\selectfont}
-\newcommand{\六号}{\fontsize{7.875pt}{\baselineskip}\selectfont}
-\newcommand{\七号}{\fontsize{5.25pt} {\baselineskip}\selectfont}
+\newcommand{\初号}{\fontsize{42pt}      {\baselineskip}\selectfont}
+\newcommand{\小初}{\fontsize{36pt}      {\baselineskip}\selectfont}
+\newcommand{\一号}{\fontsize{27.5pt}    {\baselineskip}\selectfont}
+\newcommand{\二号}{\fontsize{21pt}      {\baselineskip}\selectfont}
+\newcommand{\小二}{\fontsize{18pt}      {\baselineskip}\selectfont}
+\newcommand{\三号}{\fontsize{15.75pt}   {\baselineskip}\selectfont}
+\newcommand{\小三}{\fontsize{15pt}      {\baselineskip}\selectfont}
+\newcommand{\四号}{\fontsize{13.75pt}   {\baselineskip}\selectfont}
+\newcommand{\小四}{\fontsize{12pt}      {\baselineskip}\selectfont}
+\newcommand{\五号}{\fontsize{10.5pt}    {\baselineskip}\selectfont}
+\newcommand{\小五}{\fontsize{9pt}       {\baselineskip}\selectfont}
+\newcommand{\六号}{\fontsize{7.875pt}   {\baselineskip}\selectfont}
+\newcommand{\七号}{\fontsize{5.25pt}    {\baselineskip}\selectfont}
 \setCJKfamilyfont{zhsong}[AutoFakeBold={2.5}]{SimSun} % fake bold
 \newcommand{\粗宋}{\bfseries\CJKfamily{zhsong}}
 \setCJKfamilyfont{bftimes}[AutoFakeBold={2.5}]{Times New Roman} % fake bold
