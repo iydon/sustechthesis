@@ -11,6 +11,8 @@
 %
 % ---------------------------------------
 
+% [TODO](http://www.latexstudio.net/archives/7758.html).
+
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{sustechthesis}[2018/08/16 SUSTechthesis document class.]
 
