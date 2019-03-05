@@ -1,0 +1,72 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = en_US
+
+\documentclass[doctor]{chinathesis}
+% doctor|master|bachelor [chinese|english] [print|pdf] [super|numebers|authoryear]
+
+\title{中文学位论文\\LaTeX 模板框架}
+\author{李泽平}
+\major{计算机科学与技术}
+\supervisor{高德纳\ 教授}
+% \cosupervisor{}
+% \date{二〇一七年五月一日} % 注释掉则为今日
+% \professionaltype{专业学位类型}
+% \secretlevel{秘密}        % 绝密|机密|秘密，注释本行则不保密
+% \secretyear{20}           % 保密年限
+
+\entitle{A LaTeX template framework for Chinese dissertations}
+\enauthor{Zeping Li}
+\enmajor{Computer Science and Technology}
+\ensupervisor{Prof. Donald E. Knuth}
+% \encosupervisor{}
+% \endate{May 1, 2017}      % Today if commented
+% \enprofessionaltype{Professional degree type}
+% \ensecretlevel{Secret}    % Top secret|Highly secret|Secret
+
+
+% 加载宏包和配置
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{siunitx}
+\usepackage{amsthm}
+\usepackage{hyperref}
+
+\DeclareRobustCommand\cs[1]{\texttt{\char`\\#1}}
+\newcommand\pkg{\textsf}
+
+\renewcommand\vec{\symbf}
+\newcommand\mat{\symbf}
+\newcommand\ts{\symbfsf}
+\newcommand\real{\mathbf{R}}
+
+
+\begin{document}
+
+\maketitle
+\makestatement
+
+\frontmatter
+\input{chapters/abstract}
+\tableofcontents
+% \listoffigures
+% \listoftables
+\input{chapters/notation}
+
+\mainmatter
+\input{chapters/intro}
+\input{chapters/floats}
+\input{chapters/math}
+\input{chapters/citations}
+\bibliography{bibs/refs}
+
+\appendix
+\chapter{论文规范}
+
+\backmatter
+\input{chapters/acknowledgements}
+\input{chapters/publications}
+
+\end{document}

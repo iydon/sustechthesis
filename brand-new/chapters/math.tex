@@ -1,0 +1,193 @@
+% !TeX root = ../main.tex
+
+\chapter{数学}
+
+\section{数字和单位}
+
+宏包 \pkg{siunitx} 提供了更好的数字和单位支持：
+\begin{itemize}
+  \item \num{12345.67890}
+  \item \num{1+-2i}
+  \item \num{.3e45}
+  \item \num{1.654 x 2.34 x 3.430}
+  \item \si{kg.m.s^{-1}}
+  \item \si{\micro\meter} $\si{\micro\meter}$
+  \item \si{\ohm} $\si{\ohm}$
+  \item \numlist{10;20}
+  \item \numlist{10;20;30}
+  \item \SIlist{0.13;0.67;0.80}{\milli\metre}
+  \item \numrange{10}{20}
+  \item \SIrange{10}{20}{\degreeCelsius}
+\end{itemize}
+
+
+
+\section{数学符号和公式}
+
+\LaTeX{} 默认按照美国的习惯排版数学公式和符号，
+但是《撰写手册》要求数学符号依据《GB 3102.11--1993》执行，
+与 \LaTeX{} 的习惯有所差异。
+本模板基于 \pkg{unicode-math} 配置数学符号，以遵循国标的规定。
+
+注意，\pkg{unicode-math} 宏包与 \pkg{amsfonts}, \pkg{amssymb}, \pkg{bm},
+\pkg{mathrsfs}, \pkg{upgreek} 等宏包\emph{不}兼容。
+本模板作了处理，用户可以直接使用这些宏包的命令，如 \cs{bm}, \cs{mathscr},
+\cs{upGamma}。
+
+本模板中数学符号的用法与 \LaTeX{} 传统有些区别：
+\begin{itemize}
+  \item 数学常数和特殊函数使用正体，
+    如圆周率 $\symup{\pi}$、$\symup{\Gamma}$ 函数。
+    应使用 \pkg{unicode-math} 宏包提供的 \cs{symup} 命令转为正体，
+    如 \verb|\symup{\pi}|。
+  \item 向量和矩阵粗斜体，应使用 \cs{symbf} 命令，
+    如 \verb|\symbf{u}|、\verb|\symbf{A}|。
+  \item 有限增量符号 $\increment$ （U+2206）应使用 \cs{increment} 命令。
+  \item 微分符号 $\dif$ 使用正体，本模板提供了 \cs{dif} 命令。
+\end{itemize}
+
+除此之外，模板还提供了一些命令方便使用：
+\begin{itemize}
+  \item 常数 $\upe$：\verb|\upe|
+  \item 负数单位 $\upi$：\verb|\upi|
+  \item 圆周率 $\uppi$：\verb|\uppi|
+  \item $\argmax$：\verb|\argmax|
+  \item $\argmin$：\verb|\argmin|
+\end{itemize}
+
+关于数学符号更多的用法，参见 \pkg{unicode-math} 宏包的使用说明和符号列表
+\pkg{unimath-symbols}。
+
+在编辑数学公式时，最好避免直接使用字体命令，
+而应该定义一些语义命令取代字体命令，
+这样输入更简单，也让 \LaTeX{} 代码更有可读性，
+而且还方便根据需要统一修改改格式，比如：
+\begin{itemize}
+  \item 向量 $\vec{x}$：\verb|\renewcommand\vec{\symbf}|
+  \item 矩阵 $\mat{A}$：\verb|\newcommand\mat{\symbf}|
+  \item 张量 $\ts{T}$： \verb|\newcommand\ts{\symbfsf}|
+\end{itemize}
+
+更多的例子：
+\begin{equation}
+  \upe^{\upi\uppi} + 1 = 0
+\end{equation}
+\begin{equation}
+  \frac{\dif^2 u}{\dif t^2} = \int f(x) \dif x
+\end{equation}
+\begin{equation}
+  \argmin_x f(x)
+\end{equation}
+\begin{equation}
+  \mat{A} \vec{x} = \lambda \vec{x}
+\end{equation}
+
+
+
+\section{定理和证明}
+
+示例文件中使用 \pkg{amsthm} 宏包配置了定理、引理和证明等环境。
+用户也可以使用  \pkg{ntheorem} 宏包。
+
+\begin{definition}
+  If the integral of function $f$ is measurable and non-negative, we define
+  its (extended) \textbf{Lebesgue integral} by
+  \begin{equation}
+    \int f = \sup_g \int g,
+  \end{equation}
+  where the supremum is taken over all measurable functions $g$ such that
+  $0 \le g \le f$, and where $g$ is bounded and supported on a set of
+  finite measure.
+\end{definition}
+
+\begin{example}
+  Simple examples of functions on $\real^d$ that are integrable
+  (or non-integrable) are given by
+  \begin{equation}
+    f_a(x) =
+    \begin{cases}
+      |x|^{-a} & \text{if } |x| \le 1, \\
+      0        & \text{if } x > 1.
+    \end{cases}
+  \end{equation}
+  \begin{equation}
+    F_a(x) = \frac{1}{1 + |x|^a}, \qquad \text{all } x \in \real^d.
+  \end{equation}
+  Then $f_a$ is integrable exactly when $a < d$, while $F_a$ is integrable
+  exactly when $a > d$.
+\end{example}
+
+\begin{lemma}[Fatou]
+  Suppose $\{f_n\}$ is a sequence of measurable functions with $f_n \geq 0$.
+  If $\lim_{n \to \infty} f_n(x) = f(x)$ for a.e. $x$, then
+  \begin{equation}
+    \int f \le \liminf_{n \to \infty} \int f_n.
+  \end{equation}
+\end{lemma}
+
+\begin{remark}
+  We do not exclude the cases $\int f = \infty$,
+  or $\liminf_{n \to \infty} f_n = \infty$.
+\end{remark}
+
+\begin{corollary}
+  Suppose $f$ is a non-negative measurable function, and $\{f_n\}$ a sequence
+  of non-negative measurable functions with
+  $f_n(x) \le f(x)$ and $f_n(x) \to f(x)$ for almost every $x$. Then
+  \begin{equation}
+    \lim_{n \to \infty} \int f_n = \int f.
+  \end{equation}
+\end{corollary}
+
+\begin{proposition}
+  Suppose $f$ is integrable on $\real^d$. Then for every $\epsilon > 0$:
+  \begin{enumerate}
+    \renewcommand{\theenumi}{\roman{enumi}}
+    \item There exists a set of finite measure $B$ (a ball, for example) such
+      that
+      \begin{equation}
+        \int_{B^c} |f| < \epsilon.
+      \end{equation}
+    \item There is a $\delta > 0$ such that
+      \begin{equation}
+        \int_E |f| < \epsilon \qquad \text{whenever } m(E) < \delta.
+      \end{equation}
+  \end{enumerate}
+\end{proposition}
+
+\begin{theorem}
+  Suppose $\{f_n\}$ is a sequence of measurable functions such that
+  $f_n(x) \to f(x)$ a.e. $x$, as $n$ tends to infinity.
+  If $|f_n(x)| \le g(x)$, where $g$ is integrable, then
+  \begin{equation}
+    \int |f_n - f| \to 0 \qquad \text{as } n \to \infty,
+  \end{equation}
+  and consequently
+  \begin{equation}
+    \int f_n \to \int f \qquad \text{as } n \to \infty.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  Trivial.
+\end{proof}
+
+\newtheorem*{axiomofchoice}{Axiom of choice}
+\begin{axiomofchoice}
+  Suppose $E$ is a set and ${E_\alpha}$ is a collection of
+  non-empty subsets of $E$. Then there is a function $\alpha
+  \mapsto x_\alpha$ (a ``choice function'') such that
+  \begin{equation}
+    x_\alpha \in E_\alpha,\qquad \text{for all }\alpha.
+  \end{equation}
+\end{axiomofchoice}
+
+\newtheorem{observation}{Observation}
+\begin{observation}
+  Suppose a partially ordered set $P$ has the property
+  that every chain has an upper bound in $P$. Then the
+  set $P$ contains at least one maximal element.
+\end{observation}
+\begin{proof}[A concise proof]
+  Obvious.
+\end{proof}

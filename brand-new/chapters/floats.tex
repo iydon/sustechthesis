@@ -1,0 +1,47 @@
+% !TeX root = ../main.tex
+
+\chapter{浮动体}
+
+\section{三线表}
+
+三线表是《撰写手册》推荐使用的格式，如表~\ref{tab:exampletable}。
+\begin{table}[htb]
+  \centering\small
+  \caption{表号和表题在表的正上方}
+  \label{tab:exampletable}
+  \begin{tabular}{cl}
+    \toprule
+    类型   & 描述                                       \\
+    \midrule
+    挂线表 & 挂线表也称系统表、组织表，用于表现系统结构 \\
+    无线表 & 无线表一般用于设备配置单、技术参数列表等   \\
+    卡线表 & 卡线表有完全表，不完全表和三线表三种       \\
+    \bottomrule
+  \end{tabular}
+  \note{注：表注分两种，第一种是对全表的注释，用不加阿拉伯数字排在表的下边，
+    前面加“注：”；第二种是和表内的某处文字或数字相呼应的注，
+    在表里面用带圈的阿拉伯数字在右上角标出，然后在表下面用同样的圈码注出来}
+\end{table}
+
+编制表格应简单明了，表达一致，明晰易懂，表文呼应、内容一致。
+排版时表格字号略小，或变换字体，尽量不分页，尽量不跨节。
+表格太大需要转页是，需要在续表上方注明“续表”，表头页应重复排出。
+
+
+
+\section{插图}
+
+有的同学可能听说“\LaTeX{} 只能使用 eps 格式的图片”，甚至把 jpg 格式转为 eps。
+事实上，这种做法已经过时。
+而且每次编译时都要要调用外部工具解析 eps，导致降低编译速度。
+所以我们推荐矢量图直接使用 pdf 格式，位图使用 jpeg 或 png 格式。
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.3\textwidth]{figures/chinathesis-logo.pdf}
+  \caption{图号、图题置于图的下方}
+  \label{fig:logo}
+  \note{注：图注的内容不宜放到图题中。}
+\end{figure}
+
+关于图片的并排，推荐使用较新的 \pkg{subcaption} 宏包，
+不建议使用 \pkg{subfigure} 或 \pkg{subfig} 等宏包。
