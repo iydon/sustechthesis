@@ -1,6 +1,8 @@
 @echo off
 chcp 65001 >nul
 
+set compiler="xelatex"
+set bib="bibtex"
 set filename="main"
 set temp="temp"
 
@@ -10,7 +12,11 @@ if "%1"=="clean" (
     if "%1"=="show" (
         call:show
     ) else (
-        call:compile
+        if "%1"=="sure" (
+            call:sure
+        ) else (
+            call:compile
+        )
     )
 )
 goto:eof
@@ -23,8 +29,8 @@ rem Function
         call:pop
         call:twice
     ) else (
-        xelatex %filename%
-        bibtex  %filename%
+        %compiler% %filename%
+        %bib%  %filename%
         call:twice
     )
     call:mvto
@@ -52,10 +58,16 @@ goto:eof
 goto:eof
 
 :twice
-    xelatex %filename%
-    xelatex %filename%
+    %compiler% %filename%
+    %compiler% %filename%
 goto:eof
 
 :show
     %filename%.pdf
+goto:eof
+
+:sure
+    %compiler% %filename%
+    %bib% %filename%
+    call:twice
 goto:eof
