@@ -8,4 +8,5 @@
 ```
 make            # 编译生成论文 main.pdf
 make clean      # 删除编译过程中生成的临时文件
+make show       # 展现生成论文 main.pdf
 ```

@@ -7,11 +7,16 @@ set temp="temp"
 if "%1"=="clean" (
     call:clean
 ) else (
-    call:compile
+    if "%1"=="show" (
+        call:show
+    ) else (
+        call:compile
+    )
 )
 goto:eof
 
 
+rem Function
 
 :compile
     if exist %temp%/%filename%.bbl (
@@ -22,10 +27,15 @@ goto:eof
         bibtex  %filename%
         call:twice
     )
-    call:clean
+    call:mvto
 goto:eof
 
 :clean
+    del /q %temp%
+    rmdir %temp%
+goto:eof
+
+:mvto
     if not exist %temp% mkdir %temp%
     move %filename%.aux temp >nul 2>nul
     move %filename%.bbl temp >nul 2>nul
@@ -42,4 +52,8 @@ goto:eof
 :twice
     xelatex %filename%
     xelatex %filename%
+goto:eof
+
+:show
+    %filename%.pdf
 goto:eof
