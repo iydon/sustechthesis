@@ -40,7 +40,9 @@ goto:eof
     move %filename%.aux temp >nul 2>nul
     move %filename%.bbl temp >nul 2>nul
     move %filename%.blg temp >nul 2>nul
+    move %filename%.lof temp >nul 2>nul
     move %filename%.log temp >nul 2>nul
+    move %filename%.lot temp >nul 2>nul
     move %filename%.out temp >nul 2>nul
     move %filename%.toc temp >nul 2>nul
 goto:eof
