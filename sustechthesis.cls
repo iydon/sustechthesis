@@ -97,9 +97,9 @@
 \newcommand{\粗英}{\bfseries\CJKfamily{bftimes}}
 
 % set section title format
-\CTEXsetup[name = {{},.},format = {\黑体\三号\centering}]{section}
-\CTEXsetup[format = {\黑体\四号\raggedright}]{subsection}
-\CTEXsetup[format = {\黑体\小四\raggedright}]{subsubsection}
+\CTEXsetup[name={{},.},format={\黑体\三号\centering}]{section}
+\CTEXsetup[format={\黑体\四号\raggedright}]{subsection}
+\CTEXsetup[format={\黑体\小四\raggedright}]{subsubsection}
 
 % set content table format
 \RequirePackage{tocloft}
