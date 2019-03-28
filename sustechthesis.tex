@@ -83,6 +83,12 @@
                             },
         }
 
+    \usepackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
+        % 行距设置
+        \newenvironment{行距}[1]%
+                       {\linespread{#1}\selectfont}%
+                       {\linespread{2.14}\selectfont}
+
     \usepackage{tocloft}
         % 设置目录样式
         \renewcommand\cfttoctitlefont{\hfill\黑体\小二}
