@@ -242,9 +242,7 @@
     \usepackage{listofitems}
     \newcommand\摘要标题{
         \begin{center}
-            \黑体\二号\题目@中
-            \vskip 3pt
-            \hspace*{.3\textwidth}\小二 ——\子标题@中
+            \黑体\二号\题目@中\\\子标题@中
             \vskip 1cm
             \宋体\四号\姓名@中 \\[9pt]
             （\楷书\小四\系别@中\phantom{空}指导教师： \指导老师@中）
@@ -275,5 +273,26 @@
                         \四号 \args[1]
                         \end{spacing}
                         \vfill\clearpage}
+    % 参考文献
+    \newcommand{\参考文献}{
+        \addcontentsline{toc}{section}{参考文献}
+        \renewcommand{\refname}{\hfill 参考文献\hfill}
+        \sectionmark{参考文献}
+    }
+    % 附录
+    \newcommand{\附录}{
+        \clearpage
+        \addcontentsline{toc}{section}{附录}
+        \addtocounter{section}{1}
+        \sectionmark{附录}
+        \begin{center}
+            \黑体\三号 附录
+        \end{center}
+        \appendix
+    }
+    % 致谢
+    \newcommand{\致谢}{
+        \addcontentsline{toc}{section}{致谢}
+    }
 
 \makeatother % 将@不作为控制序列的一部分
