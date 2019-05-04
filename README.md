@@ -7,6 +7,7 @@ If you want to use Overleaf, you may refer to this [demo](https://www.overleaf.c
 
 # Interface
 Most of the following control sequences come from package `ctex`.
+
 |Control Sequence|Description|
 |----------------|-----------|
 |`\初号`         |初号       |
