@@ -1,5 +1,5 @@
-## 参考chinathesis文件
-./brand-new/*
+## 参考文件
+format/*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
