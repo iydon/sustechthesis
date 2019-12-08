@@ -1,0 +1,56 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = xelatex
+\documentclass{ctexbeamer}
+  % Preamble
+  \input{config/beamer.tex}
+  % Information
+  \title[短标题]{显示在标题页的长标题}
+  \author[Iydon]{Iydon Liang}
+  \institute[SUSTech]{Southern University of Science and Technology}
+\begin{document}
+
+\section{中文测试}
+  \begin{frame}{中文测试}
+    \zhlipsum[1]
+  \end{frame}
+
+\section{英文测试}
+  \begin{frame}{英文测试}
+    \lipsum[1]
+  \end{frame}
+
+\section{常规测试}
+  \subsection{列表测试}
+    \begin{frame}[<+->][t]{列表测试}
+        \begin{enumerate}
+        \item A;
+        \item B;
+        \item C.
+        \end{enumerate}
+        \begin{itemize}
+        \item A;
+        \item B;
+        \item C.
+        \end{itemize}
+    \end{frame}
+
+  \subsection{块测试}
+    \begin{frame}[<+->][t]{块测试}
+        \begin{block}{标题}
+        A.
+        \end{block}
+        \begin{block}{标题}
+        B.
+        \end{block}
+        \begin{block}{标题}
+        C.
+        \end{block}
+    \end{frame}
+
+\section{参考文献}
+  \begin{frame}[t,allowframebreaks]{参考文献}
+    \nocite{Nicholas1998Handbook}
+    \printbibliography[]
+  \end{frame}
+    
+\end{document}

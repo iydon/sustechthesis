@@ -1,0 +1,69 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = xelatex
+% 使用的宏包
+\usepackage{zhlipsum,lipsum}
+\usepackage[style=gb7714-2015]{biblatex}
+  \addbibresource{ref.bib}
+
+% logo 设置
+\usepackage{textpos}
+  \addtobeamertemplate{frametitle}{}{%
+    \begin{textblock*}{100mm}(.85\textwidth,-0.7cm)
+      \includegraphics[height=0.5cm]{figures/logo/SUSTech-zh.pdf}
+    \end{textblock*}
+  }
+\mode<presentation>{
+  \setbeamercovered{transparent}}
+% 字体与主题
+\setbeamertemplate{navigation symbols}{}
+\usetheme{CambridgeUS} % or other themes, see http://www.hartwork.org/beamer-theme-matrix/
+\usefonttheme{professionalfonts}
+\usefonttheme[onlymath]{serif}
+% 标题页
+\AtBeginDocument{
+  \begin{frame}
+    \titlepage
+    \vfill\hfill
+    \inserttitlegraphic{\includegraphics[height=0.5cm]{figures/logo/SUSTech-zh.pdf}}
+  \end{frame}
+  \addtocounter{framenumber}{-1}
+}
+% 目录
+\AtBeginSection[]{
+  \begin{frame}<beamer> % [shrink]
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+% 颜色设置
+\mode<presentation>
+  \definecolor{tbg}{rgb}{0.0,0.39,0.62}
+  \definecolor{tfg}{RGB}{255,227,189}
+  \definecolor{ftbg}{RGB}{220,224,224}
+  \definecolor{colorA}{RGB}{60, 60, 40}
+  % or structure
+  \setbeamercolor*{structure}{bg=tfg, fg=tbg}
+  % or subtitle
+  \setbeamercolor*{frametitle}{use=structure, bg=ftbg, fg=structure.fg}
+  % radient top color
+  \setbeamercolor*{palette primary}{use=structure,  fg=structure.bg, bg=structure.fg}
+  \setbeamercolor*{palette secondary}{use=structure,fg=structure.bg, bg=structure.fg!75!black}
+  \setbeamercolor*{palette tertiary}{use=structure,fg=structure.bg, bg=structure.fg!50!black}
+  \setbeamercolor*{palette quaternary}{fg=structure.bg, bg=black}
+  % or sidebar
+  \setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+
+  \setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
+  \setbeamercolor*{palette sidebar secondary}{fg=structure.bg}
+  \setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
+  \setbeamercolor*{palette sidebar quaternary}{fg=structure.bg}
+
+  \setbeamercolor*{titlelike}{parent=palette primary}
+
+  \setbeamercolor*{block title}{use=structure, fg=structure.bg, bg=structure.fg}
+  \setbeamercolor*{block title alerted}{use=structure, fg=colorA, bg=structure.fg!75!black!50}
+  \setbeamercolor*{block title example}{fg=black, bg=black!20}
+
+  \setbeamercolor*{block body}{fg=black,bg=black!10}
+  \setbeamercolor*{block body alerted}{fg=black,bg=black!10}
+  \setbeamercolor*{block body example}{fg=black,bg=black!10}
