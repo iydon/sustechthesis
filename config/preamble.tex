@@ -1,0 +1,39 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = xelatex
+
+% 数学符号与环境
+\usepackage{amsmath,amssymb}
+  \newcommand{\dd}{\mathrm{d}}
+  \newcommand{\RR}{\mathbb{R}}
+% 参考文献
+\usepackage[style=gb7714-2015]{biblatex}
+  \addbibresource{ref.bib}
+% 无意义文本
+\usepackage{zhlipsum,lipsum}
+% 列表环境设置
+\usepackage{enumitem}
+% 浮动题不越过 \section
+\usepackage[section]{placeins}
+% 超链接
+\usepackage{hyperref}
+% 图片，子图，浮动题设置
+\usepackage{graphicx,subcaption,float}
+% 抄录环境设置，更多有趣例子请命令行输入 `texdoc tcolorbox`
+\usepackage{tcolorbox}
+  \tcbuselibrary{xparse}
+  \DeclareTotalTCBox{\verbbox}{ O{green} v !O{} }%
+    {fontupper=\ttfamily,nobeforeafter,tcbox raise base,%
+    arc=0pt,outer arc=0pt,top=0pt,bottom=0pt,left=0mm,%
+    right=0mm,leftrule=0pt,rightrule=0pt,toprule=0.3mm,%
+    bottomrule=0.3mm,boxsep=0.5mm,bottomrule=0.3mm,boxsep=0.5mm,%
+    colback=#1!10!white,colframe=#1!50!black,#3}{#2}%
+\tcbuselibrary{listings,breakable}
+  \newtcbinputlisting{\Python}[2]{
+    listing options={language=Python,numbers=left,numberstyle=\tiny,
+      breaklines,commentstyle=\color{white!50!black}\textit},
+    title=\texttt{#1},listing only,breakable,
+    left=6mm,right=6mm,top=2mm,bottom=2mm,listing file={#2}}
+
+
+% LaTeX logo
+\usepackage{hologo}

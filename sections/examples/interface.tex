@@ -1,0 +1,33 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = xelatex
+\section{文类接口}
+文类的接口的命名均为汉字，意思为字面意思，如有疑问，欢迎在 GitHub 提出 \href{https://github.com/Iydon/sustechthesis/issues}{Issues}。
+
+\subsection{汉化字号接口}
+本接口主要使用 \texttt{ctex} 宏包。
+
+\verbbox{\初号}，\verbbox{\小初}，\verbbox{\一号}，\verbbox{\小一}，\verbbox{\二号}，\verbbox{\小二}，\verbbox{\三号}，\verbbox{\小三}，\verbbox{\四号}，\verbbox{\小四}，\verbbox{\五号}，\verbbox{\小五}，\verbbox{\六号}，\verbbox{\小六}，\verbbox{\七号}，\verbbox{\八号}。
+
+
+\subsection{汉化字体接口}
+可能本机上部分字体不存在，导致部分字体无法使用。
+
+\verbbox{\宋体}，\verbbox{\黑体}，\verbbox{\仿宋}，\verbbox{\楷书}，\verbbox{\隶书}，\verbbox{\幼圆}，\verbbox{\雅黑}，\verbbox{\苹方}。
+
+
+\subsection{字体效果接口}
+建议在正文时使用 \verb|\textbf{}|，\verb|\textit{}| 调用粗体与斜体。
+
+\verbbox{\粗体}，\verbbox{\斜体}。
+
+
+\subsection{格式相关接口}
+\subsubsection{命令}
+例子请参考前文，在写论文初期，可以注释掉标题页等不必要信息，以加快编译速度。
+
+\verbbox{\设置信息}，\verbbox{\目录}，\verbbox{\下划线}，\verbbox{\中文标题页}，\verbbox{\英文标题页}，\verbbox{\中文诚信承诺书}，\verbbox{\英文诚信承诺书}，\verbbox{\摘要标题}，\verbbox{\参考文献}，\verbbox{\附录}，\verbbox{\致谢}。
+
+\subsubsection{环境}
+摘要环境均需一个参数，为关键词：\verb|\begin{}{}...\end{}|。
+
+\verbbox{中文摘要}，\verbbox{英文摘要}。

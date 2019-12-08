@@ -1,161 +1,41 @@
-%!TEX program = xelatex
-% 编程软件：Sublime Text 3
-% 使用字体：Inconsolata
-\documentclass[AutoFakeBold,AutoFakeSlant]{ctexart}
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = xelatex
+\documentclass[AutoFakeBold,AutoFakeSlant,scheme=chinese,degree=bachelor]{sustechthesis}
+% 1. AutoFakeBold 与 AutoFakeSlant 为伪粗与伪斜，如果本机上有相应粗体与斜体字体，请使用 xeCJK 宏包进行设置，例如：
+%   \setCJKmainfont[
+%     UprightFont = * Light,
+%     BoldFont = * Bold,
+%     ItalicFont = Kaiti SC,
+%     BoldItalicFont = Kaiti SC Bold,
+%   ]{Songti SC}
+%
+% 2. scheme=chinese 为 ctexart 文类提供的中文排版方案，如果使用英文进行论文创作，请使用 scheme=plain 选项。
+%
+% 3. degree=bachelor 为 sustechthesis 文类提供的本科生毕业论文模板，其他可选项为 master 与 doctor，但是均未实现，如果您对此有兴趣，欢迎 PR。
+%
+% 4. sustechthesis.cls 文类主要参考自去年完成使命的 sustechthesis.tex，在这一年的时间，作者的 TeX 风格与常用宏包发生许多变化，因为之前的思想为仅提供必要的格式修改相关代码，所以转换为文类形式所进行的修改较少，而近期的风格与常用宏包均体现在以下的例子文件中。
+%
+% 5. 示例文件均放置于相应目录的 examples 文件夹下，构建自己论文时可暂时保留，用以检索接口与使用方法。
 
-% 宏包
-\usepackage{zhlipsum,lipsum}
-\usepackage{tcolorbox}
-    \tcbuselibrary{xparse}
-        \DeclareTotalTCBox{\verbbox}{ O{green} v !O{} }%
-            {fontupper=\ttfamily,nobeforeafter,tcbox raise base,%
-             arc=0pt,outer arc=0pt,top=0pt,bottom=0pt,left=0mm,%
-             right=0mm,leftrule=0pt,rightrule=0pt,toprule=0.3mm,%
-             bottomrule=0.3mm,boxsep=0.5mm,bottomrule=0.3mm,boxsep=0.5mm,%
-             colback=#1!10!white,colframe=#1!50!black,#3}{#2}%
-\usepackage{hologo}
-
-
-
-% 导入模板设置文件
-% 不使用宏包或者文类形式的原因：
-%   1. 文类绝大部分功能都是继承，修改不容易。
-%   2. 宏包不易懂，修改存在障碍。
-%   3. 仅提供必要的功能，多余的宏包不添加。
-% 当然想抽成宏包或文类很简单，有兴趣可以玩一下。
-\input{sustechthesis}
-
-\设置信息{
-%   键       = {{中文值}, {英文值}},
-    分类号   = {{}, {}},
-    编号     = {{}, {}},
-    UDC      = {{}, {}},
-    密级     = {{}, {}},
-    题目     = {{南方科技大学毕业论文模板设计}, {Graduation Thesis Template}},
-    子标题   = {{\LaTeX\ 形式}, {\LaTeX\ Format}},
-    姓名     = {{梁钰栋}, {Iydon Leong}},
-    学号     = {{11711217}, {11711217}},
-    系别     = {{数学系}, {Department of Mathematics}},
-    专业     = {{信息与计算科学}, {Computatoinal Mathematics}},
-    指导老师 = {{高德纳}, {Donald~E.~Knuth}},
-    时间     = {{2019年3月22日}, {March 22, 2019}},
-}
-
+\input{config/preamble.tex} % 导言区
+\input{config/info.tex} % 论文信息
 \begin{document}
 
-\中文标题页
-\英文标题页
-
-\中文诚信承诺书
-\英文诚信承诺书
-
+\中文标题页\英文标题页
+\中文诚信承诺书\英文诚信承诺书
 \摘要标题
+\input{sections/examples/abstract.tex} % 论文摘要
 
-\begin{中文摘要}{\LaTeX ，接口}
-笔者所见到的毕业论文模板，大多是以文类的形式，少部分以宏包的形式，并且在模板中大多掺杂着各式各样的例子，导致模板文件使用了大部分与形式格式不相关的内容，所以自定义不是很方便，出现问题需要查看宏包或者文类的源代码。于是，秉着仅提供实现最基本要求的理念，重构了之前所写的文类形式。由于第一年使用该模板，所以设计出的模板接口不能保证以后不发生重大变动，一切以文档为主。毕竟学校在发展初期，各类文件都在日渐完善，前几年时，学校标志及名称还发生变化，同时毕业论文的样式也发生了重大变化。但是可以保证的是，模板提供的接口均为中文形式（使用\hologo{XeLaTeX}特性），并且至少更新到\verbbox{2021年}，也就是笔者毕业。
+\目录\clearpage % 目录及换页
 
-模板这种东西不能保证一劳永逸，一方面学校的标准制度都在发生着改变，另一方面\hologo{LaTeX}的宏包也在发生着改变，早先流行的宏包可能几年后就被淘汰掉。因此，您的使用与反馈是我不断更新的动力，希望各位不吝赐教。
-\end{中文摘要}
-
-\begin{英文摘要}{\LaTeX , Interface}
-\lipsum[1]
-\end{英文摘要}
-
-\目录\clearpage
-
-\section{模板接口}
-\subsection{字体}
-大部分人最常使用的文章写作软件为Word，所以提供如下更改字号大小的设置。
-
-\begin{center}
-	\begin{tabular}{|l|c|}
-		\hline
-		\verbbox{\初号} & \初号{你好世界！} \\ \hline
-		\verbbox{\小初} & \小初{你好世界！} \\ \hline
-		\verbbox{\一号} & \一号{你好世界！} \\ \hline
-		\verbbox{\小一} & \小一{你好世界！} \\ \hline
-		\verbbox{\二号} & \二号{你好世界！} \\ \hline
-		\verbbox{\小二} & \小二{你好世界！} \\ \hline
-		\verbbox{\三号} & \三号{你好世界！} \\ \hline
-		\verbbox{\小三} & \小三{你好世界！} \\ \hline
-		\verbbox{\四号} & \四号{你好世界！} \\ \hline
-		\verbbox{\小四} & \小四{你好世界！} \\ \hline
-		\verbbox{\五号} & \五号{你好世界！} \\ \hline
-		\verbbox{\小五} & \小五{你好世界！} \\ \hline
-		\verbbox{\六号} & \六号{你好世界！} \\ \hline
-		\verbbox{\小六} & \小六{你好世界！} \\ \hline
-		\verbbox{\七号} & \七号{你好世界！} \\ \hline
-		\verbbox{\八号} & \八号{你好世界！} \\ \hline
-	\end{tabular}
-\end{center}
-
-同样提供如下的更改字体的设置。
-
-\begin{center}
-	\begin{tabular}{|l|c|}
-		\hline
-		\verbbox{\宋体} & \宋体{你好世界！}   \\ \hline
-		\verbbox{\黑体} & \黑体{你好世界！}   \\ \hline
-		\verbbox{\仿宋} & \仿宋{你好世界！}   \\ \hline
-		\verbbox{\楷书} & \楷书{你好世界！}   \\ \hline
-		\verbbox{\雅黑} & \雅黑{你好世界！}   \\ \hline
-		\verbbox{\隶书} & 需要额外定义。       \\ \hline
-		\verbbox{\幼圆} & 需要额外定义。       \\ \hline
-		\verbbox{\苹方} & 苹果字体，不作演示。 \\ \hline
-	\end{tabular}
-\end{center}
-
-其中字体命令均为重命名\CTeX 宏集中预定义的中文字体命令，如果需要更改字体样式（如斜体粗体），则需要在导言区重新定义，具体请参照\CTeX 宏集\verbbox[violet]{texdoc ctex}。
-
-\begin{itemize}
-	\item \verbbox{\宋体}，CJK等价命令\verbbox[blue]{\CJKfamily{zhsong}}。
-	\item \verbbox{\黑体}，CJK等价命令\verbbox[blue]{\CJKfamily{zhhei}}。
-	\item \verbbox{\仿宋}，CJK等价命令\verbbox[blue]{\CJKfamily{zhfs}}。
-	\item \verbbox{\楷书}，CJK等价命令\verbbox[blue]{\CJKfamily{zhkai}}。
-	\item \verbbox{\雅黑}，CJK等价命令\verbbox[blue]{\CJKfamily{zhli}}。
-	\item \verbbox{\隶书}，CJK等价命令\verbbox[blue]{\CJKfamily{zhyou}}。
-	\item \verbbox{\幼圆}，CJK等价命令\verbbox[blue]{\CJKfamily{zhyahei}}。
-	\item \verbbox{\苹方}，CJK等价命令\verbbox[blue]{\CJKfamily{zhpf}}。
-\end{itemize}
-
-行距设置提供\verbbox{行距}环境。
-
-\begin{行距}{1}
-\zhlipsum[1]
-\end{行距}
-
-\zhlipsum[2]
-
-
-
-\subsection{样式}
-
-
-
-
-
-\section{依赖宏包}
-
-
-
-
-
-
-
-
-
-
-
-\section{隶书}
-    % \隶书\zhlipsum[5]
-
-\section{幼圆}
-    % \幼圆\zhlipsum[6]
-
-\section{雅黑}
-    \雅黑\zhlipsum[7]
-
-\section{苹方}
-    % \苹方\zhlipsum[8]
-
+\input{sections/examples/disclaimer.tex}
+\input{sections/examples/interface.tex}
+\input{sections/examples/tutorial.tex}\clearpage
+\参考文献
+  \nocite{Nicholas1998Handbook}
+  \printbibliography[]\clearpage
+\附录
+  \input{sections/examples/appendix.tex}\clearpage
+\致谢
+  \input{sections/examples/thanks.tex}
 \end{document}
