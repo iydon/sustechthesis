@@ -52,6 +52,8 @@
 \RequirePackage{amssymb}
 \RequirePackage{setspace}
 \RequirePackage{graphicx}
+\RequirePackage{caption}
+  \renewcommand{\captionfont}{\heiti\zihao{5}}
 \RequirePackage{ctex}
   % 字号汉化设置
   \newcommand{\初号}{\zihao {0}}
