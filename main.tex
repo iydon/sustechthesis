@@ -1,6 +1,6 @@
 % !Mode:: "TeX:UTF-8"
 % !TEX program  = xelatex
-\documentclass[AutoFakeBold,AutoFakeSlant,scheme=chinese,degree=bachelor]{sustechthesis}
+\documentclass[AutoFakeBold,AutoFakeSlant,scheme=chinese,degree=bachelor,zihao=-4]{sustechthesis}
 % 1. AutoFakeBold 与 AutoFakeSlant 为伪粗与伪斜，如果本机上有相应粗体与斜体字体，请使用 xeCJK 宏包进行设置，例如：
 %   \setCJKmainfont[
 %     UprightFont = * Light,
@@ -16,6 +16,8 @@
 % 4. sustechthesis.cls 文类主要参考自去年完成使命的 sustechthesis.tex，在这一年的时间，作者的 TeX 风格与常用宏包发生许多变化，因为之前的思想为仅提供必要的格式修改相关代码，所以转换为文类形式所进行的修改较少，而近期的风格与常用宏包均体现在以下的例子文件中。
 %
 % 5. 示例文件均放置于相应目录的 examples 文件夹下，构建自己论文时可暂时保留，用以检索接口与使用方法。
+%
+% 6. 英文目录需要居中可以使用：\renewcommand{\contentsname}{\centerline{Content}}
 
 \input{config/preamble.tex} % 导言区
 \input{config/info.tex} % 论文信息
