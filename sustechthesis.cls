@@ -269,7 +269,7 @@
     \end{spacing}
     \vfill\clearpage}
 \newenvironment{英文摘要}[1]%
-  {\setsepchar{, }\readlist\args{#1}
+  {\setsepchar{遗留问题}\readlist\args{#1}
     \thispagestyle{empty}
     \begin{spacing}{1.45}
       \noindent\三号 [ABSTRACT]:
