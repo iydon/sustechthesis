@@ -48,7 +48,7 @@
 \fi
 
 \RequirePackage{geometry}
-  \geometry{a4paper,top=2.54cm,bottom=2.54cm,left=3.18cm,right=3.18cm}
+  \geometry{a4paper,top=2.5cm,bottom=2.0cm,left=3.0cm,right=2.5cm}
 \RequirePackage{amssymb}
 \RequirePackage{setspace}
 \RequirePackage{graphicx}
@@ -272,10 +272,10 @@
   {\setsepchar{遗留问题}\readlist\args{#1}
     \thispagestyle{empty}
     \begin{spacing}{1.45}
-      \noindent\三号 [ABSTRACT]:
+      \noindent\三号 [\textbf{ABSTRACT}]:
       \四号}%
   {\vfill
-      \noindent\三号 [Keywords]:
+      \noindent\三号 [\textbf{Keywords}]:
       \四号 \args[1]
     \end{spacing}
     \vfill\clearpage}
