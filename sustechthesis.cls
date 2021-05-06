@@ -53,9 +53,9 @@
 \RequirePackage{setspace}
 \RequirePackage{graphicx}
 \RequirePackage{caption}
-  \renewcommand{\captionfont}{\bfseries\songti\zihao{5}} %表题用五号宋体加黑
+  \renewcommand{\captionfont}{\bfseries\songti\zihao{5}} %表题,图题用五号宋体加黑
   \DeclareCaptionLabelSeparator{enspace}{\enspace}
-  \captionsetup[table]{labelsep=enspace} %表序与表题之间没有标点
+  \captionsetup{labelsep=enspace} %表序表题,图序图题之间没有标点,而是一个空格
 \RequirePackage{ctex}
   % 字号汉化设置
   \newcommand{\初号}{\zihao {0}}
