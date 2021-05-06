@@ -53,7 +53,9 @@
 \RequirePackage{setspace}
 \RequirePackage{graphicx}
 \RequirePackage{caption}
-  \renewcommand{\captionfont}{\heiti\zihao{5}}
+  \renewcommand{\captionfont}{\bfseries\songti\zihao{5}} %表题用五号宋体加黑
+  \DeclareCaptionLabelSeparator{enspace}{\enspace}
+  \captionsetup[table]{labelsep=enspace} %表序与表题之间没有标点
 \RequirePackage{ctex}
   % 字号汉化设置
   \newcommand{\初号}{\zihao {0}}
@@ -143,6 +145,12 @@
 
 % 目录
 \newcommand{\目录}{\setcounter{page}{1}\tableofcontents}
+\RequirePackage{fancyhdr}
+  \pagestyle{fancy}
+    \lhead{}\chead{}\rhead{}\lfoot{}\rfoot{}
+    \cfoot{\thepage} %除了页脚页码之外,什么也没有
+    \renewcommand{\headrulewidth}{0pt} %改为0pt即可去掉页眉下面的横线
+    \renewcommand{\footrulewidth}{0pt} %改为0pt即可去掉页脚上面的横线
 % 设置标题页
 \newcommand\下划线[2][6em]{\hskip1pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip3pt}
 \newcommand\中文标题页{%
@@ -275,7 +283,7 @@
       \noindent\三号 [\textbf{ABSTRACT}]:
       \四号}%
   {\vfill
-      \noindent\三号 [\textbf{Keywords}]:
+      \noindent\三号 [\textbf{Key words}]:
       \四号 \args[1]
     \end{spacing}
     \vfill\clearpage}
