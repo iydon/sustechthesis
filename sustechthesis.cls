@@ -55,7 +55,8 @@
 \RequirePackage{caption}
   \renewcommand{\captionfont}{\bfseries\songti\zihao{5}} %表题,图题用五号宋体加黑
   \DeclareCaptionLabelSeparator{enspace}{\enspace}
-  \captionsetup{labelsep=enspace} %表序表题,图序图题之间没有标点,而是一个空格
+  \captionsetup{labelsep=enspace} %表序表题之间没有标点,而是一个空格
+  \captionsetup[figures]{labelsep=enspace} %图序图题之间没有标点,而是一个空格
 \RequirePackage{ctex}
   % 字号汉化设置
   \newcommand{\初号}{\zihao {0}}
@@ -147,8 +148,8 @@
 \newcommand{\目录}{\setcounter{page}{1}\tableofcontents}
 \RequirePackage{fancyhdr}
   \pagestyle{fancy}
-    \lhead{}\chead{}\rhead{}\lfoot{}\rfoot{}
-    \cfoot{\thepage} %除了页脚页码之外,什么也没有
+    \lhead{}\chead{}\rhead{}\lfoot{}\rfoot{}%除了页脚页码之外,什么也没有
+    \cfoot{\五号\thepage} %页脚居中、阿拉伯数字（五号新罗马体）连续编码
     \renewcommand{\headrulewidth}{0pt} %改为0pt即可去掉页眉下面的横线
     \renewcommand{\footrulewidth}{0pt} %改为0pt即可去掉页脚上面的横线
 % 设置标题页
