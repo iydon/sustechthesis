@@ -15,11 +15,6 @@
   \ifthenelse{\boolean{xetex}\OR\boolean{luatex}}{}{
     \ClassError{sustechthesis}{You Should Use XeLaTeX or LuaLaTeX To Compile.}}
 
-\RequirePackage{fontspec}
-
-\setmainfont[Path=fonts/]{times.ttf} %英文默认为Times New Roman
-% \setmainfont{texgyretermes-regular.otf} %现在自带了字体,这个替代字体不需要了
-
 \hyphenation{SUSTech-Thesis}
 \newcommand{\sustechthesis}{SUSTechThesis}
 \newcommand{\version}{1.0}
@@ -51,6 +46,11 @@
 \ifsustech@doctor
   \ClassError{sustechthesis}{NotImplementedError}
 \fi
+
+\RequirePackage{fontspec}
+
+\setmainfont[Path=fonts/]{times.ttf} %英文默认为Times New Roman
+% \setmainfont{texgyretermes-regular.otf} %现在自带了字体,这个替代字体不需要了
 
 \RequirePackage{geometry}
   \geometry{a4paper,top=2.5cm,bottom=2.0cm,left=3.0cm,right=2.5cm}

@@ -9,6 +9,9 @@ jobs:
         with:
           submodules: true
 
+      - name: Tree All project
+        run: sudo apt install tree;tree
+
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
