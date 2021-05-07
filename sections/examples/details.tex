@@ -1,0 +1,25 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = xelatex
+
+\section{一些样例}
+
+\subsection{表格}
+
+\begin{table}[htb]
+% h-here,t-top,b-bottom,优先级依次下降
+    \begin{center}
+    % 居中
+        \caption{表格的标题应该放在上方}\label{table}
+        \begin{tabular}{lc} % 三线表不能有竖线,l-left,c-center,r-right
+            \toprule
+            %三线表-top 线
+            Example & Result \\
+            \midrule
+            %三线表-middle 线
+            Example1          & 0.25 \\
+            Example2          & 0.36 \\
+            \bottomrule
+            %三线表-底线
+        \end{tabular}
+    \end{center}
+\end{table}

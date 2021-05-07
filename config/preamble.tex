@@ -33,7 +33,14 @@
       breaklines,commentstyle=\color{white!50!black}\textit},
     title=\texttt{#1},listing only,breakable,
     left=6mm,right=6mm,top=2mm,bottom=2mm,listing file={#2}}
+% 三线表支持
+\usepackage{booktabs}
 
-
+\usepackage{xeCJK}
+\usepackage{fontspec}
+% \setCJKmainfont{SimSun} % 中文默认为宋体,小四在\documentclass处设置
+\setmainfont{texgyretermes-regular.otf} %和TNR很像的开源字体
+%\setmainfont{Times New Roman}  %英文默认为Times New Roman
+% Times new roman github actions可能没有,本地还是用Times New roman比较好
 % LaTeX logo
 \usepackage{hologo}
