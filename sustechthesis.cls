@@ -47,16 +47,17 @@
   \ClassError{sustechthesis}{NotImplementedError}
 \fi
 
+\RequirePackage{fontspec}
+
+\setmainfont[Path=fonts/]{times.ttf} %英文默认为Times New Roman
+% \setmainfont{texgyretermes-regular.otf} %现在自带了字体,这个替代字体不需要了
+
 \RequirePackage{geometry}
   \geometry{a4paper,top=2.5cm,bottom=2.0cm,left=3.0cm,right=2.5cm}
 \RequirePackage{amssymb}
 \RequirePackage{setspace}
 \RequirePackage{graphicx}
-\RequirePackage{caption}
-  \renewcommand{\captionfont}{\bfseries\songti\zihao{5}} %表题,图题用五号宋体加黑
-  \DeclareCaptionLabelSeparator{enspace}{\enspace}
-  \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格
-  \captionsetup[figures]{labelsep=enspace} %图序图题之间没有标点,而是一个空格
+
 \RequirePackage{ctex}
   % 字号汉化设置
   \newcommand{\初号}{\zihao {0}}
@@ -76,7 +77,11 @@
   \newcommand{\七号}{\zihao {7}}
   \newcommand{\八号}{\zihao {8}}
   % 字体汉化设置
+  \renewcommand{\songti}{\CJKfontspec[Path=fonts/]{simsun.ttc}}
+  \setCJKmainfont[Path=fonts/]{simsun.ttc} % 中文默认为宋体,小四在\documentclass处设置
   \newcommand{\宋体}{\songti}
+  \renewcommand{\heiti}{\CJKfontspec[Path=fonts/]{simhei.ttf}}
+  \setCJKsansfont[Path=fonts/]{simhei.ttf}
   \newcommand{\黑体}{\heiti}
   \newcommand{\仿宋}{\fangsong}
   \newcommand{\楷书}{\kaishu}
@@ -101,6 +106,11 @@
       format={\黑体\小四},
     },
   }
+\RequirePackage{caption}
+  \renewcommand{\captionfont}{\bfseries\songti\zihao{5}} %表题,图题用五号宋体加黑
+  \DeclareCaptionLabelSeparator{enspace}{\enspace}
+  \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格
+  \captionsetup[figures]{labelsep=enspace} %图序图题之间没有标点,而是一个空格
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
   % 行距设置
   \newenvironment{行距}[1]%
@@ -141,6 +151,7 @@
   \信息中英键{专业}
   \信息中英键{指导老师}
   \信息中英键{时间}
+  \信息中英键{年级}
   % 设置键-值
   \newcommand{\设置信息}[1]{\setkeys{信息}{#1}}
 
@@ -262,7 +273,8 @@
     \黑体\二号\题目@中\\\子标题@中
     \vskip 1cm
     \宋体\四号\姓名@中 \\[9pt]
-    （\楷书\小四\系别@中\phantom{空}指导教师： \指导老师@中）
+    （\楷书\小四{\年级@中\phantom{空}\专业@中\text{专业}\phantom{空}指导教师： \指导老师@中}）
+    %署名：注明年级 专业 学生姓名 指导老师姓名
   \end{center}
   \vskip 1.5cm
 }
