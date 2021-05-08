@@ -1,0 +1,69 @@
+name: Upload LaTeX Build
+on:
+  push:
+    tags:
+      - "*"
+jobs:
+  build_latex:
+    if: github.repository == 'Iydon/sustechthesis'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Tree All project
+        run: sudo apt install tree;tree
+
+      - name: Branch name
+        id: branch_name
+        run: |
+          echo ::set-output name=SOURCE_NAME::${GITHUB_REF#refs/*/}
+          echo ::set-output name=SOURCE_BRANCH::${GITHUB_REF#refs/heads/}
+          echo ::set-output name=SOURCE_TAG::${GITHUB_REF#refs/tags/}
+      - name: tag name output
+        run: |
+          echo ${SOURCE_NAME};echo ${SOURCE_BRANCH};echo ${SOURCE_TAG}
+        env:
+          SOURCE_NAME: ${{ steps.branch_name.outputs.SOURCE_NAME }}
+          SOURCE_BRANCH: ${{ steps.branch_name.outputs.SOURCE_BRANCH }}
+          SOURCE_TAG: ${{ steps.branch_name.outputs.SOURCE_TAG }}
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            main.tex
+            slides.tex
+          latexmk_use_xelatex: true
+
+      - name: Tree All project
+        run: sudo apt install tree;tree
+
+      - name: zip the fonts
+        run: zip -r fonts.zip ./fonts
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: PDF_files
+          path: |
+            main.pdf
+            slides.pdf
+
+      - name: release 
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "${{steps.branch_name.outputs.SOURCE_TAG}}"
+          prerelease: false
+          title: "${{steps.branch_name.outputs.SOURCE_TAG}}"
+          files: |
+            ./main.pdf
+            ./slides.pdf
+            ./fonts.zip
+            ./sustechthesis.cls
+
+      - name: look files
+        run: |
+          tree
