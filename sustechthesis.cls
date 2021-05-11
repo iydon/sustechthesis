@@ -110,7 +110,7 @@
   \renewcommand{\captionfont}{\bfseries\songti\zihao{5}} %表题,图题用五号宋体加黑
   \DeclareCaptionLabelSeparator{enspace}{\enspace}
   \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格
-  \captionsetup[figures]{labelsep=enspace} %图序图题之间没有标点,而是一个空格
+  \captionsetup[figure]{labelsep=enspace} %图序图题之间没有标点,而是一个空格
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
   % 行距设置
   \newenvironment{行距}[1]%
@@ -152,6 +152,8 @@
   \信息中英键{指导老师}
   \信息中英键{时间}
   \信息中英键{年级}
+  \信息中英键{班级}
+  \信息中英键{职称}
   % 设置键-值
   \newcommand{\设置信息}[1]{\setkeys{信息}{#1}}
 
@@ -186,9 +188,10 @@
         & \下划线[9cm]{\子标题@中}   \\[9pt]
         姓\hfill 名： & \下划线[9cm]{\姓名@中}     \\[9pt]
         学\hfill 号： & \下划线[9cm]{\学号@中}     \\[9pt]
+        班\hfill 级： & \下划线[9cm]{\班级@中}     \\[9pt]
         系\hfill 别： & \下划线[9cm]{\系别@中}     \\[9pt]
         专\hfill 业： & \下划线[9cm]{\专业@中}     \\[9pt]
-        指导教师：    & \下划线[9cm]{\指导老师@中} \\[9pt]
+        指导教师：    & \下划线[9cm]{\指导老师@中\职称@中} \\[9pt]
       \end{tabular}}
     \vskip 3.14cm
     {\宋体\三号\时间@中}
@@ -215,9 +218,10 @@
         & \下划线[9cm]{\子标题@英}   \\[2.1cm]
         Student Name:   & \下划线[9cm]{\姓名@英}     \\[9pt]
         Student ID:     & \下划线[9cm]{\学号@英}     \\[9pt]
+        Class:          & \下划线[9cm]{\班级@英}     \\[9pt]
         Department:     & \下划线[9cm]{\系别@英}     \\[9pt]
-        Program:        & \下划线[9cm]{\专业@英}     \\[9pt]
-        Thesis Advisor: & \下划线[9cm]{\指导老师@英} \\[10pt]
+        Major:          & \下划线[9cm]{\专业@英}     \\[9pt]
+        Thesis Advisor: & \下划线[9cm]{\职称@英 \quad \指导老师@英} \\[10pt]
       \end{tabular}}
     \vskip 2.1cm
     \三号 Date: \时间@英
