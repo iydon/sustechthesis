@@ -272,6 +272,7 @@
 }
 % 摘要
 \RequirePackage{listofitems}
+\RequirePackage{ifthen}
 \newcommand\摘要标题{
   \begin{center}
     \黑体\二号\题目@中\\\子标题@中
@@ -283,25 +284,37 @@
   \vskip 1.5cm
 }
 \newenvironment{中文摘要}[1]%
-  {\setsepchar{, }\readlist\args{#1}
+  {\setsepchar{；}\readlist\args{#1}
     \thispagestyle{empty}
     \begin{spacing}{1.45}
       \noindent\黑体\三号[摘要]：
       \宋体\四号}%
   {\vfill
       \noindent\黑体\三号 [关键词]：
-      \宋体\四号 \args[1]
+      \宋体\四号
+      \foreachitem\word\in\args{
+        \word
+        \ifthenelse{
+          \wordcnt < \argslen}
+          {；}{}
+      }
     \end{spacing}
     \vfill\clearpage}
 \newenvironment{英文摘要}[1]%
-  {\setsepchar{遗留问题}\readlist\args{#1}
+  {\setsepchar{{, }}\readlist\args{#1}
     \thispagestyle{empty}
     \begin{spacing}{1.45}
       \noindent\三号 [\textbf{ABSTRACT}]:
       \四号}%
   {\vfill
       \noindent\三号 [\textbf{Key words}]:
-      \四号 \args[1]
+      \四号
+      \foreachitem\word\in\args{
+        \word
+        \ifthenelse{
+          \wordcnt < \argslen}
+          {,}{}
+      }
     \end{spacing}
     \vfill\clearpage}
 % 参考文献
