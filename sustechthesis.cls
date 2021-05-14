@@ -110,7 +110,7 @@
   \renewcommand{\captionfont}{\bfseries\songti\zihao{5}} %表题,图题用五号宋体加黑
   \DeclareCaptionLabelSeparator{enspace}{\enspace}
   \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格
-  \captionsetup[figures]{labelsep=enspace} %图序图题之间没有标点,而是一个空格
+  \captionsetup[figure]{labelsep=enspace} %图序图题之间没有标点,而是一个空格
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
   % 行距设置
   \newenvironment{行距}[1]%
@@ -272,6 +272,7 @@
 }
 % 摘要
 \RequirePackage{listofitems}
+\RequirePackage{ifthen}
 \newcommand\摘要标题{
   \begin{center}
     \黑体\二号\题目@中\\\子标题@中
@@ -283,25 +284,37 @@
   \vskip 1.5cm
 }
 \newenvironment{中文摘要}[1]%
-  {\setsepchar{, }\readlist\args{#1}
+  {\setsepchar{；}\readlist\args{#1}
     \thispagestyle{empty}
     \begin{spacing}{1.45}
       \noindent\黑体\三号[摘要]：
       \宋体\四号}%
   {\vfill
       \noindent\黑体\三号 [关键词]：
-      \宋体\四号 \args[1]
+      \宋体\四号
+      \foreachitem\word\in\args{
+        \word
+        \ifthenelse{
+          \wordcnt < \argslen}
+          {；}{}
+      }
     \end{spacing}
     \vfill\clearpage}
 \newenvironment{英文摘要}[1]%
-  {\setsepchar{遗留问题}\readlist\args{#1}
+  {\setsepchar{{, }}\readlist\args{#1}
     \thispagestyle{empty}
     \begin{spacing}{1.45}
       \noindent\三号 [\textbf{ABSTRACT}]:
       \四号}%
   {\vfill
       \noindent\三号 [\textbf{Key words}]:
-      \四号 \args[1]
+      \四号
+      \foreachitem\word\in\args{
+        \word
+        \ifthenelse{
+          \wordcnt < \argslen}
+          {,}{}
+      }
     \end{spacing}
     \vfill\clearpage}
 % 参考文献
