@@ -1,29 +1,39 @@
 # sustechthesis
+
+南方科技大学论文模板（本科）
+
 Southern University of Science and Technology Thesis Template LaTeX Template.
 Not Finished yet.
 
-# Clone
+# 下载
 
-Please clone with `--recurse-submodules` to get the fonts submodule
+如您熟悉使用Git工具，例如：`git clone ${GIT_REPO_PATH}`。
 
-Example: `git clone --recurse-submodules ${GIT_REPO_PATH}`
+如**不熟悉**，直接点击绿色 `Code` 下载ZIP压缩包。
 
-# Usage
-Please read the [document](https://github.com/Iydon/sustechthesis/blob/master/main.pdf).
+# 模板使用
+
+请阅读 [文档](https://github.com/Iydon/sustechthesis/blob/master/main.pdf).
+
+# 文档架构
+
+* `config/preamble.tex`: 导言区，导入宏包，宏定义
+* `config/info.tex`: 论文信息，例如：标题，作者，等
+* `main.tex`: 主文档，编排章节顺序。
 
 
-# Build
-- Use Makefile: `make`, `make clean` ......
-- Or, use `latexmk`
-    - Build: `latexmk main`
-    - Clean: `latexmk -c main`
+# 构建
+- 使用 Makefile: `make`, `make clean` ......
+- 或，使用 `latexmk`
+    - 构建: `latexmk main`
+    - 清理: `latexmk -c main`
 
-# Attention
+# ⚠️ 注意
 
-[Main.pdf](./main.pdf) or [Slides.pdf](Slides.pdf) Maybe not the lastest version, Please Look the newest in [Github Actions](https://github.com/Iydon/sustechthesis/actions) pages' latest workflow
+[Main.pdf](./main.pdf) 或 [Slides.pdf](Slides.pdf) 格式并不是最新版本，如需查看最新示例文件，请在 [Github Actions](https://github.com/Iydon/sustechthesis/actions/workflows/compile.yaml) workflow 任务中下载最新的 Artifacts `PDF`。
 
-# Release
+# 开发发布
 
-Release can be produce by push a tag
+使用 tag 发布版本。
 
-PS: `git push --tag` only push tag, should work after `git push`
+PS: `git push --tag` 仅在本地发布, 需运行 `git push` 将本地 tag 推到远端。
