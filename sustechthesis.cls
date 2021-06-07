@@ -154,8 +154,16 @@
   % 设置键-值
   \newcommand{\设置信息}[1]{\setkeys{信息}{#1}}
 
-% 目录
-\newcommand{\目录}{\setcounter{page}{1}\tableofcontents}
+% 目录 
+% 无论是撰写规范还是样例都没有提到页码位置
+% 已确认页码应在正文处开始
+\newcommand{\目录}{
+  \pagenumbering{gobble}
+  \tableofcontents
+  \clearpage
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+}
 \RequirePackage{fancyhdr}
   \pagestyle{fancy}
     \lhead{}\chead{}\rhead{}\lfoot{}\rfoot{}%除了页脚页码之外,什么也没有
@@ -183,6 +191,8 @@
       \begin{tabular}{lc}
         题\hfill 目： & \下划线[9cm]{\题目@中}     \\[9pt]
         & \下划线[9cm]{\子标题@中}   \\[9pt]
+        \\
+        \\
         姓\hfill 名： & \下划线[9cm]{\姓名@中}     \\[9pt]
         学\hfill 号： & \下划线[9cm]{\学号@中}     \\[9pt]
         系\hfill 别： & \下划线[9cm]{\系别@中}     \\[9pt]
@@ -212,6 +222,7 @@
       \begin{tabular}{rr}
         Thesis Title:   & \下划线[9cm]{\题目@英}     \\[9pt]
         & \下划线[9cm]{\子标题@英}   \\[2.1cm]
+        \\
         Student Name:   & \下划线[9cm]{\姓名@英}     \\[9pt]
         Student ID:     & \下划线[9cm]{\学号@英}     \\[9pt]
         Department:     & \下划线[9cm]{\系别@英}     \\[9pt]
@@ -240,7 +251,7 @@
     4.在毕业论文（设计）中对侵犯任何方面知识产权的行为，由本人承担相应的法律责任。
     \vskip 4cm
     \hfill 作者签名:\phantom{xxxx月xxxx日} \par
-    \hfill\下划线[1.6cm]{}年\下划线[1cm]{}月\下划线[1cm]{}日
+    \hfill\下划线[2cm]{}年\下划线[1cm]{}月\下划线[1cm]{}日
   \end{spacing}
   \clearpage\restoregeometry
 }
