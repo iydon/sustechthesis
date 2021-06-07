@@ -222,7 +222,6 @@
       \begin{tabular}{rr}
         Thesis Title:   & \下划线[9cm]{\题目@英}     \\[9pt]
         & \下划线[9cm]{\子标题@英}   \\[2.1cm]
-        \\
         Student Name:   & \下划线[9cm]{\姓名@英}     \\[9pt]
         Student ID:     & \下划线[9cm]{\学号@英}     \\[9pt]
         Department:     & \下划线[9cm]{\系别@英}     \\[9pt]
