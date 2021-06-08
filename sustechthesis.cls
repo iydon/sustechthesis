@@ -277,7 +277,6 @@
 }
 % 摘要
 \RequirePackage{listofitems}
-\RequirePackage{ifthen}
 \newcommand\摘要标题{
   \begin{center}
     \黑体\二号\题目@中\\\子标题@中
