@@ -49,8 +49,14 @@
 
 \RequirePackage{fontspec}
 
-\setmainfont[Path=fonts/]{times.ttf} %英文默认为Times New Roman
-% \setmainfont{texgyretermes-regular.otf} %现在自带了字体,这个替代字体不需要了
+\setmainfont[
+  Path=fonts/times/,
+  Extension = .ttf,
+  UprightFont = * ,
+  BoldFont = *bd ,
+  ItalicFont = *i ,
+  BoldItalicFont = *bi
+]{times} %英文默认为Times New Roman
 
 \RequirePackage{geometry}
   \geometry{a4paper,top=2.5cm,bottom=2.0cm,left=3.0cm,right=2.5cm}
@@ -77,8 +83,8 @@
   \newcommand{\七号}{\zihao {7}}
   \newcommand{\八号}{\zihao {8}}
   % 字体汉化设置
-  \renewcommand{\songti}{\CJKfontspec[Path=fonts/]{simsun.ttc}}
-  \setCJKmainfont[Path=fonts/]{simsun.ttc} % 中文默认为宋体,小四在\documentclass处设置
+  \renewcommand{\songti}{\CJKfontspec[Path=fonts/,FallBack=simsunb.ttf]{simsun.ttc}}
+  \setCJKmainfont[Path=fonts/,FallBack=simsunb.ttf]{simsun.ttc} % 中文默认为宋体,小四在\documentclass处设置
   \newcommand{\宋体}{\songti}
   \renewcommand{\heiti}{\CJKfontspec[Path=fonts/]{simhei.ttf}}
   \setCJKsansfont[Path=fonts/]{simhei.ttf}
@@ -154,7 +160,7 @@
   % 设置键-值
   \newcommand{\设置信息}[1]{\setkeys{信息}{#1}}
 
-% 目录 
+% 目录
 % 无论是撰写规范还是样例都没有提到页码位置
 % 已确认页码应在正文处开始
 \newcommand{\目录}{
