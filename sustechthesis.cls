@@ -115,8 +115,9 @@
 \RequirePackage{caption}
   \renewcommand{\captionfont}{\bfseries\songti\zihao{5}} %表题,图题用五号宋体加黑
   \DeclareCaptionLabelSeparator{enspace}{\enspace}
-  \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格
-  \captionsetup[figure]{labelsep=enspace} %图序图题之间没有标点,而是一个空格
+  \captionsetup[table]{labelsep=enspace,name={表}} %表序表题之间没有标点,而是一个空格,默认前缀为表
+  \captionsetup[figure]{labelsep=enspace,name={图}} %图序图题之间没有标点,而是一个空格，默认前缀为图
+
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
   % 行距设置
   \newenvironment{行距}[1]%
