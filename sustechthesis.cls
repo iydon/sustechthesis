@@ -134,8 +134,8 @@
   \renewcommand\cftsubsubsecfont{\宋体\四号}
   \renewcommand\cftsubsubsecpagefont{\宋体\四号}
   \setlength\cftparskip{7pt}
-  \setlength\cftsubsecindent{0pt}
-  \setlength\cftsubsubsecindent{0pt}
+  \setlength\cftsubsecindent{0bp}
+  \setlength\cftsubsubsecindent{0bp}
 \RequirePackage{xkeyval}
   % 根据名称定义中英文控制序列
   \def\中英信息#1,#2#3{
@@ -174,8 +174,8 @@
   \pagestyle{fancy}
     \lhead{}\chead{}\rhead{}\lfoot{}\rfoot{}%除了页脚页码之外,什么也没有
     \cfoot{\五号\thepage} %页脚居中、阿拉伯数字（五号新罗马体）连续编码
-    \renewcommand{\headrulewidth}{0pt} %改为0pt即可去掉页眉下面的横线
-    \renewcommand{\footrulewidth}{0pt} %改为0pt即可去掉页脚上面的横线
+    \renewcommand{\headrulewidth}{0bp} %改为0bp即可去掉页眉下面的横线
+    \renewcommand{\footrulewidth}{0bp} %改为0bp即可去掉页脚上面的横线
 % 设置标题页
 \newcommand\下划线[2][6em]{\hskip1pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip3pt}
 \newcommand\中文标题页{%
@@ -242,42 +242,44 @@
 % 诚信承诺书
 \newcommand\中文诚信承诺书{
   \newgeometry{%
-    top=3.6cm,bottom=2.75cm,
-    left=2.54cm,right=2.48cm}
+    top=2.74cm,bottom=2.54cm,
+    left=3.17cm,right=3.17cm}
   \thispagestyle{empty}
-  \begin{center}
-    \黑体\二号 诚信承诺书
-  \end{center}
-  \vskip 1.8cm
-  \begin{spacing}{1.9}\宋体\四号
+  \begin{center}{
+      \黑体\二号 诚信承诺书
+  }\end{center}
+  \vskip 1.65cm
+  \begin{spacing}{1.85}\宋体\四号
     1.本人郑重承诺所呈交的毕业设计（论文），是在导师的指导下，独立进行研究工作所取得的成果，所有数据、图片资料均真实可靠。\par
     2.除文中已经注明引用的内容外，本论文不包含任何其他人或集体已经发表或撰写过的作品或成果。对本论文的研究作出重要贡献的个人和集体，均已在文中以明确的方式标明。\par
     3.本人承诺在毕业论文（设计）选题和研究内容过程中没有抄袭他人研究成果和伪造相关数据等行为。\par
     4.在毕业论文（设计）中对侵犯任何方面知识产权的行为，由本人承担相应的法律责任。
-    \vskip 4cm
-    \hfill 作者签名:\phantom{xxxx月xxxx日} \par
-    \hfill\下划线[2cm]{}年\下划线[1cm]{}月\下划线[1cm]{}日
+    \vskip 4.55cm
+    \hspace {8.3cm } 作者签名：\phantom{xxxx月xxxx日} \par
+    \hspace {8.0cm } \下划线[2cm]{}年\下划线[1cm]{}月\下划线[1cm]{}日
   \end{spacing}
   \clearpage\restoregeometry
 }
 \newcommand\英文诚信承诺书{
   \newgeometry{%
-    top=2.75cm,bottom=2.75cm,
-    left=2.54cm,right=2.48cm}
+    top=2.85cm,bottom=0.49cm,
+    left=3.16cm,right=3.10cm}
   \thispagestyle{empty}
   \begin{center}
-    \huge COMMITMENT OF HONESTY
+    {\fontsize{22bp}{22bp}\selectfont  COMMITMENT OF HONESTY}
   \end{center}
-  \vskip 0.9cm
-  \begin{spacing}{1.45}
-    \三号\noindent
-    1. I solemnly promise that the paper presented comes from my independent research work under my supervisor's supervision. All statistics and images are real and reliable.\\
-    2. Except for the annotated reference, the paper contents no other published work or achievement by person or group. All people making important contributions to the study of the paper have been indicated clearly in the paper.\\
-    3. I promise that I did not plagiarize other people's research achievement or forge related data in the process of designing topic and research content.\\
-    4. If there is violation of any intellectual property right, I will take legal responsibility myself.
-    \vskip 3.63cm
-    \hfill Signature:\phantom{abcdefghijklmn} \par
-    \hfill Date:\phantom{abcdefghijklmnopqr}
+  \vskip 0.5cm
+  \begin{spacing}{2.24}
+    {\fontsize{14bp}{14bp} \selectfont
+    \noindent
+    1. I\phantom{st}solemnly\phantom{es}promise\phantom{or}that\phantom{un}the\phantom{r }paper\phantom{su}presented\phantom{se}comes\phantom{vi}from\phantom{ak}my independent\phantom{nl}research\phantom{is}work\phantom{at}under\phantom{ia}my\phantom{on}supervisor's\phantom{co}supervision.\phantom{o}All statistics and images are real and reliable.\\
+    2. Except\phantom{th}for\phantom{tr}the\phantom{ti}annotated\phantom{e }reference,\phantom{n}the\phantom{p }paper\phantom{h }contents\phantom{pl}no\phantom{di}other published\phantom{t}work\phantom{r}or\phantom{a}achievement\phantom{s}by\phantom{d}person\phantom{h}or\phantom{p}group. All\phantom{c}people\phantom{n}making important\phantom{t}contributions\phantom{o}to\phantom{p}the\phantom{ia}study\phantom{e}of\phantom{o}the\phantom{o}paper\phantom{p}have\phantom{ll}been\phantom{h}indicated clearly in the paper.\\
+    3. I\phantom{f}promise\phantom{a}that\phantom{l}I did not plagiarize other people's\phantom{g}research\phantom{a}achievement or\phantom{m}forge\phantom{r}related\phantom{ol}data\phantom{h}in\phantom{f}the\phantom{g}process\phantom{n}of\phantom{n}designing\phantom{dl}topic\phantom{tl}and \phantom{e}research content.\\
+    4. If\phantom{e}there\phantom{s}is\phantom{t}violation\phantom{n}of\phantom{f}any\phantom{f}intellectual\phantom{g}property\phantom{n}right, I will take legal responsibility myself.
+    \vskip 3.25cm
+    \hspace {8.3cm }  Signature：\hspace {3.06cm} \par
+    \hspace {8.3cm }  Date：\hspace {3.06cm}
+    }
   \end{spacing}
   \clearpage\restoregeometry
 }
