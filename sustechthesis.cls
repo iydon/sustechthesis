@@ -228,7 +228,7 @@
         Student ID:     & \下划线[9cm]{\学号@英}     \\[9pt]
         Department:     & \下划线[9cm]{\系别@英}     \\[9pt]
         Program:        & \下划线[9cm]{\专业@英}     \\[9pt]
-        Thesis Advisor: & \下划线[9cm]{\职称@英\phantom{e}\指导老师@英} \\[10pt]
+        Thesis Advisor: & \下划线[9cm]{\指导老师@英\phantom{e}\职称@英} \\[10pt]
       \end{tabular}}
     \vskip 2.1cm
     \三号 Date: \时间@英
