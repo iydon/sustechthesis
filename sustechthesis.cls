@@ -49,6 +49,7 @@
 
 \RequirePackage{fontspec}
 \RequirePackage{hologo}
+\RequirePackage{etoolbox}
 
 \setmainfont[
   Path=fonts/times/,
@@ -351,7 +352,13 @@
 \RequirePackage{listofitems}
 \newcommand\摘要标题{
   \begin{center}
-    \黑体\二号\题目@中\\%\子标题@中
+    \黑体\二号\题目@中\\
+    \ifdefempty{\子标题@中}%
+      {% empty
+        \relax
+      }{% not empty
+        \hspace*{\fill} \小二 ——\子标题@中\\
+      }%
     \vskip 1cm
     \宋体\四号\姓名@中 \\[9pt]
     （\楷书\小四{\系别@中\phantom{空}指导教师： \指导老师@中}）
