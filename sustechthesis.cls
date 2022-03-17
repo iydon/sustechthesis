@@ -48,6 +48,7 @@
 \fi
 
 \RequirePackage{fontspec}
+\RequirePackage{hologo}
 
 \setmainfont[
   Path=fonts/times/,
@@ -181,6 +182,55 @@
     \renewcommand{\headrulewidth}{0pt} %改为0pt即可去掉页眉下面的横线
     \renewcommand{\footrulewidth}{0pt} %改为0pt即可去掉页脚上面的横线
 % 设置标题页
+\RequirePackage{listofitems}
+\RequirePackage{xeCJKfntef}
+
+\newcommand{\ulbox}[2][2em]{%
+  \CJKunderline[thickness=0.5pt]{\makebox[#1]{#2}}%
+}
+
+\NewDocumentCommand\sustech@info@item{s o m o m}{%
+  {
+    % \renewcommand\arraystretch{1.3} % 应该只是对可能会换行的英文 item 生效。
+    \bfseries
+    \IfValueTF{#2}
+    {\begin{tabular}[t]{@{}r@{}}\makebox[#2][s]{#3}\end{tabular}}
+    {\begin{tabular}[t]{@{}r@{}}#3\end{tabular}}
+  } & %
+  {
+    % \renewcommand\arraystretch{1.3} % 应该只是对可能会换行的英文 item 生效。
+    \bfseries
+    \IfBooleanTF{#1}
+    {%有星号
+      \IfValueTF{#4}
+      {\sustech@info@multiline[#4]{#5}}
+      {\sustech@info@multiline[15em]{#5}}
+    }
+    {%没星号
+      \IfValueTF{#4}
+      {\sustech@info@singleline[#4]{#5}}
+      {\sustech@info@singleline[15em]{#5}}
+    }
+  }
+}
+
+\newcommand{\sustech@info@singleline}[2][2em]{
+  \begin{tabular}[t]{@{}r@{}}\ulbox[#1]{#2}\end{tabular}
+}
+
+\newcommand{\sustech@info@multiline}[2][2em]{
+  \setsepchar{\\}%
+  \readlist\tmp@list#2%
+  \def\e@tmp@list{}%
+  \foreachitem\y\in\tmp@list[]{%
+    \listeadd{\e@tmp@list}{\y}%
+  }%
+  \renewcommand*{\do}[1]{\ulbox[#1]{##1}\\[9pt]}%
+  \begin{tabular}[t]{@{}r@{}}%
+    \dolistloop{\e@tmp@list}
+  \end{tabular}
+}
+
 \newcommand\下划线[2][6em]{\hskip1pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip3pt}
 \newcommand\中文标题页{%
   \newgeometry{%
@@ -199,15 +249,21 @@
     \vskip 3.5cm
     {\粗体\宋体\三号
       \begin{tabular}{lc}
-        题\hfill 目： & \下划线[9cm]{\题目@中}     \\[9pt]
-        & \下划线[9cm]{\子标题@中}   \\[9pt]
+        \sustech@info@item*[5em]{题目：}[9cm]{\题目@中}\\[9pt]
+        % 题\hfill 目： & \下划线[9cm]{\题目@中}     \\[9pt]
+        % & \下划线[9cm]{\子标题@中}   \\[9pt]
         \\
         \\
-        姓\hfill 名： & \下划线[9cm]{\姓名@中}     \\[9pt]
-        学\hfill 号： & \下划线[9cm]{\学号@中}     \\[9pt]
-        系\hfill 别： & \下划线[9cm]{\系别@中}     \\[9pt]
-        专\hfill 业： & \下划线[9cm]{\专业@中}     \\[9pt]
-        指导教师：    & \下划线[9cm]{\指导老师@中\phantom{e}\职称@中} \\[9pt]
+        \sustech@info@item[5em]{姓名：}[9cm]{\姓名@中}\\[9pt]
+        \sustech@info@item[5em]{学号：}[9cm]{\学号@中}\\[9pt]
+        \sustech@info@item*[5em]{系别：}[9cm]{\系别@中}\\[9pt]
+        \sustech@info@item*[5em]{专业：}[9cm]{\专业@中}\\[9pt]
+        \sustech@info@item[5em]{指导教师：}[9cm]{\指导老师@中}\\[9pt]
+        % 姓\hfill 名： & \下划线[9cm]{\姓名@中}     \\[9pt]
+        % 学\hfill 号： & \下划线[9cm]{\学号@中}     \\[9pt]
+        % 系\hfill 别： & \下划线[9cm]{\系别@中}     \\[9pt]
+        % 专\hfill 业： & \下划线[9cm]{\专业@中}     \\[9pt]
+        % 指导教师：    & \下划线[9cm]{\指导老师@中\phantom{e}\职称@中} \\[9pt]
       \end{tabular}}
     \vskip 3.14cm
     {\宋体\三号\时间@中}
@@ -230,13 +286,19 @@
     \vskip 2.7cm
     {\粗体\三号
       \begin{tabular}{rr}
-        Thesis Title:   & \下划线[9cm]{\题目@英}     \\[9pt]
-        & \下划线[9cm]{\子标题@英}   \\[2.1cm]
-        Student Name:   & \下划线[9cm]{\姓名@英}     \\[9pt]
-        Student ID:     & \下划线[9cm]{\学号@英}     \\[9pt]
-        Department:     & \下划线[9cm]{\系别@英}     \\[9pt]
-        Program:        & \下划线[9cm]{\专业@英}     \\[9pt]
-        Thesis Advisor: & \下划线[9cm]{\指导老师@英\phantom{e}\职称@英} \\[10pt]
+        \sustech@info@item*{Thesis Title:}[9cm]{\题目@英}\\[2.1cm]
+        % Thesis Title:   & \下划线[9cm]{\题目@英}     \\[9pt]
+        % & \下划线[9cm]{\子标题@英}   \\[2.1cm]
+        % Student Name:   & \下划线[9cm]{\姓名@英}     \\[9pt]
+        % Student ID:     & \下划线[9cm]{\学号@英}     \\[9pt]
+        \sustech@info@item{Student Name:}[9cm]{\姓名@英}\\[9pt]
+        \sustech@info@item{Student ID:}[9cm]{\学号@英}\\[9pt]
+        \sustech@info@item*{Department:}[9cm]{\系别@英}\\[9pt]
+        \sustech@info@item*{Program:}[9cm]{\专业@英}\\[9pt]
+        \sustech@info@item{Thesis Advisor:}[9cm]{\指导老师@英}\\[10pt]
+        % Department:     & \下划线[9cm]{\系别@英}     \\[9pt]
+        % Program:        & \下划线[9cm]{\专业@英}     \\[9pt]
+        % Thesis Advisor: & \下划线[9cm]{\指导老师@英\phantom{e}\职称@英} \\[10pt]
       \end{tabular}}
     \vskip 2.1cm
     \三号 Date: \时间@英
@@ -289,7 +351,7 @@
 \RequirePackage{listofitems}
 \newcommand\摘要标题{
   \begin{center}
-    \黑体\二号\题目@中\\\子标题@中
+    \黑体\二号\题目@中\\%\子标题@中
     \vskip 1cm
     \宋体\四号\姓名@中 \\[9pt]
     （\楷书\小四{\系别@中\phantom{空}指导教师： \指导老师@中}）
