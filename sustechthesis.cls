@@ -155,7 +155,7 @@
   \信息中英键{UDC}
   \信息中英键{密级}
   \信息中英键{题目}
-  \信息中英键{子标题}
+  \信息中英键{副标题}
   \信息中英键{姓名}
   \信息中英键{学号}
   \信息中英键{系别}
@@ -252,7 +252,7 @@
       \begin{tabular}{lc}
         \sustech@info@item*[5em]{题目：}[9cm]{\题目@中}\\[9pt]
         % 题\hfill 目： & \下划线[9cm]{\题目@中}     \\[9pt]
-        % & \下划线[9cm]{\子标题@中}   \\[9pt]
+        % & \下划线[9cm]{\副标题@中}   \\[9pt]
         \\
         \\
         \sustech@info@item[5em]{姓名：}[9cm]{\姓名@中}\\[9pt]
@@ -289,7 +289,7 @@
       \begin{tabular}{rr}
         \sustech@info@item*{Thesis Title:}[9cm]{\题目@英}\\[2.1cm]
         % Thesis Title:   & \下划线[9cm]{\题目@英}     \\[9pt]
-        % & \下划线[9cm]{\子标题@英}   \\[2.1cm]
+        % & \下划线[9cm]{\副标题@英}   \\[2.1cm]
         % Student Name:   & \下划线[9cm]{\姓名@英}     \\[9pt]
         % Student ID:     & \下划线[9cm]{\学号@英}     \\[9pt]
         \sustech@info@item{Student Name:}[9cm]{\姓名@英}\\[9pt]
@@ -353,11 +353,11 @@
 \newcommand\摘要标题{
   \begin{center}
     \黑体\二号\题目@中\\
-    \ifdefempty{\子标题@中}%
+    \ifdefempty{\副标题@中}%
       {% empty
         \relax
       }{% not empty
-        \hspace*{\fill} \小二 ——\子标题@中\\
+        \hspace*{\fill} \小二 ——\副标题@中\\
       }%
     \vskip 1cm
     \宋体\四号\姓名@中 \\[9pt]
