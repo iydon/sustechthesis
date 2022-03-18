@@ -251,10 +251,17 @@
     {\粗体\宋体\三号
       \begin{tabular}{lc}
         \sustech@info@item*[5em]{题目：}[9cm]{\题目@中}\\[9pt]
+        \ifdefempty{\副标题@中}%
+        {% empty
+          \relax
+        }{% not empty
+          \sustech@info@item[5em]{}[9cm]{\副标题@中}\\[9pt]
+        }%
+      \end{tabular}
+      \vfill
+      \begin{tabular}{lc}
         % 题\hfill 目： & \下划线[9cm]{\题目@中}     \\[9pt]
         % & \下划线[9cm]{\副标题@中}   \\[9pt]
-        \\
-        \\
         \sustech@info@item[5em]{姓名：}[9cm]{\姓名@中}\\[9pt]
         \sustech@info@item[5em]{学号：}[9cm]{\学号@中}\\[9pt]
         \sustech@info@item*[5em]{系别：}[9cm]{\系别@中}\\[9pt]
@@ -265,7 +272,8 @@
         % 系\hfill 别： & \下划线[9cm]{\系别@中}     \\[9pt]
         % 专\hfill 业： & \下划线[9cm]{\专业@中}     \\[9pt]
         % 指导教师：    & \下划线[9cm]{\指导老师@中\phantom{e}\职称@中} \\[9pt]
-      \end{tabular}}
+      \end{tabular}
+    }
     \vskip 3.14cm
     {\宋体\三号\时间@中}
   \end{center}
@@ -287,7 +295,17 @@
     \vskip 2.7cm
     {\粗体\三号
       \begin{tabular}{rr}
-        \sustech@info@item*{Thesis Title:}[9cm]{\题目@英}\\[2.1cm]
+        \sustech@info@item*{Thesis Title:}[9cm]{\题目@英}\\[9pt]
+        \ifdefempty{\副标题@英}%
+        {% empty
+          \relax
+        }{% not empty
+          \sustech@info@item{}[9cm]{\副标题@英}\\[9pt]
+        }%
+      \end{tabular}
+      \vfill
+      \begin{tabular}{lc}
+        % \sustech@info@item*{Thesis Title:}[9cm]{\联合标题@英}\\[2.1cm]
         % Thesis Title:   & \下划线[9cm]{\题目@英}     \\[9pt]
         % & \下划线[9cm]{\副标题@英}   \\[2.1cm]
         % Student Name:   & \下划线[9cm]{\姓名@英}     \\[9pt]
@@ -300,7 +318,8 @@
         % Department:     & \下划线[9cm]{\系别@英}     \\[9pt]
         % Program:        & \下划线[9cm]{\专业@英}     \\[9pt]
         % Thesis Advisor: & \下划线[9cm]{\指导老师@英\phantom{e}\职称@英} \\[10pt]
-      \end{tabular}}
+      \end{tabular}
+    }
     \vskip 2.1cm
     \三号 Date: \时间@英
   \end{center}
