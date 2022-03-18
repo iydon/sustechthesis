@@ -261,18 +261,11 @@
       \end{tabular}
       \vfill
       \begin{tabular}{lc}
-        % 题\hfill 目： & \下划线[9cm]{\题目@中}     \\[9pt]
-        % & \下划线[9cm]{\副标题@中}   \\[9pt]
         \sustech@info@item[5em]{姓名：}[9cm]{\姓名@中}\\[9pt]
         \sustech@info@item[5em]{学号：}[9cm]{\学号@中}\\[9pt]
         \sustech@info@item*[5em]{系别：}[9cm]{\系别@中}\\[9pt]
         \sustech@info@item*[5em]{专业：}[9cm]{\专业@中}\\[9pt]
         \sustech@info@item[5em]{指导教师：}[9cm]{\指导老师@中 \space \职称@中}\\[9pt]
-        % 姓\hfill 名： & \下划线[9cm]{\姓名@中}     \\[9pt]
-        % 学\hfill 号： & \下划线[9cm]{\学号@中}     \\[9pt]
-        % 系\hfill 别： & \下划线[9cm]{\系别@中}     \\[9pt]
-        % 专\hfill 业： & \下划线[9cm]{\专业@中}     \\[9pt]
-        % 指导教师：    & \下划线[9cm]{\指导老师@中\phantom{e}\职称@中} \\[9pt]
       \end{tabular}
     }
     \vskip 3.14cm
@@ -306,19 +299,11 @@
       \end{tabular}
       \vfill
       \begin{tabular}{lc}
-        % \sustech@info@item*{Thesis Title:}[9cm]{\联合标题@英}\\[2.1cm]
-        % Thesis Title:   & \下划线[9cm]{\题目@英}     \\[9pt]
-        % & \下划线[9cm]{\副标题@英}   \\[2.1cm]
-        % Student Name:   & \下划线[9cm]{\姓名@英}     \\[9pt]
-        % Student ID:     & \下划线[9cm]{\学号@英}     \\[9pt]
         \sustech@info@item{Student Name:}[9cm]{\姓名@英}\\[9pt]
         \sustech@info@item{Student ID:}[9cm]{\学号@英}\\[9pt]
         \sustech@info@item*{Department:}[9cm]{\系别@英}\\[9pt]
         \sustech@info@item*{Program:}[9cm]{\专业@英}\\[9pt]
         \sustech@info@item{Thesis Advisor:}[9cm]{\指导老师@英 \space \职称@英}\\[10pt]
-        % Department:     & \下划线[9cm]{\系别@英}     \\[9pt]
-        % Program:        & \下划线[9cm]{\专业@英}     \\[9pt]
-        % Thesis Advisor: & \下划线[9cm]{\指导老师@英\phantom{e}\职称@英} \\[10pt]
       \end{tabular}
     }
     \vskip 2.1cm
