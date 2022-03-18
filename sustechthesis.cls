@@ -47,6 +47,7 @@
   \ClassError{sustechthesis}{NotImplementedError}
 \fi
 
+\RequirePackage[breaklinks,hidelinks,hypertexnames=true,bookmarks=true,bookmarksopen=true,bookmarksnumbered=true]{hyperref}
 \RequirePackage{fontspec}
 \RequirePackage{hologo}
 \RequirePackage{etoolbox}
