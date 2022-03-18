@@ -51,5 +51,5 @@ git push --delete origin v1.2.0
 
 ## 致谢
 
-* 本模版根据南方科技大学-教学工作部发布的相关 [《撰写指南》和《样例》](http://tao.sustech.edu.cn/studentService/graduation_project.html) 编写，如有冲突以官网规定为准。
-  * 如果《样例》中存在与《撰写指南》中的规定不符之处，以《撰写指南》中的文字叙述为准。
+* 本模版根据南方科技大学-教学工作部发布的相关 [《撰写规范》和《样例》](http://tao.sustech.edu.cn/studentService/graduation_project.html) 编写，如有冲突以官网规定为准。
+  * 如果《样例》中存在与《撰写规范》中的规定不符之处，以《撰写规范》中的文字叙述为准。
