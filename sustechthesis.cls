@@ -245,9 +245,9 @@
     top=2.74cm,bottom=2.54cm,
     left=3.17cm,right=3.17cm}
   \thispagestyle{empty}
-  \begin{center}{
-      \黑体\二号 \bfseries 诚信承诺书
-  }\end{center}
+  \begin{center}
+    {\黑体\二号 \bfseries 诚信承诺书}
+  \end{center}
   \vskip 1.65cm
   \begin{spacing}{1.85}\宋体\四号
     1.本人郑重承诺所呈交的毕业设计（论文），是在导师的指导下，独立进行研究工作所取得的成果，所有数据、图片资料均真实可靠。\par
@@ -271,7 +271,7 @@
   \vskip 0.5cm
   \begin{spacing}{2.24}
     {\fontsize{14bp}{14bp} \selectfont
-    \begin{enumerate}[wide, labelwidth=!, labelindent=0pt,nolistsep]
+    \begin{enumerate}[wide, labelwidth=!, labelindent=0pt, nolistsep]
       \item I solemnly promise that the paper presented comes from my \linebreak independent research work under my supervisor's supervision. All \linebreak statistics and images are real and reliable.
       \item Except for the annotated reference, the paper contents no other \linebreak published work or achievement by person or group. All people making \linebreak important contributions to the study of the paper have been indicated \linebreak clearly in the paper.
       \item I promise that I did not plagiarize other people's research achievement \linebreak or forge related data in the process of designing topic and research \linebreak content.
