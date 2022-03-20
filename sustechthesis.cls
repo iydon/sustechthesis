@@ -278,8 +278,10 @@
       \item If there is violation of any intellectual property right, I will take legal \linebreak responsibility myself.
     \end{enumerate}
     \vskip 3.25cm
-    \hspace {8.3cm}  Signature: \hspace {3.06cm} \par
-    \hspace {8.3cm}  Date: \hspace {3.06cm}
+    \begin{flushright}
+      \makebox[11em][l]{Signature:}\\
+      \makebox[11em][l]{Date:}
+    \end{flushright}
     }
   \end{spacing}
   \clearpage\restoregeometry
