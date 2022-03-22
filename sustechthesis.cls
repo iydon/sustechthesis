@@ -254,9 +254,12 @@
     2.除文中已经注明引用的内容外，本论文不包含任何其他人或集体已经发表或撰写过的作品或成果。对本论文的研究作出重要贡献的个人和集体，均已在文中以明确的方式标明。\par
     3.本人承诺在毕业论文（设计）选题和研究内容过程中没有抄袭他人研究成果和伪造相关数据等行为。\par
     4.在毕业论文（设计）中对侵犯任何方面知识产权的行为，由本人承担相应的法律责任。
+
     \vskip 4.55cm
-    \hspace {8.3cm} 作者签名：\phantom{xxxx月xxxx日} \par
-    \hspace {8.0cm} \下划线[2cm]{}年\下划线[1cm]{}月\下划线[1cm]{}日
+    \begin{flushright}
+      \makebox[10em][l]{作者签名:}\\
+      \makebox[11em][l]{\下划线[2cm]{}年\下划线[1cm]{}月\下划线[1cm]{}日}
+    \end{flushright}
   \end{spacing}
   \clearpage\restoregeometry
 }
