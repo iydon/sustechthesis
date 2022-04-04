@@ -37,15 +37,18 @@
 \newif\ifsustech@bachelor
 \newif\ifsustech@master
 \newif\ifsustech@doctor
-\newif\ifsustech@postdoctor
 \sustech@validate@key{degree}
-\LoadClass[a4paper,UTF8]{ctexart}
+\LoadClass[a4paper,UTF8,scheme=chinese,zihao=-4]{ctexart}
 \ifsustech@master
   \ClassError{sustechthesis}{NotImplementedError}
 \fi
 \ifsustech@doctor
   \ClassError{sustechthesis}{NotImplementedError}
 \fi
+
+\newif\ifsustech@chinese
+\newif\ifsustech@english
+\sustech@validate@key{language}
 
 \RequirePackage[breaklinks,hidelinks,hypertexnames=true,bookmarks=true,bookmarksopen=true,bookmarksnumbered=true]{hyperref}
 \RequirePackage{fontspec}
@@ -119,8 +122,13 @@
   \renewcommand{\captionfont}{\bfseries\songti\zihao{5}} %表题,图题用五号宋体加黑
   \DeclareCaptionLabelSeparator{enspace}{\enspace}
   \DeclareCaptionLabelFormat{rightBracket}{#2)}
-  \captionsetup[table]{labelsep=enspace,name={表}} %表序表题之间没有标点,而是一个空格,默认前缀为表
-  \captionsetup[figure]{labelsep=enspace,name={图}} %图序图题之间没有标点,而是一个空格，默认前缀为图
+  \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格,默认前缀为表
+  \captionsetup[figure]{labelsep=enspace} %图序图题之间没有标点,而是一个空格，默认前缀为图
+  \ifsustech@chinese
+    \ctexset{figurename = {图}, tablename  = {表},}%
+  \else
+    \ctexset{figurename = {Figure}, tablename  = {Table},}%
+  \fi
   \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
 
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
