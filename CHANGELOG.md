@@ -29,7 +29,12 @@ Changelog 维护应保持最新版本在文件上面的原则，日期格式按�
 - 预发布版本使用形如 "`[1.0.2-rc.1] - 2021-06-11`" 作为二级标题，
 - 正式发布版本使用形如 "`[1.0.1] - 2020-07-25`" 作为二级标题。
 
-## [Unreleased](https://github.com/iydon/sustechthesis/compare/v1.3.1...HEAD)
+## [Unreleased](https://github.com/iydon/sustechthesis/compare/v1.3.2...HEAD)
+
+## [1.3.2](https://github.com/iydon/sustechthesis/compare/v1.3.1...v1.3.2) - 2022-04-21
+
+### Changed
+- 更新英文选项，修改英文下图表名。
 
 ## [1.3.1](https://github.com/iydon/sustechthesis/compare/v1.3...v1.3.1) - 2022-03-22
 
