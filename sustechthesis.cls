@@ -248,6 +248,8 @@
 }
 
 \newcommand\下划线[2][6em]{\hskip1pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip3pt}
+\def\thesis@subject{本科生毕业设计（论文）}
+\def\thesis@subject@en{Undergraduate Thesis}
 \newcommand\中文标题页{%
   \newgeometry{%
     top=2.25cm,bottom=2.25cm,
@@ -261,7 +263,7 @@
     \vskip 1.35cm
     \includegraphics[width=0.85\textwidth]{figures/logo/SUSTech-zh.pdf}
     \vskip 0.5cm
-    {\粗体\宋体\小初 本科生毕业设计（论文）}
+    {\粗体\宋体\小初 \thesis@subject}
     \vskip 3.5cm
     {\粗体\宋体\三号
       \begin{tabular}{lc}
@@ -299,7 +301,7 @@
     \vskip 1.8cm
     \includegraphics[width=0.9\textwidth]{figures/logo/SUSTech-en.pdf}
     \vskip 1.6cm
-    {\小初 Undergraduate Thesis}
+    {\小初 \thesis@subject@en}
     \vskip 2.7cm
     {\粗体\三号
       \begin{tabular}{rr}
@@ -448,6 +450,33 @@
   \sectionmark{致谢}
   \section*{\centerline{致谢}}
 }
+% 设定元数据
+\ifsustech@chinese
+  \hypersetup{
+    pdflang = zh-CN,
+  }%
+\else
+  \hypersetup{
+    pdflang = en-US,
+  }%
+\fi
+\AtBeginDocument{%
+  \ifsustech@chinese
+    \hypersetup{
+      pdftitle    = \题目@中,
+      pdfauthor   = \姓名@中,
+      pdfsubject  = \thesis@subject,
+    }%
+  \else
+    \hypersetup{
+      pdftitle    = \题目@英,
+      pdfauthor   = \姓名@英,
+      pdfsubject  = \thesis@subject@en,
+    }%
+  \fi
+  \hypersetup{
+    pdfcreator={\sustechthesis-v\version}}
+}%
 
 \endinput
 %%
