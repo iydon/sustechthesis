@@ -175,15 +175,21 @@
   % 设置键-值
   \newcommand{\设置信息}[1]{\setkeys{信息}{#1}}
 
+\newcommand{\前序格式化}{
+  \setcounter{page}{1}
+  \pagenumbering{Roman}
+}
+\newcommand{\正文格式化}{
+  \setcounter{page}{1}
+  \pagenumbering{arabic}
+}
+
 % 目录
 % 无论是撰写规范还是样例都没有提到页码位置
 % 已确认页码应在正文处开始
 \newcommand{\目录}{
-  \pagenumbering{gobble}
   \tableofcontents
   \clearpage
-  \pagenumbering{arabic}
-  \setcounter{page}{1}
 }
 \RequirePackage{fancyhdr}
   \pagestyle{fancy}
@@ -388,7 +394,6 @@
 }
 \newenvironment{中文摘要}[1]%
   {\setsepchar{；}\readlist\args{#1}
-    \thispagestyle{empty}
     \begin{spacing}{1.45}
       \noindent\黑体\三号[摘要]：
       \宋体\四号}%
@@ -405,7 +410,6 @@
     \vfill\clearpage}
 \newenvironment{英文摘要}[1]%
   {\setsepchar{{, }}\readlist\args{#1}
-    \thispagestyle{empty}
     \begin{spacing}{1.45}
       \noindent\三号 [\textbf{ABSTRACT}]:
       \四号}%
