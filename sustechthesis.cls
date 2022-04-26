@@ -317,7 +317,7 @@
         \sustech@info@item{Student ID:}[9cm]{\学号@英}\\[9pt]
         \sustech@info@item*{Department:}[9cm]{\系别@英}\\[9pt]
         \sustech@info@item*{Program:}[9cm]{\专业@英}\\[9pt]
-        \sustech@info@item{Thesis Advisor:}[9cm]{\指导老师@英 \space \职称@英}\\[10pt]
+        \sustech@info@item{Thesis Advisor:}[9cm]{\职称@英 \space \指导老师@英}\\[10pt]
       \end{tabular}
     }
     \vskip 2.1cm
