@@ -1,0 +1,78 @@
+{
+    // 使用 Docker 镜像需预先拉取镜像，此处使用官方打包镜像：https://hub.docker.com/r/texlive/texlive ，可自行替换。
+    "latex-workshop.docker.enabled": false, // 如欲使用 Docker 编译，修改此选项为 true
+    // "latex-workshop.docker.image.latex": "texlive/texlive:latest", // 如欲使用 Docker 编译，开启此选项
+    "latex-workshop.latex.autoClean.run": "never",
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.intellisense.unimathsymbols.enabled": true,
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.latex.build.forceRecipeUsage": true,
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.bcf",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.fls",
+        "*.log",
+        "*.xdv",
+        "*.run.xml",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.synctex(busy)",
+        "*.synctex.gz(busy)",
+        "*.nav",
+        "*.vrb"
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk for sustechthesis",
+            "tools": [
+                "latexmk-xelatex"
+            ]
+        },
+        {
+            "name": "GNU make thesis",
+            "tools": [
+                "make-thesis"
+            ]
+        },
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk-xelatex",
+            "command": "latexmk",
+            "args": [
+                "-xelatex",
+                "-file-line-error",
+                "-halt-on-error",
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "-pv-",
+                "-pvc-",
+                "-outdir=%OUTDIR%",
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "make-thesis",
+            "command": "make",
+            "args": [],
+            "env": {}
+        }
+    ],
+    "editor.wordWrap": "bounded"
+}
