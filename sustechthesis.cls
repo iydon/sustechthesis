@@ -429,12 +429,14 @@
 % 参考文献
 \newcommand{\参考文献}{
   % 或者可以将refname置空, 按照附录的样式修改.
+  \phantomsection
   \addcontentsline{toc}{section}{参考文献}
   \sectionmark{参考文献}
   \section*{\centerline{参考文献}}
 }
 % 附录
 \newcommand{\附录}{
+  \phantomsection
   \clearpage
   \addcontentsline{toc}{section}{附录}
   \addtocounter{section}{1}
@@ -446,6 +448,7 @@
 }
 % 致谢
 \newcommand{\致谢}{
+  \phantomsection
   \addcontentsline{toc}{section}{致谢}
   \sectionmark{致谢}
   \section*{\centerline{致谢}}
