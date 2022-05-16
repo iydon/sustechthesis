@@ -1,8 +1,13 @@
 name: Build LaTeX document
-on: [push,pull_request]
+on: [push, pull_request]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        texlive: [TL2020-historic, TL2021-historic, latest]
+        # 多版本 TexLive 兼容性测试
+        # 版本号选自：https://hub.docker.com/r/texlive/texlive/tags
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
@@ -12,13 +17,15 @@ jobs:
       - name: Tree All project
         run: sudo apt install tree;tree
 
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: main.tex
-          latexmk_use_xelatex: true
+      - name: Build the Docker image
+        run: |
+          docker build . --file .github/workflows/Dockerfile --tag sustechthesis --build-arg TEXLIVE_TAG=${{ matrix.texlive }}
+          docker run --rm -v "$(pwd)":/docs sustechthesis /bin/bash -c "make cleanall && make thesis slide"
 
-      - uses: actions/upload-artifact@v2
+      - name: Publish PDF as actions assets
+        uses: actions/upload-artifact@v2
         with:
-          name: PDF
-          path: main.pdf
+          name: Example-PDFs-texlive-${{ matrix.texlive }}
+          path: |
+            main.pdf
+            slides.pdf
