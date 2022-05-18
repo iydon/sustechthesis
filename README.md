@@ -19,17 +19,21 @@ Southern University of Science and Technology Thesis Template LaTeX Template for
 
 ## 文档架构
 
-* `config/preamble.tex`: 导言区，导入宏包，宏定义
-* `config/info.tex`: 论文信息，例如：标题，作者，等
+* `config/preamble.tex`: 导言区，导入宏包，宏定义。
+* `config/info.tex`: 论文信息，例如：标题，作者，等。
 * `main.tex`: 主文档，编排章节顺序。
 * `slides.tex`: beamer 幻灯片模版。
 
 
-## 构建
+## XeLaTeX 构建
 - 使用 Makefile: `make`, `make clean` ......
 - 或，使用 `latexmk`
     - 构建: `latexmk main`
     - 清理: `latexmk -c main`
+
+## 更新日志
+
+每个版本的详细更新日志，请见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 开发发布
 
@@ -45,10 +49,6 @@ git tag -d v1.2.0
 #删除远程tag
 git push --delete origin v1.2.0
 ```
-
-## 更新日志
-
-每个版本的详细更新日志，请见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 致谢
 
