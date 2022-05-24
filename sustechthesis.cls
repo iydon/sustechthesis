@@ -434,6 +434,17 @@
   \sectionmark{参考文献}
   \section*{\centerline{参考文献}}
 }
+\ifsustech@chinese
+  \AtBeginDocument{%
+    % 本地化 \citeauthor{} 的输出，避免出现 et al.
+    \DefineBibliographyStrings{english}{
+            andincite         = {和},
+            andincitecn       = {和},
+            andothersincitecn = {等人},
+            andothersincite   = {等人},%adddot才能避开标点追踪
+    }
+  }
+\fi
 % 附录
 \newcommand{\附录}{
   \phantomsection
