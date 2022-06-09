@@ -109,7 +109,7 @@
     % 需要使用ctexart文类，否则报错键不存在
     section = {
       name={{},.},
-      format={\hspace*{-1.5em}\黑体\三号},
+      format={\黑体\三号},
     },
     subsection = {
       format={\黑体\四号},
