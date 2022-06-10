@@ -261,13 +261,13 @@
         U\hfill D\hfill C\下划线[2.3cm]{\UDC@中} \hspace{0.45\textwidth} & 密级\下划线[2.3cm]{\密级@中}
     \end{tabular}
     \vskip 1.35cm
-    \includegraphics[width=0.85\textwidth]{figures/logo/SUSTech-cn.eps}
+    \hspace{-0.75cm}\includegraphics[width=0.85\textwidth]{figures/logo/SUSTech-cn.eps}
     \vskip 0.5cm
     {\粗体\宋体\小初 \thesis@subject}
     \vskip 3.5cm
     {\粗体\宋体\三号
       \begin{tabular}{lc}
-        \sustech@info@item*[5em]{题目：}[9cm]{\题目@中}\\[9pt]
+        \sustech@info@item*[5em]{题目：}[9.15cm]{\题目@中}\\[9pt]
         \ifdefempty{\副标题@中}%
         {% empty
           \relax
@@ -305,7 +305,7 @@
     \vskip 2.7cm
     {\粗体\三号
       \begin{tabular}{rr}
-        \sustech@info@item*{Thesis Title:}[9cm]{\题目@英}\\[9pt]
+        \sustech@info@item*{Thesis Title:}[9.92cm]{\题目@英}\\[9pt]
         \ifdefempty{\副标题@英}%
         {% empty
           \relax
@@ -345,7 +345,7 @@
 
     \vskip 4.55cm
     \begin{flushright}
-      \makebox[10em][l]{作者签名:}\\
+      \makebox[11em][l]{作者签名:}\\
       \makebox[11em][l]{\下划线[2cm]{}年\下划线[1cm]{}月\下划线[1cm]{}日}
     \end{flushright}
   \end{spacing}
