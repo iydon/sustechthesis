@@ -161,6 +161,8 @@
   \setlength\cftparskip{7pt}
   \setlength\cftsubsecindent{0bp}
   \setlength\cftsubsubsecindent{0bp}
+  % 修改目录标题之间的距离
+  \renewcommand{\cftbeforesecskip}{0pt}
 \RequirePackage{xkeyval}
   % 根据名称定义中英文控制序列
   \def\中英信息#1,#2#3{
