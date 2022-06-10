@@ -64,6 +64,8 @@
   BoldItalicFont = *bi
 ]{times} %英文默认为Times New Roman
 
+\renewcommand{\baselinestretch}{1.5} %调整正文为1.5倍行距
+
 \RequirePackage{geometry}
   \geometry{a4paper,top=2.5cm,bottom=2.0cm,left=3.0cm,right=2.5cm}
 \RequirePackage{amssymb}
