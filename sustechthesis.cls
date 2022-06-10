@@ -55,6 +55,10 @@
 \RequirePackage{hologo}
 \RequirePackage{etoolbox}
 
+%添加绘制三线表的必要依赖
+\RequirePackage{multirow}
+\RequirePackage{threeparttable}
+
 \setmainfont[
   Path=fonts/times/,
   Extension = .ttf,
