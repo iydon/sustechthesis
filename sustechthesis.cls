@@ -66,6 +66,11 @@
 
 \renewcommand{\baselinestretch}{1.5} %调整正文为1.5倍行距
 
+%取消标题空行
+\RequirePackage{titlesec}
+\titlespacing{\section}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
+\titlespacing{\subsection}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
+
 \RequirePackage{geometry}
   \geometry{a4paper,top=2.5cm,bottom=2.0cm,left=3.0cm,right=2.5cm}
 \RequirePackage{amssymb}
