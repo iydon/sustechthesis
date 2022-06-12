@@ -55,6 +55,10 @@
 \RequirePackage{hologo}
 \RequirePackage{etoolbox}
 
+%添加绘制三线表的必要依赖
+\RequirePackage{multirow}
+\RequirePackage{threeparttable}
+
 \setmainfont[
   Path=fonts/times/,
   Extension = .ttf,
@@ -63,6 +67,13 @@
   ItalicFont = *i ,
   BoldItalicFont = *bi
 ]{times} %英文默认为Times New Roman
+
+\renewcommand{\baselinestretch}{1.5} %调整正文为1.5倍行距
+
+%取消标题空行
+\RequirePackage{titlesec}
+\titlespacing{\section}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
+\titlespacing{\subsection}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
 
 \RequirePackage{geometry}
   \geometry{a4paper,top=2.5cm,bottom=2.0cm,left=3.0cm,right=2.5cm}
@@ -109,7 +120,7 @@
     % 需要使用ctexart文类，否则报错键不存在
     section = {
       name={{},.},
-      format={\hspace*{-1.5em}\黑体\三号},
+      format={\黑体\三号},
     },
     subsection = {
       format={\黑体\四号},
@@ -150,6 +161,8 @@
   \setlength\cftparskip{7pt}
   \setlength\cftsubsecindent{0bp}
   \setlength\cftsubsubsecindent{0bp}
+  % 修改目录标题之间的距离
+  \renewcommand{\cftbeforesecskip}{0pt}
 \RequirePackage{xkeyval}
   % 根据名称定义中英文控制序列
   \def\中英信息#1,#2#3{
@@ -261,13 +274,13 @@
         U\hfill D\hfill C\下划线[2.3cm]{\UDC@中} \hspace{0.45\textwidth} & 密级\下划线[2.3cm]{\密级@中}
     \end{tabular}
     \vskip 1.35cm
-    \includegraphics[width=0.85\textwidth]{figures/logo/SUSTech-zh.pdf}
+    \hspace{-0.75cm}\includegraphics[width=0.85\textwidth]{figures/logo/SUSTech-cn.eps}
     \vskip 0.5cm
     {\粗体\宋体\小初 \thesis@subject}
     \vskip 3.5cm
     {\粗体\宋体\三号
       \begin{tabular}{lc}
-        \sustech@info@item*[5em]{题目：}[9cm]{\题目@中}\\[9pt]
+        \sustech@info@item*[5em]{题目：}[9.15cm]{\题目@中}\\[9pt]
         \ifdefempty{\副标题@中}%
         {% empty
           \relax
@@ -299,13 +312,13 @@
     CLC  \下划线[2.3cm]{\分类号@英} \hfill Number\下划线[2.3cm]{\编号@英}\\[5pt]
     UDC\下划线[2.3cm]{\UDC@英} \hfill Available for reference~\quad$\square$Yes~\quad$\square$No
     \vskip 1.8cm
-    \includegraphics[width=0.9\textwidth]{figures/logo/SUSTech-en.pdf}
+    \includegraphics[width=0.9\textwidth]{figures/logo/SUSTech-en.eps}
     \vskip 1.6cm
     {\小初 \thesis@subject@en}
     \vskip 2.7cm
     {\粗体\三号
       \begin{tabular}{rr}
-        \sustech@info@item*{Thesis Title:}[9cm]{\题目@英}\\[9pt]
+        \sustech@info@item*{Thesis Title:}[9.92cm]{\题目@英}\\[9pt]
         \ifdefempty{\副标题@英}%
         {% empty
           \relax
@@ -345,7 +358,7 @@
 
     \vskip 4.55cm
     \begin{flushright}
-      \makebox[10em][l]{作者签名:}\\
+      \makebox[11em][l]{作者签名:}\\
       \makebox[11em][l]{\下划线[2cm]{}年\下划线[1cm]{}月\下划线[1cm]{}日}
     \end{flushright}
   \end{spacing}
