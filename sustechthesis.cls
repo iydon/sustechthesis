@@ -274,7 +274,7 @@
         U\hfill D\hfill C\下划线[2.3cm]{\UDC@中} \hspace{0.45\textwidth} & 密级\下划线[2.3cm]{\密级@中}
     \end{tabular}
     \vskip 1.35cm
-    \hspace{-0.75cm}\includegraphics[width=0.85\textwidth]{figures/logo/SUSTech-cn.eps}
+    \includegraphics[width=0.85\textwidth]{figures/logo/SUSTech-zh.pdf}
     \vskip 0.5cm
     {\粗体\宋体\小初 \thesis@subject}
     \vskip 3.5cm
@@ -312,7 +312,7 @@
     CLC  \下划线[2.3cm]{\分类号@英} \hfill Number\下划线[2.3cm]{\编号@英}\\[5pt]
     UDC\下划线[2.3cm]{\UDC@英} \hfill Available for reference~\quad$\square$Yes~\quad$\square$No
     \vskip 1.8cm
-    \includegraphics[width=0.9\textwidth]{figures/logo/SUSTech-en.eps}
+    \includegraphics[width=0.9\textwidth]{figures/logo/SUSTech-en.pdf}
     \vskip 1.6cm
     {\小初 \thesis@subject@en}
     \vskip 2.7cm
