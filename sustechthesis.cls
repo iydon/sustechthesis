@@ -68,7 +68,7 @@
   BoldItalicFont = *bi
 ]{times} %英文默认为Times New Roman
 
-\renewcommand{\baselinestretch}{1.5} %调整正文为1.5倍行距
+\renewcommand{\baselinestretch}{1.72} %调整正文为1.5倍行距
 
 %取消标题空行
 \RequirePackage{titlesec}
