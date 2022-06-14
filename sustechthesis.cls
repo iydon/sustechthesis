@@ -98,8 +98,8 @@
   \newcommand{\七号}{\zihao {7}}
   \newcommand{\八号}{\zihao {8}}
   % 字体汉化设置
-  \renewcommand{\songti}{\CJKfontspec[Path=fonts/,FallBack=simsunb.ttf]{simsun.ttc}}
-  \setCJKmainfont[Path=fonts/,FallBack=simsunb.ttf]{simsun.ttc} % 中文默认为宋体,小四在\documentclass处设置
+  \renewcommand{\songti}{\CJKfontspec[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold=3]{simsun.ttc}}
+  \setCJKmainfont[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold=3]{simsun.ttc} % 中文默认为宋体,小四在\documentclass处设置
   \newcommand{\宋体}{\songti}
   \renewcommand{\heiti}{\CJKfontspec[Path=fonts/]{simhei.ttf}}
   \setCJKsansfont[Path=fonts/]{simhei.ttf}
