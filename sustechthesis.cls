@@ -68,8 +68,6 @@
   BoldItalicFont = *bi
 ]{times} %英文默认为Times New Roman
 
-\renewcommand{\baselinestretch}{1.72} %调整正文为1.5倍行距
-
 %取消标题空行
 \RequirePackage{titlesec}
 \titlespacing{\section}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
@@ -142,6 +140,7 @@
   \fi
   \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
 
+\renewcommand{\baselinestretch}{1.5} %调整正文为1.5倍行距
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
   % 行距设置
   \newenvironment{行距}[1]%
@@ -159,10 +158,10 @@
   \renewcommand\cftsubsubsecfont{\宋体\四号}
   \renewcommand\cftsubsubsecpagefont{\宋体\四号}
   \setlength\cftparskip{7pt}
+  % 修改目录标题之间的距离
+  \setlength\cftbeforesecskip{0bp}
   \setlength\cftsubsecindent{0bp}
   \setlength\cftsubsubsecindent{0bp}
-  % 修改目录标题之间的距离
-  \renewcommand{\cftbeforesecskip}{0pt}
 \RequirePackage{xkeyval}
   % 根据名称定义中英文控制序列
   \def\中英信息#1,#2#3{
@@ -274,7 +273,7 @@
         U\hfill D\hfill C\下划线[2.3cm]{\UDC@中} \hspace{0.45\textwidth} & 密级\下划线[2.3cm]{\密级@中}
     \end{tabular}
     \vskip 1.35cm
-    \hspace{-0.75cm}\includegraphics[width=0.85\textwidth]{figures/logo/SUSTech-cn.eps}
+    \includegraphics[width=0.85\textwidth]{figures/logo/SUSTech-zh.pdf}
     \vskip 0.5cm
     {\粗体\宋体\小初 \thesis@subject}
     \vskip 3.5cm
@@ -312,7 +311,7 @@
     CLC  \下划线[2.3cm]{\分类号@英} \hfill Number\下划线[2.3cm]{\编号@英}\\[5pt]
     UDC\下划线[2.3cm]{\UDC@英} \hfill Available for reference~\quad$\square$Yes~\quad$\square$No
     \vskip 1.8cm
-    \includegraphics[width=0.9\textwidth]{figures/logo/SUSTech-en.eps}
+    \includegraphics[width=0.9\textwidth]{figures/logo/SUSTech-en.pdf}
     \vskip 1.6cm
     {\小初 \thesis@subject@en}
     \vskip 2.7cm
