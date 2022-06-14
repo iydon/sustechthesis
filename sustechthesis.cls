@@ -98,12 +98,16 @@
   \newcommand{\七号}{\zihao {7}}
   \newcommand{\八号}{\zihao {8}}
   % 字体汉化设置
-  \renewcommand{\songti}{\CJKfontspec[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold=3]{simsun.ttc}}
-  \setCJKmainfont[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold=3]{simsun.ttc} % 中文默认为宋体,小四在\documentclass处设置
+  \xeCJKsetup{EmboldenFactor=3} % 伪粗体等级
+  % 宋体
+  \renewcommand{\songti}{\CJKfontspec[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold]{simsun.ttc}}
+  \setCJKmainfont[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold]{simsun.ttc} % 中文默认为宋体,小四在\documentclass处设置
   \newcommand{\宋体}{\songti}
+  % 黑体
   \renewcommand{\heiti}{\CJKfontspec[Path=fonts/]{simhei.ttf}}
   \setCJKsansfont[Path=fonts/]{simhei.ttf}
   \newcommand{\黑体}{\heiti}
+  % 其他
   \newcommand{\仿宋}{\fangsong}
   \newcommand{\楷书}{\kaishu}
   \newcommand{\隶书}{\lishu}
