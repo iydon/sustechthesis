@@ -5,6 +5,8 @@
 
 \subsection{表格}
 
+表格与图片可以直接通过\verbbox{\ref{<key>}}来引用，例如表\ref{table2}、图\ref{F:test-a}、图\ref{F:test-b-sub-b}。
+
 \begin{table}[htb]
 % h-here,t-top,b-bottom,优先级依次下降
     \begin{center}
@@ -22,6 +24,30 @@
             %三线表-底线
         \end{tabular}
     \end{center}
+\end{table}
+
+\begin{table}[htb]
+    \centering
+    \caption{表格的标题}
+    \label{table2}
+    \begin{threeparttable}
+        \setlength{\tabcolsep}{0.6cm}{ % 调节表格长度
+                \begin{tabular}{lc} % 三线表不能有竖线,l-left,c-center,r-right
+                    \toprule
+                    %三线表-top 线
+                    Example & Result \\
+                    \midrule
+                    %三线表-middle 线
+                    Example1          & 0.25 \\
+                    Example2          & 0.36 \\
+                    \bottomrule
+                    %三线表-底线
+                \end{tabular}
+        }
+        \begin{tablenotes}
+            \item[] 数据来源：% 增加表格数据来源注释
+        \end{tablenotes}
+    \end{threeparttable}
 \end{table}
 
 \subsection{参考文献}

@@ -74,7 +74,7 @@
 \titlespacing{\subsection}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
 
 \RequirePackage{geometry}
-  \geometry{a4paper,top=2.5cm,bottom=2.0cm,left=3.0cm,right=2.5cm}
+  \geometry{a4paper,top=27mm,bottom=31mm,left=25mm,right=25mm,bindingoffset=5mm}
 \RequirePackage{amssymb}
 \RequirePackage{setspace}
 \RequirePackage{graphicx}
@@ -98,8 +98,8 @@
   \newcommand{\七号}{\zihao {7}}
   \newcommand{\八号}{\zihao {8}}
   % 字体汉化设置
-  \renewcommand{\songti}{\CJKfontspec[Path=fonts/,FallBack=simsunb.ttf]{simsun.ttc}}
-  \setCJKmainfont[Path=fonts/,FallBack=simsunb.ttf]{simsun.ttc} % 中文默认为宋体,小四在\documentclass处设置
+  \renewcommand{\songti}{\CJKfontspec[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold=3]{simsun.ttc}}
+  \setCJKmainfont[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold=3]{simsun.ttc} % 中文默认为宋体,小四在\documentclass处设置
   \newcommand{\宋体}{\songti}
   \renewcommand{\heiti}{\CJKfontspec[Path=fonts/]{simhei.ttf}}
   \setCJKsansfont[Path=fonts/]{simhei.ttf}
@@ -140,7 +140,7 @@
   \fi
   \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
 
-\renewcommand{\baselinestretch}{1.5} %调整正文为1.5倍行距
+\renewcommand{\baselinestretch}{1.72} %调整正文为1.5倍行距
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
   % 行距设置
   \newenvironment{行距}[1]%
