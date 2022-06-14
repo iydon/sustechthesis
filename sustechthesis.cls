@@ -55,6 +55,10 @@
 \RequirePackage{hologo}
 \RequirePackage{etoolbox}
 
+%添加绘制三线表的必要依赖
+\RequirePackage{multirow}
+\RequirePackage{threeparttable}
+
 \setmainfont[
   Path=fonts/times/,
   Extension = .ttf,
@@ -63,6 +67,11 @@
   ItalicFont = *i ,
   BoldItalicFont = *bi
 ]{times} %英文默认为Times New Roman
+
+%取消标题空行
+\RequirePackage{titlesec}
+\titlespacing{\section}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
+\titlespacing{\subsection}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
 
 \RequirePackage{geometry}
   \geometry{a4paper,top=2.5cm,bottom=2.0cm,left=3.0cm,right=2.5cm}
@@ -109,7 +118,7 @@
     % 需要使用ctexart文类，否则报错键不存在
     section = {
       name={{},.},
-      format={\hspace*{-1.5em}\黑体\三号},
+      format={\黑体\三号},
     },
     subsection = {
       format={\黑体\四号},
@@ -131,6 +140,7 @@
   \fi
   \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
 
+\renewcommand{\baselinestretch}{1.5} %调整正文为1.5倍行距
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
   % 行距设置
   \newenvironment{行距}[1]%
@@ -148,6 +158,8 @@
   \renewcommand\cftsubsubsecfont{\宋体\四号}
   \renewcommand\cftsubsubsecpagefont{\宋体\四号}
   \setlength\cftparskip{7pt}
+  % 修改目录标题之间的距离
+  \setlength\cftbeforesecskip{0bp}
   \setlength\cftsubsecindent{0bp}
   \setlength\cftsubsubsecindent{0bp}
 \RequirePackage{xkeyval}
@@ -267,7 +279,7 @@
     \vskip 3.5cm
     {\粗体\宋体\三号
       \begin{tabular}{lc}
-        \sustech@info@item*[5em]{题目：}[9cm]{\题目@中}\\[9pt]
+        \sustech@info@item*[5em]{题目：}[9.15cm]{\题目@中}\\[9pt]
         \ifdefempty{\副标题@中}%
         {% empty
           \relax
@@ -305,7 +317,7 @@
     \vskip 2.7cm
     {\粗体\三号
       \begin{tabular}{rr}
-        \sustech@info@item*{Thesis Title:}[9cm]{\题目@英}\\[9pt]
+        \sustech@info@item*{Thesis Title:}[9.92cm]{\题目@英}\\[9pt]
         \ifdefempty{\副标题@英}%
         {% empty
           \relax
@@ -345,7 +357,7 @@
 
     \vskip 4.55cm
     \begin{flushright}
-      \makebox[10em][l]{作者签名:}\\
+      \makebox[11em][l]{作者签名:}\\
       \makebox[11em][l]{\下划线[2cm]{}年\下划线[1cm]{}月\下划线[1cm]{}日}
     \end{flushright}
   \end{spacing}
