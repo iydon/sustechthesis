@@ -140,7 +140,7 @@
   \fi
   \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
 
-\renewcommand{\baselinestretch}{1.5} %调整正文为1.5倍行距
+\renewcommand{\baselinestretch}{1.72} %调整正文为1.5倍行距
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
   % 行距设置
   \newenvironment{行距}[1]%
