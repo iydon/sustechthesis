@@ -30,17 +30,21 @@ Changelog 维护应保持最新版本在文件上面的原则，日期格式按�
 - 正式发布版本使用形如 "`[1.0.1] - 2020-07-25`" 作为二级标题。
 
 ## [Unreleased](https://github.com/iydon/sustechthesis/compare/v1.3.2...HEAD)
+### Changed
+- 修改行距，标题，段前缩进，目录标题距离（[#35](https://github.com/iydon/sustechthesis/pull/35), [#36](https://github.com/iydon/sustechthesis/pull/36)）。
+- 修改页边距，修改伪粗等级（[#38](https://github.com/iydon/sustechthesis/pull/38)）。
+- 添加了三线表与`\ref{}`的样例（[#38](https://github.com/iydon/sustechthesis/pull/38)）。
 
 ## [1.3.3](https://github.com/iydon/sustechthesis/compare/v1.3.2...v1.3.3) - 2022-05-16
 
 ### Added
-- 加入 VScode 项目编译配置
-- 加入 pdf 元数据
-- 摘要和目录加入罗马页码（[#31](https://github.com/iydon/sustechthesis/issues/31)）
+- 加入 VScode 项目编译配置。
+- 加入 pdf 元数据。
+- 摘要和目录加入罗马页码（[#31](https://github.com/iydon/sustechthesis/issues/31)）。
 
 ### Fixed
-- 修复参考文献、附录、致谢的链接跳转位置错误（[#32](https://github.com/iydon/sustechthesis/issues/32)）
-- 修复英文封面教授职称顺序错误
+- 修复参考文献、附录、致谢的链接跳转位置错误（[#32](https://github.com/iydon/sustechthesis/issues/32)）。
+- 修复英文封面教授职称顺序错误。
 
 ## [1.3.2](https://github.com/iydon/sustechthesis/compare/v1.3.1...v1.3.2) - 2022-04-21
 
