@@ -29,7 +29,10 @@ Changelog 维护应保持最新版本在文件上面的原则，日期格式按�
 - 预发布版本使用形如 "`[1.0.2-rc.1] - 2021-06-11`" 作为二级标题，
 - 正式发布版本使用形如 "`[1.0.1] - 2020-07-25`" 作为二级标题。
 
-## [Unreleased](https://github.com/iydon/sustechthesis/compare/v1.3.2...HEAD)
+## [Unreleased](https://github.com/iydon/sustechthesis/compare/v1.3.4...HEAD)
+
+## [1.3.4](https://github.com/iydon/sustechthesis/compare/v1.3.3...v1.3.4) - 2022-05-16
+
 ### Changed
 - 修改行距，标题，段前缩进，目录标题距离（[#35](https://github.com/iydon/sustechthesis/pull/35), [#36](https://github.com/iydon/sustechthesis/pull/36)）。
 - 修改页边距，修改伪粗等级（[#38](https://github.com/iydon/sustechthesis/pull/38)）。
