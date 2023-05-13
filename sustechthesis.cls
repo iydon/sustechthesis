@@ -132,7 +132,7 @@
     },
   }
 \RequirePackage{caption}
-  \renewcommand{\captionfont}{\bfseries\songti\zihao{5}} %表题,图题用五号宋体加黑
+  \renewcommand{\captionfont}{\bfseries\songti\五号} %表题,图题用五号宋体加黑
   \DeclareCaptionLabelSeparator{enspace}{\enspace}
   \DeclareCaptionLabelFormat{rightBracket}{#2)}
   \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格,默认前缀为表
@@ -144,6 +144,7 @@
   \fi
   \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
 
+% 设定浮动体内字体大小
 \RequirePackage{floatrow}
 \DeclareFloatFont{floatfont}{\五号}
 \floatsetup[table]{%
