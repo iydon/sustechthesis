@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        texlive: [TL2020-historic, TL2021-historic, latest]
+        texlive: [TL2020-historic, TL2021-historic, TL2022-historic, latest]
         # 多版本 TexLive 兼容性测试
         # 版本号选自：https://hub.docker.com/r/texlive/texlive/tags
     steps:
