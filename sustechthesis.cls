@@ -144,6 +144,21 @@
   \fi
   \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
 
+\RequirePackage{floatrow}
+\DeclareFloatFont{floatfont}{\五号}
+\floatsetup[table]{%
+  capposition = top,
+  objectset   = centering,
+  margins     = centering,
+  font        = floatfont,
+}
+\floatsetup[figure]{%
+  capposition = bottom,
+  objectset   = centering,
+  margins     = centering,
+  font        = floatfont,
+}
+
 \renewcommand{\baselinestretch}{1.72} %调整正文为1.5倍行距
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
   % 行距设置
