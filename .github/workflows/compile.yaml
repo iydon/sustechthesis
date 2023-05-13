@@ -17,10 +17,9 @@ jobs:
       - name: Tree All project
         run: sudo apt install tree;tree
 
-      - name: Build the Docker image
+      - name: Build pdf
         run: |
-          docker build . --file .github/workflows/Dockerfile --tag sustechthesis --build-arg TEXLIVE_TAG=${{ matrix.texlive }}
-          docker run --rm -v "$(pwd)":/docs sustechthesis /bin/bash -c "make cleanall && make thesis slide"
+          docker run --rm -v "$(pwd)":/docs ghcr.io/liziwl/texlive-full-with-fonts:latest /bin/bash -c "make cleanall && make thesis slide"
 
       - name: Publish PDF as actions assets
         uses: actions/upload-artifact@v2
