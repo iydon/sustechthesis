@@ -19,7 +19,7 @@ jobs:
 
       - name: Build pdf
         run: |
-          docker run --rm -v "$(pwd)":/docs ghcr.io/liziwl/texlive-full-with-fonts:latest /bin/bash -c "make cleanall && make thesis slide"
+          docker run --rm -v "$(pwd)":/docs ghcr.io/liziwl/texlive-full-with-fonts:${{ matrix.texlive }} /bin/bash -c "make cleanall && make thesis slide"
 
       - name: Publish PDF as actions assets
         uses: actions/upload-artifact@v3
