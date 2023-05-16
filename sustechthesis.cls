@@ -477,6 +477,12 @@
     }
   }
 \fi
+\AtEndPreamble{%
+  \@ifpackageloaded{biblatex}{%
+    \renewcommand{\bibfont}{\五号}%
+  }{}
+}
+
 % 附录
 \newcommand{\附录}{
   \phantomsection
