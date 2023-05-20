@@ -35,15 +35,19 @@ Southern University of Science and Technology Thesis Template LaTeX Template for
 
 每个版本的详细更新日志，请见 [CHANGELOG.md](CHANGELOG.md)。
 
-## 开发发布
+## 正式版本发布流程
 
-使用 tag 发布版本。
+1. 手动更新 CHANGELOG.md
+2. 手动更新 sustechthesis.cls 中定义的版本号 `\version`
+3. 使用 git 命令行工具，打 tag 并推送到远端仓库
+
 
 ```git
 #标记本地tag
 git tag v1.2.0
 #推送本地tag到远程
 git push origin v1.2.0
+
 #删除本地tag
 git tag -d v1.2.0
 #删除远程tag

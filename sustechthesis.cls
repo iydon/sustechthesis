@@ -17,7 +17,7 @@
 
 \hyphenation{SUSTech-Thesis}
 \newcommand{\sustechthesis}{SUSTechThesis}
-\newcommand{\version}{1.3.3}
+\newcommand{\version}{1.3.5}
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{
   family=sustech,

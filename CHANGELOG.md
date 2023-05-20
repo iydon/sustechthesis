@@ -29,7 +29,13 @@ Changelog 维护应保持最新版本在文件上面的原则，日期格式按�
 - 预发布版本使用形如 "`[1.0.2-rc.1] - 2021-06-11`" 作为二级标题，
 - 正式发布版本使用形如 "`[1.0.1] - 2020-07-25`" 作为二级标题。
 
-## [Unreleased](https://github.com/iydon/sustechthesis/compare/v1.3.4...HEAD)
+## [Unreleased](https://github.com/iydon/sustechthesis/compare/v1.3.5...HEAD)
+
+## [1.3.5](https://github.com/iydon/sustechthesis/compare/v1.3.4...v1.3.5) - 2023-05-20
+
+### Fixed
+- 修复表格字体为五号（[#42](https://github.com/iydon/sustechthesis/issues/42)）。
+- 修复参考文献字体为五号（[#43](https://github.com/iydon/sustechthesis/issues/43)）。
 
 ## [1.3.4](https://github.com/iydon/sustechthesis/compare/v1.3.3...v1.3.4) - 2022-05-16
 
