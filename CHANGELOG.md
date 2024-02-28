@@ -29,7 +29,14 @@ Changelog 维护应保持最新版本在文件上面的原则，日期格式按�
 - 预发布版本使用形如 "`[1.0.2-rc.1] - 2021-06-11`" 作为二级标题，
 - 正式发布版本使用形如 "`[1.0.1] - 2020-07-25`" 作为二级标题。
 
-## [Unreleased](https://github.com/iydon/sustechthesis/compare/v1.3.5...HEAD)
+## [Unreleased](https://github.com/iydon/sustechthesis/compare/v1.3.6...HEAD)
+
+## [1.3.6](https://github.com/iydon/sustechthesis/compare/v1.3.5...v1.3.6) - 2024-02-28
+
+### Added
+- 增加 Overleaf 编译指引（[#45](https://github.com/iydon/sustechthesis/issues/45)）。
+### Changed
+- 更新参考文献配置（[#44](https://github.com/iydon/sustechthesis/issues/44)）。
 
 ## [1.3.5](https://github.com/iydon/sustechthesis/compare/v1.3.4...v1.3.5) - 2023-05-20
 
