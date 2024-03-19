@@ -10,7 +10,7 @@ jobs:
         # 版本号选自：https://hub.docker.com/r/texlive/texlive/tags
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
 
@@ -22,7 +22,7 @@ jobs:
           docker run --rm -v "$(pwd)":/docs ghcr.io/liziwl/texlive-full-with-fonts:${{ matrix.texlive }} /bin/bash -c "make cleanall && make thesis slide"
 
       - name: Publish PDF as actions assets
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Example-PDFs-texlive-${{ matrix.texlive }}
           path: |
