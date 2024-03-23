@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
 
@@ -47,25 +47,24 @@ jobs:
       - name: zip the fonts
         run: zip -r fonts.zip ./fonts
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: PDF_files
           path: |
             main.pdf
             slides.pdf
 
-      - name: release 
-        uses: "marvinpinto/action-automatic-releases@latest"
+      - name: release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "${{steps.branch_name.outputs.SOURCE_TAG}}"
-          prerelease: false
-          title: "${{steps.branch_name.outputs.SOURCE_TAG}}"
           files: |
             ./main.pdf
             ./slides.pdf
             ./fonts.zip
             ./sustechthesis.cls
+          prerelease: false
+          generate_release_notes: true
 
       - name: look files
         run: |
