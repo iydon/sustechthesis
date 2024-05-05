@@ -447,9 +447,11 @@
       }{% not empty
         \hspace*{\fill} \小二 ——\副标题@中\\
       }%
-    \vskip 1cm
-    \宋体\四号\姓名@中 \\[9pt]
-    （\楷书\小四{\系别@中 \quad 指导教师： \指导老师@中}）
+    \ifsustech@chinese
+      \vskip 1cm
+      \宋体\四号\姓名@中 \\[9pt]
+      （\楷书\小四{\系别@中 \quad 指导教师： \指导老师@中}）
+    \fi
   \end{center}
   \vskip 1.5cm
 }
