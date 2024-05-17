@@ -138,9 +138,21 @@
   \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格,默认前缀为表
   \captionsetup[figure]{labelsep=enspace} %图序图题之间没有标点,而是一个空格，默认前缀为图
   \ifsustech@chinese
-    \ctexset{figurename = {图}, tablename  = {表},}%
+    \ctexset{
+      figurename = {图},
+      tablename  = {表},
+      listfigurename = {插图},
+      listtablename = {表格},
+      proofname = {证明},
+    }%
   \else
-    \ctexset{figurename = {Figure}, tablename  = {Table},}%
+    \ctexset{
+      figurename = {Figure},
+      tablename  = {Table},
+      listfigurename = {List of Figures},
+      listtablename = {List of Tables},
+      proofname = {Proof},
+    }%
   \fi
   \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
 
