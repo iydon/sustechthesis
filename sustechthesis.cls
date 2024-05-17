@@ -215,11 +215,29 @@
   \setcounter{page}{1}
   \pagenumbering{arabic}
 }
+% 定义中英文常量
+\ifsustech@chinese
+  \def\contentsname{目录}%
+  \def\bibname{参考文献}%
+  \def\appendixname{附录}%
+  \def\sustech@acknowledgement@name{致谢}%
+  \def\sustech@abstract@name{摘要}%
+  \def\sustech@honesty@name{诚信承诺书}%
+\else
+  \def\contentsname{Table of Content}%
+  \def\bibname{References}%
+  \def\appendixname{Appendix}%
+  \def\sustech@acknowledgement@name{Acknowledgement}%
+  \def\sustech@abstract@name{Abstract}%
+  \def\sustech@honesty@name{Commitment of Honesty}%
+\fi
+\setcounter{tocdepth}{3}
 
 % 目录
 % 无论是撰写规范还是样例都没有提到页码位置
 % 已确认页码应在正文处开始
 \newcommand{\目录}{
+  \pdfbookmark[1]{\contentsname}{toc}
   \tableofcontents
   \clearpage
 }
@@ -366,7 +384,7 @@
     left=3.17cm,right=3.17cm}
   \thispagestyle{empty}
   \begin{center}
-    {\黑体\二号 \bfseries 诚信承诺书}
+    {\黑体\二号 \bfseries \sustech@honesty@name}
   \end{center}
   \vskip 1.65cm
   \begin{spacing}{1.85}\宋体\四号
@@ -389,7 +407,7 @@
     left=3.16cm,right=3.10cm}
   \thispagestyle{empty}
   \begin{center}
-    {\fontsize{22bp}{22bp}\selectfont  COMMITMENT OF HONESTY}
+    {\fontsize{22bp}{22bp}\selectfont  \sustech@honesty@name}
   \end{center}
   \vskip 0.5cm
   \begin{spacing}{2.24}
@@ -409,9 +427,18 @@
   \end{spacing}
   \clearpage\restoregeometry
 }
+\newcommand\诚信承诺书{
+  \pdfbookmark[1]{\sustech@honesty@name}{coh}
+  \ifsustech@chinese
+    \中文诚信承诺书
+  \else
+    \英文诚信承诺书
+  \fi
+}
 % 摘要
 \RequirePackage{listofitems}
 \newcommand\摘要标题{
+  \pdfbookmark[1]{\sustech@abstract@name}{abstract}
   \begin{center}
     \黑体\二号\题目@中\\
     \ifdefempty{\副标题@中}%
@@ -420,9 +447,11 @@
       }{% not empty
         \hspace*{\fill} \小二 ——\副标题@中\\
       }%
-    \vskip 1cm
-    \宋体\四号\姓名@中 \\[9pt]
-    （\楷书\小四{\系别@中 \quad 指导教师： \指导老师@中}）
+    \ifsustech@chinese
+      \vskip 1cm
+      \宋体\四号\姓名@中 \\[9pt]
+      （\楷书\小四{\系别@中 \quad 指导教师： \指导老师@中}）
+    \fi
   \end{center}
   \vskip 1.5cm
 }
@@ -462,9 +491,9 @@
 \newcommand{\参考文献}{
   % 或者可以将refname置空, 按照附录的样式修改.
   \phantomsection
-  \addcontentsline{toc}{section}{参考文献}
-  \sectionmark{参考文献}
-  \section*{\centerline{参考文献}}
+  \addcontentsline{toc}{section}{\bibname}
+  \sectionmark{\bibname}
+  \section*{\centerline{\bibname}}
 }
 \ifsustech@chinese
   \AtBeginDocument{%
@@ -487,20 +516,20 @@
 \newcommand{\附录}{
   \phantomsection
   \clearpage
-  \addcontentsline{toc}{section}{附录}
   \addtocounter{section}{1}
-  \sectionmark{附录}
+  \addcontentsline{toc}{section}{\appendixname}
+  \sectionmark{\appendixname}
   \begin{center}
-    \黑体\三号 附录
+    \黑体\三号 \appendixname
   \end{center}
   \appendix
 }
 % 致谢
 \newcommand{\致谢}{
   \phantomsection
-  \addcontentsline{toc}{section}{致谢}
-  \sectionmark{致谢}
-  \section*{\centerline{致谢}}
+  \addcontentsline{toc}{section}{\sustech@acknowledgement@name}
+  \sectionmark{\sustech@acknowledgement@name}
+  \section*{\centerline{\sustech@acknowledgement@name}}
 }
 % 设定元数据
 \ifsustech@chinese
