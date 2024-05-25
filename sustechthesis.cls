@@ -70,7 +70,8 @@
 
 %取消标题空行
 \RequirePackage{titlesec}
-\titlespacing{\section}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
+%第一层标题段前空一行
+\titlespacing{\section}{0pt}{15.6pt}{.3ex plus .0ex}
 \titlespacing{\subsection}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
 
 \RequirePackage{geometry}
