@@ -38,7 +38,7 @@
 \newif\ifsustech@master
 \newif\ifsustech@doctor
 \sustech@validate@key{degree}
-\LoadClass[a4paper,UTF8,scheme=chinese,zihao=-4]{ctexart}
+\LoadClass[a4paper,UTF8,scheme=chinese,zihao=-4,twoside]{ctexart}
 \ifsustech@master
   \ClassError{sustechthesis}{NotImplementedError}
 \fi
