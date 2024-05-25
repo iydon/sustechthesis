@@ -453,7 +453,12 @@
 \newcommand\摘要标题{
   \pdfbookmark[1]{\sustech@abstract@name}{abstract}
   \begin{center}
-    \黑体\二号\题目@中\\
+    \ifsustech@chinese
+      \黑体\二号\题目@中
+    \else
+      \黑体\二号\题目@英
+    \fi
+    \\
     \ifdefempty{\副标题@中}%
       {% empty
         \relax
