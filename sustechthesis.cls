@@ -38,7 +38,7 @@
 \newif\ifsustech@master
 \newif\ifsustech@doctor
 \sustech@validate@key{degree}
-\LoadClass[a4paper,UTF8,scheme=chinese,zihao=-4]{ctexart}
+\LoadClass[a4paper,UTF8,scheme=chinese,zihao=-4,twoside]{ctexart}
 \ifsustech@master
   \ClassError{sustechthesis}{NotImplementedError}
 \fi
@@ -70,7 +70,8 @@
 
 %取消标题空行
 \RequirePackage{titlesec}
-\titlespacing{\section}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
+%第一层标题段前空一行
+\titlespacing{\section}{0pt}{15.6pt}{.3ex plus .0ex}
 \titlespacing{\subsection}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
 
 \RequirePackage{geometry}
@@ -452,7 +453,12 @@
 \newcommand\摘要标题{
   \pdfbookmark[1]{\sustech@abstract@name}{abstract}
   \begin{center}
-    \黑体\二号\题目@中\\
+    \ifsustech@chinese
+      \黑体\二号\题目@中
+    \else
+      \黑体\二号\题目@英
+    \fi
+    \\
     \ifdefempty{\副标题@中}%
       {% empty
         \relax
