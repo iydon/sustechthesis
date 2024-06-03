@@ -337,9 +337,6 @@
         }{% not empty
           \sustech@info@item[5em]{}[9cm]{\副标题@中}\\[9pt]
         }%
-      \end{tabular}
-      \vfill
-      \begin{tabular}{lc}
         \sustech@info@item[5em]{姓名：}[9cm]{\姓名@中}\\[9pt]
         \sustech@info@item[5em]{学号：}[9cm]{\学号@中}\\[9pt]
         \sustech@info@item*[5em]{系别：}[9cm]{\系别@中}\\[9pt]
@@ -375,9 +372,6 @@
         }{% not empty
           \sustech@info@item{}[9cm]{\副标题@英}\\[9pt]
         }%
-      \end{tabular}
-      \vfill
-      \begin{tabular}{lc}
         \sustech@info@item{Student Name:}[9cm]{\姓名@英}\\[9pt]
         \sustech@info@item{Student ID:}[9cm]{\学号@英}\\[9pt]
         \sustech@info@item*{Department:}[9cm]{\系别@英}\\[9pt]
