@@ -5,6 +5,7 @@
 [![Download Analysis](https://img.shields.io/badge/Download-Analysis-blue.svg)](https://qii404.me/github-release-statistics/?repo=/Iydon/sustechthesis/)
 [![GitHub commits](https://img.shields.io/github/commits-since/Iydon/sustechthesis/latest)](https://github.com/Iydon/sustechthesis/commits/master)
 [![GitHub release](https://img.shields.io/github/v/release/Iydon/sustechthesis?&label=%E5%8F%91%E5%B8%83%E7%89%88)](https://github.com/Iydon/sustechthesis/releases/latest)
+[<img src="https://api.gitsponsors.com/api/badge/img?id=145962715" height="20">](https://api.gitsponsors.com/api/badge/link?p=JeMxbHPUXYGtd9jpmI1SGvSHERLVDdX8cJ/FSfiNlmd6RCoLknBEFajyjqU/ynhZQwglE1S31txO2IaNctV2pdO8wqSaqivbkLf8N672v89sWdbava9ATehxrhSaHkiCtfFEu9G6R8rCF8wNXUfQWg==)
 
 Southern University of Science and Technology Thesis Template LaTeX Template for bachelor's degree.
 
