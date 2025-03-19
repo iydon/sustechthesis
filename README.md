@@ -32,12 +32,12 @@ Southern University of Science and Technology Thesis Template LaTeX Template for
     - 构建: `latexmk main`
     - 清理: `latexmk -c main`
 
-## 使用Overleaf在线编辑
-
-* 下载源码zip压缩包
-* 登录Overleaf，点击`New Project`，选中`Upload Project`
-* 上传源码zip压缩包
-* 点击左上角的`Menu`，将设置中的编译器由`pdfLaTeX`改为`XeLaTeX`
+## 使用 LaTeX 在线编辑器
+* 使用 [Overleaf](https://www.overleaf.com/)（需要科学上网保证稳定使用），上传 zip 压缩包后，更改编译器为 `XeLaTeX`
+  * ⚠️ 由于Overleaf将免费账户的超时时间缩短到20秒，因此如果您在使用免费账户，可能无法成功完成项目的编译。[Overleaf官方声明](https://www.overleaf.com/blog/changes-to-free-compile-timeouts-and-servers)
+* 使用 [南科大 ShareLaTeX](https://sharelatex.cra.moe/)，使用方式与Overleaf相同，上传 zip 压缩包后，更改编译器为 `XeLaTeX`。
+* 使用 [TeXPage](https://www.texpage.com/)，使用方式与Overleaf类似，上传 zip 压缩包后，选择编译的主文档，并将编译选项设置为 `XeLaTeX`。
+* 使用 [LoongTeX](https://www.loongtex.com/)，使用方式与VS Code类似，上传 zip 压缩包后，选择编译的主文档，并将编译选项设置为 `XeLaTeX`。
 
 ## 更新日志
 
