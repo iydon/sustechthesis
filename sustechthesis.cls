@@ -142,9 +142,9 @@
     \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格,默认前缀为表
     \captionsetup[figure]{labelsep=enspace} %图序图题之间没有标点,而是一个空格，默认前缀为图
   \else
-      \renewcommand{\captionfont}{\五号} %表题,图题用五号宋体加黑
-      \captionsetup[table]{labelsep=period, labelfont=bf}
-      \captionsetup[figure]{labelsep=period, labelfont=bf}
+      \renewcommand{\captionfont}{\五号} %表题,图题用五号
+      \captionsetup[table]{labelsep=period, labelfont=bf} %图序图题之间用.分割， 加粗
+      \captionsetup[figure]{labelsep=period, labelfont=bf} %图序图题之间用.分割， 加粗
     \ctexset{figurename = {Figure}, tablename  = {Table},}%
   \fi
 
