@@ -10,14 +10,14 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{sustechthesis}
-  [2024/02/28 v1.3.6 SUSTech Thesis Template]
+  [2024/02/28 v1.3.7 SUSTech Thesis Template]
 \RequirePackage{ifxetex,ifluatex,ifthen}
   \ifthenelse{\boolean{xetex}\OR\boolean{luatex}}{}{
     \ClassError{sustechthesis}{You Should Use XeLaTeX or LuaLaTeX To Compile.}}
 
 \hyphenation{SUSTech-Thesis}
 \newcommand{\sustechthesis}{SUSTechThesis}
-\newcommand{\version}{1.3.5}
+\newcommand{\version}{1.3.7}
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{
   family=sustech,
@@ -133,29 +133,20 @@
     },
   }
 \RequirePackage{caption}
-  \renewcommand{\captionfont}{\bfseries\songti\五号} %表题,图题用五号宋体加黑
   \DeclareCaptionLabelSeparator{enspace}{\enspace}
   \DeclareCaptionLabelFormat{rightBracket}{#2)}
-  \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格,默认前缀为表
-  \captionsetup[figure]{labelsep=enspace} %图序图题之间没有标点,而是一个空格，默认前缀为图
   \ifsustech@chinese
-    \ctexset{
-      figurename = {图},
-      tablename  = {表},
-      listfigurename = {插图},
-      listtablename = {表格},
-      proofname = {证明},
-    }%
+    \renewcommand{\captionfont}{\bfseries\songti\五号} %表题,图题用五号宋体加黑
+    \ctexset{figurename = {图}, tablename  = {表},}%
+    \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
+    \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格,默认前缀为表
+    \captionsetup[figure]{labelsep=enspace} %图序图题之间没有标点,而是一个空格，默认前缀为图
   \else
-    \ctexset{
-      figurename = {Figure},
-      tablename  = {Table},
-      listfigurename = {List of Figures},
-      listtablename = {List of Tables},
-      proofname = {Proof},
-    }%
+      \renewcommand{\captionfont}{\五号} %表题,图题用五号宋体加黑
+      \captionsetup[table]{labelsep=period, labelfont=bf}
+      \captionsetup[figure]{labelsep=period, labelfont=bf}
+    \ctexset{figurename = {Figure}, tablename  = {Table},}%
   \fi
-  \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
 
 % 设定浮动体内字体大小
 \RequirePackage{floatrow}
@@ -231,14 +222,15 @@
 % 定义中英文常量
 \ifsustech@chinese
   \def\contentsname{目录}%
-  \def\bibname{参考文献}%
+  \def\bibtitle{参考文献}%
   \def\appendixname{附录}%
   \def\sustech@acknowledgement@name{致谢}%
   \def\sustech@abstract@name{摘要}%
   \def\sustech@honesty@name{诚信承诺书}%
 \else
-  \def\contentsname{Table of Content}%
-  \def\bibname{References}%
+  \def\contentsname{Contents}%
+  % 用bibname这个变量会被莫名其妙覆盖，改成bibtitle
+  \def\bibtitle{References}%
   \def\appendixname{Appendix}%
   \def\sustech@acknowledgement@name{Acknowledgement}%
   \def\sustech@abstract@name{Abstract}%
@@ -434,14 +426,6 @@
   \end{spacing}
   \clearpage\restoregeometry
 }
-\newcommand\诚信承诺书{
-  \pdfbookmark[1]{\sustech@honesty@name}{coh}
-  \ifsustech@chinese
-    \中文诚信承诺书
-  \else
-    \英文诚信承诺书
-  \fi
-}
 % 摘要
 \RequirePackage{listofitems}
 \newcommand\摘要标题{
@@ -453,13 +437,16 @@
       \黑体\二号\题目@英
     \fi
     \\
-    \ifdefempty{\副标题@中}%
+    
+    \ifsustech@chinese
+      %  英文论文一般没有副标题
+      \ifdefempty{\副标题@中}%
       {% empty
         \relax
       }{% not empty
         \hspace*{\fill} \小二 ——\副标题@中\\
       }%
-    \ifsustech@chinese
+
       \vskip 1cm
       \宋体\四号\姓名@中 \\[9pt]
       （\楷书\小四{\系别@中 \quad 指导教师： \指导老师@中}）
@@ -503,9 +490,9 @@
 \newcommand{\参考文献}{
   % 或者可以将refname置空, 按照附录的样式修改.
   \phantomsection
-  \addcontentsline{toc}{section}{\bibname}
-  \sectionmark{\bibname}
-  \section*{\centerline{\bibname}}
+  \addcontentsline{toc}{section}{\bibtitle}
+  \sectionmark{\bibtitle}
+  \section*{\centerline{\bibtitle}}
 }
 \ifsustech@chinese
   \AtBeginDocument{%
@@ -570,6 +557,11 @@
   \hypersetup{
     pdfcreator={\sustechthesis-v\version}}
 }%
+
+% 修正英文环境下 Proof 命令显示中文的问题
+\ifsustech@english
+  \renewcommand{\proofname}{Proof} 
+\fi
 
 \endinput
 %%
