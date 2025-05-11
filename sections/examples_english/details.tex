@@ -1,0 +1,59 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = xelatex
+
+\section{Some Examples}
+
+\subsection{Tables}
+
+Tables and figures can be cited directly via \verbbox{\ref{<key>}}, for example Tab.~\ref{table2}, Fig.~\ref{F:test-a}, and Fig.~\ref{F:test-b-sub-b}.
+
+\begin{table}[htb]
+% h-here, t-top, b-bottom (priority decreases in order)
+    % Centered (the template already sets table floats to be centered)
+    \centering
+    \caption{Table titles should be placed at the top}
+    \label{table}
+    \begin{tabular}{lc} % Three-line tables should not have vertical lines; l-left, c-center, r-right
+        \toprule
+        % Three-line table - top rule
+        Example & Result \\
+        \midrule
+        % Three-line table - middle rule
+        Example1          & 0.25 \\
+        Example2          & 0.36 \\
+        \bottomrule
+        % Three-line table - bottom rule
+    \end{tabular}
+\end{table}
+
+\begin{table}[htb]
+    \centering
+    \caption{Table title with notes}
+    \label{table2}
+    \begin{threeparttable}
+        \setlength{\tabcolsep}{0.6cm}{ % Adjust table width
+                \begin{tabular}{lc} % Three-line tables should not have vertical lines; l-left, c-center, r-right
+                    \toprule
+                    % Three-line table - top rule
+                    Example & Result \\
+                    \midrule
+                    % Three-line table - middle rule
+                    Example1          & 0.25\tnote{1} \\
+                    Example2          & 0.36 \\
+                    \bottomrule
+                    % Three-line table - bottom rule
+                \end{tabular}
+        }
+        \begin{tablenotes}
+            \item[1] Data source: Southern University of Science and Technology \LaTeX template % Add table note for data source
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+\begin{proof}
+    This is a proof written in English.
+\end{proof}
+
+\subsection{References}
+
+References are usually cited using the \verbbox{\cite{<key>}} command, as shown here: \cite{Nicholas1998Handbook}. To cite authors, use \verbbox{\citeauthor{<key>}}, for example: "\citeauthor{goossens1994latex}."

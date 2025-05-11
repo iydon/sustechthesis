@@ -1,0 +1,31 @@
+% !Mode:: "TeX:UTF-8"
+% !TEX program  = xelatex
+\section{Document Class Interface}
+The document class interface uses Chinese naming conventions, with names reflecting their literal meanings. For any questions, please submit \href{https://github.com/Iydon/sustechthesis/issues}{Issues} on GitHub.
+
+\subsection{Sinified Font Size Interface}
+This interface primarily utilizes the \texttt{ctex} package.
+
+\verbbox{\初号}, \verbbox{\小初}, \verbbox{\一号}, \verbbox{\小一}, \verbbox{\二号}, \verbbox{\小二}, \verbbox{\三号}, \verbbox{\小三}, \verbbox{\四号}, \verbbox{\小四}, \verbbox{\五号}, \verbbox{\小五}, \verbbox{\六号}, \verbbox{\小六}, \verbbox{\七号}, \verbbox{\八号}.
+
+\subsection{Sinified Font Family Interface}
+Some fonts might be unavailable on local systems, which may prevent certain font styles from working.
+
+\verbbox{\宋体}, \verbbox{\黑体}, \verbbox{\仿宋}, \verbbox{\楷书}, \verbbox{\隶书}, \verbbox{\幼圆}, \verbbox{\雅黑}, \verbbox{\苹方}.
+
+\subsection{Font Style Interface}
+
+For body text, it's recommended to use \verb|\textbf{}| and \verb|\textit{}| for \textbf{bold} and \textit{italic} styles respectively.
+
+\verbbox{\粗体}, \verbbox{\斜体}.
+
+\subsection{Formatting-related Interface}
+\subsubsection{Commands}
+Refer to previous examples. During early thesis writing, you may comment out unnecessary elements like title pages to speed up compilation.
+
+\verbbox{\设置信息}, \verbbox{\目录}, \verbbox{\下划线}, \verbbox{\中文标题页}, \verbbox{\英文标题页}, \verbbox{\中文诚信承诺书}, \verbbox{\英文诚信承诺书}, \verbbox{\摘要标题}, \verbbox{\参考文献}, \verbbox{\附录}, \verbbox{\致谢}.
+
+\subsubsection{Environments}
+All abstract environments require one parameter for keywords: \verb|\begin{}{}...\end{}|.
+
+\verbbox{中文摘要}, \verbbox{英文摘要}.
