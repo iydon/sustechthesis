@@ -55,7 +55,7 @@
 \RequirePackage{hologo}
 \RequirePackage{etoolbox}
 
-%添加绘制三线表的必要依赖
+% 添加绘制三线表的必要依赖
 \RequirePackage{multirow}
 \RequirePackage{threeparttable}
 
@@ -66,11 +66,11 @@
   BoldFont = *bd ,
   ItalicFont = *i ,
   BoldItalicFont = *bi
-]{times} %英文默认为Times New Roman
+]{times} % 英文默认为 Times New Roman
 
-%取消标题空行
+% 取消标题空行
 \RequirePackage{titlesec}
-%第一层标题段前空一行
+% 第一层标题段前空一行
 \titlespacing{\section}{0pt}{15.6pt}{.3ex plus .0ex}
 \titlespacing{\subsection}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
 
@@ -102,7 +102,7 @@
   \xeCJKsetup{EmboldenFactor=3} % 伪粗体等级
   % 宋体
   \renewcommand{\songti}{\CJKfontspec[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold]{simsun.ttc}}
-  \setCJKmainfont[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold]{simsun.ttc} % 中文默认为宋体,小四在\documentclass处设置
+  \setCJKmainfont[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold]{simsun.ttc} % 中文默认为宋体，小四在 \documentclass 处设置
   \newcommand{\宋体}{\songti}
   % 黑体
   \renewcommand{\heiti}{\CJKfontspec[Path=fonts/]{simhei.ttf}}
@@ -120,7 +120,7 @@
   \newcommand{\斜体}{\itshape}
   % 设置章节样式
   \ctexset{
-    % 需要使用ctexart文类，否则报错键不存在
+    % 需要使用 ctexart 文类，否则报错键不存在
     section = {
       name={{},.},
       format={\黑体\三号},
@@ -133,11 +133,11 @@
     },
   }
 \RequirePackage{caption}
-  \renewcommand{\captionfont}{\bfseries\songti\五号} %表题,图题用五号宋体加黑
+  \renewcommand{\captionfont}{\bfseries\songti\五号} % 表题，图题用五号宋体加黑
   \DeclareCaptionLabelSeparator{enspace}{\enspace}
   \DeclareCaptionLabelFormat{rightBracket}{#2)}
-  \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格,默认前缀为表
-  \captionsetup[figure]{labelsep=enspace} %图序图题之间没有标点,而是一个空格，默认前缀为图
+  \captionsetup[table]{labelsep=enspace} % 表序表题之间没有标点，而是一个空格，默认前缀为表
+  \captionsetup[figure]{labelsep=enspace} % 图序图题之间没有标点，而是一个空格，默认前缀为图
   \ifsustech@chinese
     \ctexset{
       figurename = {图},
@@ -155,7 +155,7 @@
       proofname = {Proof},
     }%
   \fi
-  \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
+  \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace} % 子图 a, b, c 外没有括号
 
 % 设定浮动体内字体大小
 \RequirePackage{floatrow}
@@ -173,7 +173,7 @@
   font        = floatfont,
 }
 
-\renewcommand{\baselinestretch}{1.72} %调整正文为1.5倍行距
+\renewcommand{\baselinestretch}{1.72} % 调整正文为 1.5 倍行距
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
   % 行距设置
   \newenvironment{行距}[1]%
@@ -256,10 +256,10 @@
 }
 \RequirePackage{fancyhdr}
   \pagestyle{fancy}
-    \lhead{}\chead{}\rhead{}\lfoot{}\rfoot{}%除了页脚页码之外,什么也没有
-    \cfoot{\五号\thepage} %页脚居中、阿拉伯数字（五号新罗马体）连续编码
-    \renewcommand{\headrulewidth}{0bp} %改为0bp即可去掉页眉下面的横线
-    \renewcommand{\footrulewidth}{0bp} %改为0bp即可去掉页脚上面的横线
+    \lhead{}\chead{}\rhead{}\lfoot{}\rfoot{} % 除了页脚页码之外，什么也没有
+    \cfoot{\五号\thepage} % 页脚居中、阿拉伯数字（五号新罗马体）连续编码
+    \renewcommand{\headrulewidth}{0bp} % 改为 0bp 即可去掉页眉下面的横线
+    \renewcommand{\footrulewidth}{0bp} % 改为 0bp 即可去掉页脚上面的横线
 % 设置标题页
 \RequirePackage{listofitems}
 \RequirePackage{xeCJKfntef}
@@ -280,12 +280,12 @@
     % \renewcommand\arraystretch{1.3} % 应该只是对可能会换行的英文 item 生效。
     \bfseries
     \IfBooleanTF{#1}
-    {%有星号
+    {% 有星号
       \IfValueTF{#4}
       {\sustech@info@multiline[#4]{#5}}
       {\sustech@info@multiline[15em]{#5}}
     }
-    {%没星号
+    {% 没星号
       \IfValueTF{#4}
       {\sustech@info@singleline[#4]{#5}}
       {\sustech@info@singleline[15em]{#5}}
@@ -396,7 +396,8 @@
   \vskip 1.65cm
   \begin{spacing}{1.85}\宋体\四号
     1.本人郑重承诺所呈交的毕业设计（论文），是在导师的指导下，独立进行研究工作所取得的成果，所有数据、图片资料均真实可靠。\par
-    2.除文中已经注明引用的内容外，本论文不包含任何其他人或集体已经发表或撰写过的作品或成果。对本论文的研究作出重要贡献的个人和集体，均已在文中以明确的方式标明。\par
+    2.除文中已经注明引用的内容外，本论文不包含任何其他人或集体已经发表或撰写过的作品或成果。
+    对本论文的研究作出重要贡献的个人和集体，均已在文中以明确的方式标明。\par
     3.本人承诺在毕业论文（设计）选题和研究内容过程中没有抄袭他人研究成果和伪造相关数据等行为。\par
     4.在毕业论文（设计）中对侵犯任何方面知识产权的行为，由本人承担相应的法律责任。
 
@@ -420,10 +421,21 @@
   \begin{spacing}{2.24}
     {\fontsize{14bp}{14bp} \selectfont
     \begin{enumerate}[wide, labelwidth=!, labelindent=0pt, nolistsep]
-      \item I solemnly promise that the paper presented comes from my \linebreak independent research work under my supervisor's supervision. All \linebreak statistics and images are real and reliable.
-      \item Except for the annotated reference, the paper contents no other \linebreak published work or achievement by person or group. All people making \linebreak important contributions to the study of the paper have been indicated \linebreak clearly in the paper.
-      \item I promise that I did not plagiarize other people's research achievement \linebreak or forge related data in the process of designing topic and research \linebreak content.
-      \item If there is violation of any intellectual property right, I will take legal \linebreak responsibility myself.
+      \item I solemnly promise that the paper presented comes from my \linebreak
+      independent research work under my supervisor's supervision. All \linebreak
+      statistics and images are real and reliable.
+      
+      \item Except for the annotated reference, the paper contents no other \linebreak
+      published work or achievement by person or group. All people making \linebreak
+      important contributions to the study of the paper have been indicated \linebreak
+      clearly in the paper.
+
+      \item I promise that I did not plagiarize other people's research achievement \linebreak
+      or forge related data in the process of designing topic and research \linebreak
+      content.
+      
+      \item If there is violation of any intellectual property right, I will take legal \linebreak
+      responsibility myself.
     \end{enumerate}
     \vskip 3.25cm
     \begin{flushright}
@@ -501,7 +513,7 @@
     \vfill\clearpage}
 % 参考文献
 \newcommand{\参考文献}{
-  % 或者可以将refname置空, 按照附录的样式修改.
+  % 或者可以将 refname 置空，按照附录的样式修改
   \phantomsection
   \addcontentsline{toc}{section}{\bibname}
   \sectionmark{\bibname}
@@ -514,7 +526,7 @@
             andincite         = {和},
             andincitecn       = {和},
             andothersincitecn = {等人},
-            andothersincite   = {等人},%adddot才能避开标点追踪
+            andothersincite   = {等人}, % adddot 才能避开标点追踪
     }
   }
 \fi
