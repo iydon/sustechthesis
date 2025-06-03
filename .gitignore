@@ -35,6 +35,10 @@ format/*
 *-blx.bib
 *.run.xml
 
+*.bbl-*
+*.bcf-*
+*.blg-*
+
 ## Build tool auxiliary files:
 *.fdb_latexmk
 *.synctex

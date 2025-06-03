@@ -17,15 +17,18 @@
 
 \hyphenation{SUSTech-Thesis}
 \newcommand{\sustechthesis}{SUSTechThesis}
-\newcommand{\version}{1.3.5}
+\newcommand{\version}{1.3.6}
+
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{
   family=sustech,
   prefix=sustech@,
   setkeys=\kvsetkeys}
-\DeclareStringOption[bachelor]{degree}[bachelor]
 \DeclareStringOption[chinese]{language}[chinese]
 \DeclareDefaultOption{\PassOptionsToClass{\CurrentOption}{ctexart}}
+
+\LoadClass[a4paper,UTF8,scheme=chinese,zihao=-4,twoside]{ctexart}
+
 \ProcessKeyvalOptions*
 \newcommand\sustech@validate@key[1]{%
   \@ifundefined{sustech@\csname sustech@#1\endcsname true}{%
@@ -34,17 +37,6 @@
     \csname sustech@\csname sustech@#1\endcsname true\endcsname
   }%
 }
-\newif\ifsustech@bachelor
-\newif\ifsustech@master
-\newif\ifsustech@doctor
-\sustech@validate@key{degree}
-\LoadClass[a4paper,UTF8,scheme=chinese,zihao=-4,twoside]{ctexart}
-\ifsustech@master
-  \ClassError{sustechthesis}{NotImplementedError}
-\fi
-\ifsustech@doctor
-  \ClassError{sustechthesis}{NotImplementedError}
-\fi
 
 \newif\ifsustech@chinese
 \newif\ifsustech@english
