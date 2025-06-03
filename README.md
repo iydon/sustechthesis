@@ -5,7 +5,6 @@
 [![Download Analysis](https://img.shields.io/badge/Download-Analysis-blue.svg)](https://qii404.me/github-release-statistics/?repo=/Iydon/sustechthesis/)
 [![GitHub commits](https://img.shields.io/github/commits-since/Iydon/sustechthesis/latest)](https://github.com/Iydon/sustechthesis/commits/master)
 [![GitHub release](https://img.shields.io/github/v/release/Iydon/sustechthesis?&label=%E5%8F%91%E5%B8%83%E7%89%88)](https://github.com/Iydon/sustechthesis/releases/latest)
-[<img src="https://api.gitsponsors.com/api/badge/img?id=145962715" height="20">](https://api.gitsponsors.com/api/badge/link?p=JeMxbHPUXYGtd9jpmI1SGvSHERLVDdX8cJ/FSfiNlmd6RCoLknBEFajyjqU/ynhZQwglE1S31txO2IaNctV2pdO8wqSaqivbkLf8N672v89sWdbava9ATehxrhSaHkiCtfFEu9G6R8rCF8wNXUfQWg==)
 
 Southern University of Science and Technology Thesis Template LaTeX Template for bachelor's degree.
 
@@ -48,8 +47,8 @@ Southern University of Science and Technology Thesis Template LaTeX Template for
 
 ## 正式版本发布流程
 
-1. 手动更新 CHANGELOG.md
-2. 手动更新 sustechthesis.cls 中定义的版本号 `\version`
+1. 手动更新 `CHANGELOG.md`
+2. 手动更新 `sustechthesis.cls` 中定义的版本号 `\version`
 3. 使用 git 命令行工具，打 tag 并推送到远端仓库
 
 
@@ -67,5 +66,5 @@ git push --delete origin v1.2.0
 
 ## 致谢
 
-* 本模版根据南方科技大学-教学工作部发布的相关 [《撰写规范》和《样例》](http://tao.sustech.edu.cn/studentService/graduation_project.html) 编写，如有冲突以官网规定为准。
+* 本模版根据南方科技大学-教学工作部发布的本科生毕业设计论文相关 [《撰写规范》和《样例》](https://tao.sustech.edu.cn/xueshengfuwu/biyelunwen/) 编写，如有冲突以官网规定为准。
   * 如果《样例》中存在与《撰写规范》中的规定不符之处，以《撰写规范》中的文字叙述为准。

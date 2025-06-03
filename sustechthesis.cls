@@ -125,11 +125,12 @@
     },
   }
 \RequirePackage{caption}
-  \renewcommand{\captionfont}{\bfseries\songti\五号} % 表题，图题用五号宋体加黑
+  \renewcommand{\captionfont}{\粗体\黑体\五号} % 表题、图题用五号黑体加黑
   \DeclareCaptionLabelSeparator{enspace}{\enspace}
   \DeclareCaptionLabelFormat{rightBracket}{#2)}
   \captionsetup[table]{labelsep=enspace} % 表序表题之间没有标点，而是一个空格，默认前缀为表
   \captionsetup[figure]{labelsep=enspace} % 图序图题之间没有标点，而是一个空格，默认前缀为图
+  \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace} % 子图 a, b, c 外没有括号
   \ifsustech@chinese
     \ctexset{
       figurename = {图},
@@ -147,7 +148,6 @@
       proofname = {Proof},
     }%
   \fi
-  \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace} % 子图 a, b, c 外没有括号
 
 % 设定浮动体内字体大小
 \RequirePackage{floatrow}
@@ -225,16 +225,16 @@
   \def\contentsname{目录}%
   \def\bibname{参考文献}%
   \def\appendixname{附录}%
-  \def\sustech@acknowledgement@name{致谢}%
+  \def\sustech@acknowledgments@name{致谢}%
   \def\sustech@abstract@name{摘要}%
-  \def\sustech@honesty@name{诚信承诺书}%
+  \def\sustech@honesty@name{诚信承诺}%
 \else
-  \def\contentsname{Table of Content}%
+  \def\contentsname{Table of Contents}%
   \def\bibname{References}%
   \def\appendixname{Appendix}%
-  \def\sustech@acknowledgement@name{Acknowledgement}%
+  \def\sustech@acknowledgments@name{Acknowledgments}%
   \def\sustech@abstract@name{Abstract}%
-  \def\sustech@honesty@name{Commitment of Honesty}%
+  \def\sustech@honesty@name{COMMITMENT OF HONESTY}%
 \fi
 \setcounter{tocdepth}{3}
 
@@ -333,7 +333,7 @@
         \sustech@info@item[5em]{学号：}[9cm]{\学号@中}\\[9pt]
         \sustech@info@item*[5em]{系别：}[9cm]{\系别@中}\\[9pt]
         \sustech@info@item*[5em]{专业：}[9cm]{\专业@中}\\[9pt]
-        \sustech@info@item[5em]{指导教师：}[9cm]{\指导老师@中 \space \职称@中}\\[9pt]
+        \sustech@info@item[5em]{指导教师：}[9cm]{\指导老师@中}\\[9pt]
       \end{tabular}
     }
     \vskip 3.14cm
@@ -368,7 +368,7 @@
         \sustech@info@item{Student ID:}[9cm]{\学号@英}\\[9pt]
         \sustech@info@item*{Department:}[9cm]{\系别@英}\\[9pt]
         \sustech@info@item*{Program:}[9cm]{\专业@英}\\[9pt]
-        \sustech@info@item{Thesis Advisor:}[9cm]{\职称@英 \space \指导老师@英}\\[10pt]
+        \sustech@info@item{Thesis Advisor:}[9cm]{\指导老师@英}\\[10pt]
       \end{tabular}
     }
     \vskip 2.1cm
@@ -383,7 +383,7 @@
     left=3.17cm,right=3.17cm}
   \thispagestyle{empty}
   \begin{center}
-    {\黑体\二号 \bfseries \sustech@honesty@name}
+    {\bfseries\黑体\二号 \sustech@honesty@name}
   \end{center}
   \vskip 1.65cm
   \begin{spacing}{1.85}\宋体\四号
@@ -454,14 +454,19 @@
     \ifsustech@chinese
       \黑体\二号\题目@中
     \else
-      \黑体\二号\题目@英
+      \二号\题目@英
     \fi
     \\
     \ifdefempty{\副标题@中}%
       {% empty
         \relax
       }{% not empty
-        \hspace*{\fill} \小二 ——\副标题@中\\
+        \ifsustech@chinese
+          \hspace*{\fill} \黑体\小二 ——\副标题@中\\
+        \else
+          % 按需使用英文副标题
+          \hspace*{\fill} \小二 ---\副标题@英\\
+        \fi
       }%
     \ifsustech@chinese
       \vskip 1cm
@@ -474,7 +479,7 @@
 \newenvironment{中文摘要}[1]%
   {\setsepchar{；}\readlist\args{#1}
     \begin{spacing}{1.45}
-      \noindent\黑体\三号[摘要]：
+      \noindent\黑体\三号 [摘要]：
       \宋体\四号}%
   {\vfill
       \noindent\黑体\三号 [关键词]：
@@ -490,10 +495,10 @@
 \newenvironment{英文摘要}[1]%
   {\setsepchar{{, }}\readlist\args{#1}
     \begin{spacing}{1.45}
-      \noindent\三号 [\textbf{ABSTRACT}]:
+      \noindent\三号 [ABSTRACT]:
       \四号}%
   {\vfill
-      \noindent\三号 [\textbf{Key words}]:
+      \noindent\三号 [Keywords]:
       \四号
       \foreachitem\word\in\args{
         \word
@@ -543,9 +548,9 @@
 % 致谢
 \newcommand{\致谢}{
   \phantomsection
-  \addcontentsline{toc}{section}{\sustech@acknowledgement@name}
-  \sectionmark{\sustech@acknowledgement@name}
-  \section*{\centerline{\sustech@acknowledgement@name}}
+  \addcontentsline{toc}{section}{\sustech@acknowledgments@name}
+  \sectionmark{\sustech@acknowledgments@name}
+  \section*{\centerline{\sustech@acknowledgments@name}}
 }
 % 设定元数据
 \ifsustech@chinese
