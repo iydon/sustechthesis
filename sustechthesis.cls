@@ -317,12 +317,12 @@
     \end{tabular}
     \vskip 1.35cm
     \includegraphics[width=0.85\textwidth]{figures/logo/SUSTech-zh.pdf}
-    \vskip 0.5cm
+    \vskip 1.8cm
     {\粗体\宋体\小初 \thesis@subject}
-    \vskip 3.5cm
+    \vskip 2.7cm
     {\粗体\宋体\三号
-      \begin{tabular}{lc}
-        \sustech@info@item*[5em]{题目：}[9.15cm]{\题目@中}\\[9pt]
+      \begin{tabular}{rl}
+        \sustech@info@item*[5em]{题目：}[9cm]{\题目@中}\\[9pt]
         \ifdefempty{\副标题@中}%
         {% empty
           \relax
@@ -336,8 +336,9 @@
         \sustech@info@item[5em]{指导教师：}[9cm]{\指导老师@中}\\[9pt]
       \end{tabular}
     }
-    \vskip 3.14cm
-    {\宋体\三号\时间@中}
+    % 2025.06 消息，封面的时间字段将删除
+    % \vskip 3.14cm
+    % {\宋体\三号\时间@中}
   \end{center}
   \clearpage
   \restoregeometry
@@ -356,8 +357,8 @@
     {\小初 \thesis@subject@en}
     \vskip 2.7cm
     {\粗体\三号
-      \begin{tabular}{rr}
-        \sustech@info@item*{Thesis Title:}[9.92cm]{\题目@英}\\[9pt]
+      \begin{tabular}{rl}
+        \sustech@info@item*{Thesis Title:}[9cm]{\题目@英}\\[9pt]
         \ifdefempty{\副标题@英}%
         {% empty
           \relax
@@ -371,8 +372,8 @@
         \sustech@info@item{Thesis Advisor:}[9cm]{\指导老师@英}\\[10pt]
       \end{tabular}
     }
-    \vskip 2.1cm
-    \三号 Date: \时间@英
+    % \vskip 2.1cm
+    % \三号 Date: \时间@英
   \end{center}
   \clearpage\restoregeometry
 }
