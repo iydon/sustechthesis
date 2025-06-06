@@ -204,7 +204,7 @@
   \信息中英键{副标题}
   \信息中英键{姓名}
   \信息中英键{学号}
-  \信息中英键{系别}
+  \信息中英键{院系}
   \信息中英键{专业}
   \信息中英键{指导老师}
   \信息中英键{时间}
@@ -312,28 +312,32 @@
   \thispagestyle{empty}
   \begin{center}
     \begin{tabular}{llr}
-        分类号  \下划线[2.3cm]{\分类号@中}       \hspace{0.45\textwidth} & 编号\下划线[2.3cm]{\编号@中} \\[5pt]
+        分类号  \下划线[2.3cm]{\分类号@中}       \hspace{0.45\textwidth} & 编号\下划线[2.3cm]{\编号@中} \\[15pt]
         U\hfill D\hfill C\下划线[2.3cm]{\UDC@中} \hspace{0.45\textwidth} & 密级\下划线[2.3cm]{\密级@中}
     \end{tabular}
-    \vskip 1.35cm
-    \includegraphics[width=0.85\textwidth]{figures/logo/SUSTech-zh.pdf}
-    \vskip 1.8cm
+    \vskip 1.05cm
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.75\textwidth]{figures/logo/SUSTech-zh.pdf}
+    \end{figure}
+    \vskip 1.05cm
     {\粗体\宋体\小初 \thesis@subject}
-    \vskip 2.7cm
+    \vskip 2.25cm
     {\粗体\宋体\三号
       \begin{tabular}{rl}
-        \sustech@info@item*[5em]{题目：}[9cm]{\题目@中}\\[9pt]
+        \sustech@info@item*[5em]{题目：}[9cm]{\题目@中}\\[6pt]
         \ifdefempty{\副标题@中}%
         {% empty
-          \relax
+          \\[20pt] % 按照最新模板，题目的 2 行和姓名之间还有 1 个空行，
         }{% not empty
-          \sustech@info@item[5em]{}[9cm]{\副标题@中}\\[9pt]
+          \sustech@info@item[5em]{}[9cm]{\副标题@中}\\[20pt]
         }%
-        \sustech@info@item[5em]{姓名：}[9cm]{\姓名@中}\\[9pt]
-        \sustech@info@item[5em]{学号：}[9cm]{\学号@中}\\[9pt]
-        \sustech@info@item*[5em]{系别：}[9cm]{\系别@中}\\[9pt]
-        \sustech@info@item*[5em]{专业：}[9cm]{\专业@中}\\[9pt]
-        \sustech@info@item[5em]{指导教师：}[9cm]{\指导老师@中}\\[9pt]
+
+        \sustech@info@item[5em]{姓名：}[9cm]{\姓名@中}\\[16pt]
+        \sustech@info@item[5em]{学号：}[9cm]{\学号@中}\\[16pt]
+        \sustech@info@item*[5em]{院系：}[9cm]{\院系@中}\\[16pt]
+        \sustech@info@item*[5em]{专业：}[9cm]{\专业@中}\\[16pt]
+        \sustech@info@item[5em]{指导教师：}[9cm]{\指导老师@中}\\[16pt]
       \end{tabular}
     }
     % 2025.06 消息，封面的时间字段将删除
@@ -358,18 +362,18 @@
     \vskip 2.7cm
     {\粗体\三号
       \begin{tabular}{rl}
-        \sustech@info@item*{Thesis Title:}[9cm]{\题目@英}\\[9pt]
+        \sustech@info@item*{Thesis Title:}[9cm]{\题目@英}\\[12pt]
         \ifdefempty{\副标题@英}%
         {% empty
-          \relax
+          \\[15pt] % 按照最新模板，题目的 2 行和姓名之间还有 1 个空行，
         }{% not empty
-          \sustech@info@item{}[9cm]{\副标题@英}\\[9pt]
+          \sustech@info@item{}[9cm]{\副标题@英}\\[15pt]
         }%
-        \sustech@info@item{Student Name:}[9cm]{\姓名@英}\\[9pt]
-        \sustech@info@item{Student ID:}[9cm]{\学号@英}\\[9pt]
-        \sustech@info@item*{Department:}[9cm]{\系别@英}\\[9pt]
-        \sustech@info@item*{Program:}[9cm]{\专业@英}\\[9pt]
-        \sustech@info@item{Thesis Advisor:}[9cm]{\指导老师@英}\\[10pt]
+        \sustech@info@item{Student Name:}[9cm]{\姓名@英}\\[12pt]
+        \sustech@info@item{Student ID:}[9cm]{\学号@英}\\[12pt]
+        \sustech@info@item*{Department:}[9cm]{\院系@英}\\[12pt]
+        \sustech@info@item*{Program:}[9cm]{\专业@英}\\[12pt]
+        \sustech@info@item{Thesis Advisor:}[9cm]{\指导老师@英}\\[12pt]
       \end{tabular}
     }
     % \vskip 2.1cm
@@ -472,7 +476,7 @@
     \ifsustech@chinese
       \vskip 1cm
       \宋体\四号\姓名@中 \\[9pt]
-      （\楷书\小四{\系别@中 \quad 指导教师： \指导老师@中}）
+      （\楷书\小四{\院系@中 \quad 指导教师： \指导老师@中}）
     \fi
   \end{center}
   \vskip 1.5cm
