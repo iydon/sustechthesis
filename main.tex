@@ -1,8 +1,13 @@
 % !Mode:: "TeX:UTF-8"
 % !TEX program  = xelatex
 % !BIB program  = biber
-\documentclass[AutoFakeBold,AutoFakeSlant,language=chinese,degree=bachelor]{sustechthesis}
-% 1. AutoFakeBold 与 AutoFakeSlant 为伪粗与伪斜，如果本机上有相应粗体与斜体字体，请使用 xeCJK 宏包进行设置，例如：
+\documentclass[
+  AutoFakeBold,
+  AutoFakeSlant,
+  language=chinese,
+]{sustechthesis}
+% 1. AutoFakeBold 与 AutoFakeSlant 为伪粗与伪斜，
+% 如果本机上有相应粗体与斜体字体，请使用 xeCJK 宏包进行设置，例如：
 %   \setCJKmainfont[
 %     UprightFont = * Light,
 %     BoldFont = * Bold,
@@ -10,11 +15,15 @@
 %     BoldItalicFont = Kaiti SC Bold,
 %   ]{Songti SC}
 %
-% 2. language=chinese 基于为 ctexart 文类提供的中文排版方案修改，如果使用英文进行论文创作，请使用 language=english 选项。
+% 2. language=chinese 基于为 ctexart 文类提供的中文排版方案修改，
+% 如果使用英文进行论文创作，请使用 language=english 选项。
 %
-% 3. degree=bachelor 为 sustechthesis 文类提供的本科生毕业论文模板，其他可选项为 master 与 doctor，但是均未实现，如果您对此有兴趣，欢迎 PR。
+% 3. 此 sustechthesis 文类为本科生毕业论文模板，未实现的学位选项已弃用。
+% 如需研究生学位论文模板，可参考 https://github.com/SUSTech-CRA/sustech-master-thesis 
 %
-% 4. sustechthesis.cls 文类主要参考自去年完成使命的 sustechthesis.tex，在这一年的时间，作者的 TeX 风格与常用宏包发生许多变化，因为之前的思想为仅提供必要的格式修改相关代码，所以转换为文类形式所进行的修改较少，而近期的风格与常用宏包均体现在以下的例子文件中。
+% 4. sustechthesis.cls 文类主要参考自去年完成使命的 sustechthesis.tex，
+% 在这一年的时间，作者的 TeX 风格与常用宏包发生许多变化，因为之前的思想为仅提供必要的格式修改相关代码，
+% 所以转换为文类形式所进行的修改较少，而近期的风格与常用宏包均体现在以下的例子文件中。
 %
 % 5. 示例文件均放置于相应目录的 examples 文件夹下，构建自己论文时可暂时保留，用以检索接口与使用方法。
 %
@@ -48,5 +57,5 @@
 \附录
   \input{sections/examples/appendix.tex}\cleardoublepage
 \致谢
-  \input{sections/examples/thanks.tex}
+  \input{sections/examples/acknowledgments.tex}
 \end{document}
