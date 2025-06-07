@@ -28,3 +28,7 @@ jobs:
           path: |
             main.pdf
             slides.pdf
+
+      - name: look files
+        run: |
+          tree
