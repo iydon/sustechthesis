@@ -16,7 +16,9 @@ jobs:
           submodules: true
 
       - name: Tree All project
-        run: sudo apt install tree;tree
+        run: |
+          apt update && apt install -y tree
+          tree
 
       - name: run texlive docker container
         run: make cleanall && make thesis slide
