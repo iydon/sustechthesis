@@ -8,6 +8,7 @@ jobs:
         texlive: [latest, TL2024-historic, TL2023-historic, TL2022-historic, TL2021-historic]
         # 多版本 TexLive 兼容性测试
         # 版本号选自：https://hub.docker.com/r/texlive/texlive/tags
+    container: texlive/texlive:${{ matrix.texlive }}
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
@@ -17,9 +18,8 @@ jobs:
       - name: Tree All project
         run: sudo apt install tree;tree
 
-      - name: Build pdf
-        run: |
-          docker run --rm -v "$(pwd)":/docs ghcr.io/liziwl/texlive-full-with-fonts:${{ matrix.texlive }} /bin/bash -c "make cleanall && make thesis slide"
+      - name: run texlive docker container
+        run: make cleanall && make thesis slide
 
       - name: Publish PDF as actions assets
         uses: actions/upload-artifact@v4
