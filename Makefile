@@ -1,6 +1,9 @@
 LATEXMK = latexmk
 SHELL  := /bin/bash
 
+# 英文版
+# THESIS  = main_english
+# 中文版
 THESIS  = main
 SLIDE  = slides
 
