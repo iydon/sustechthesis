@@ -5,10 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        texlive: [latest, TL2024-historic, TL2023-historic]
+        texlive: [latest, 2024, 2023]
         # 多版本 TexLive 兼容性测试
-        # 版本号选自：https://hub.docker.com/r/texlive/texlive/tags
-    container: texlive/texlive:${{ matrix.texlive }}
+        # 版本号选自：https://github.com/xu-cheng/latex-action?tab=readme-ov-file#environment-configuration
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
@@ -20,8 +19,15 @@ jobs:
           apt update && apt install -y tree
           tree
 
-      - name: run texlive docker container
-        run: make cleanall && make thesis slide
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: |
+            main.tex
+            main_english.tex
+            slides.tex
+          latexmk_use_xelatex: true
+          texlive_version: ${{ matrix.texlive }}
 
       - name: Publish PDF as actions assets
         uses: actions/upload-artifact@v4
@@ -29,6 +35,7 @@ jobs:
           name: Example-PDFs-texlive-${{ matrix.texlive }}
           path: |
             main.pdf
+            main_english.pdf
             slides.pdf
 
       - name: look files

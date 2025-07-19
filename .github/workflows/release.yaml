@@ -34,10 +34,11 @@ jobs:
           SOURCE_TAG: ${{ steps.branch_name.outputs.SOURCE_TAG }}
 
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: |
             main.tex
+            main_english.tex
             slides.tex
           latexmk_use_xelatex: true
 
@@ -52,6 +53,7 @@ jobs:
           name: PDF_files
           path: |
             main.pdf
+            main_english.pdf
             slides.pdf
 
       - name: release
@@ -60,6 +62,7 @@ jobs:
         with:
           files: |
             ./main.pdf
+            ./main_english.pdf
             ./slides.pdf
             ./fonts.zip
             ./sustechthesis.cls

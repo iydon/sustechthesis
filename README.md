@@ -22,6 +22,7 @@ Southern University of Science and Technology Thesis Template LaTeX Template for
 * `config/preamble.tex`: 导言区，导入宏包，宏定义。
 * `config/info.tex`: 论文信息，例如：标题，作者，等。
 * `main.tex`: 主文档，编排章节顺序。
+* `main_english.tex`: 英文主文档，编排章节顺序。
 * `slides.tex`: beamer 幻灯片模版。
 
 

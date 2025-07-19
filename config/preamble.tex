@@ -6,8 +6,16 @@
   \newcommand{\dd}{\mathrm{d}}
   \newcommand{\RR}{\mathbb{R}}
 % 参考文献
-\usepackage[style=gb7714-2015,gbpunctin=false]{biblatex}
+\makeatletter
+\ifsustech@chinese
+  \usepackage[style=gb7714-2015,gbpunctin=false]{biblatex}
   \addbibresource{references.bib}
+\else
+  \usepackage[style=trad-abbrv,firstinits=true]{biblatex}
+  \addbibresource{references.bib}
+\fi
+\makeatother
+
 % 无意义文本
 \usepackage{zhlipsum,lipsum}
 % 列表环境设置
