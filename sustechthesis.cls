@@ -23,9 +23,11 @@
   family=sustech,
   prefix=sustech@,
   setkeys=\kvsetkeys}
-\DeclareStringOption[bachelor]{degree}[bachelor]
 \DeclareStringOption[chinese]{language}[chinese]
 \DeclareDefaultOption{\PassOptionsToClass{\CurrentOption}{ctexart}}
+
+\LoadClass[a4paper,UTF8,scheme=chinese,zihao=-4,twoside]{ctexart}
+
 \ProcessKeyvalOptions*
 \newcommand\sustech@validate@key[1]{%
   \@ifundefined{sustech@\csname sustech@#1\endcsname true}{%
@@ -34,17 +36,6 @@
     \csname sustech@\csname sustech@#1\endcsname true\endcsname
   }%
 }
-\newif\ifsustech@bachelor
-\newif\ifsustech@master
-\newif\ifsustech@doctor
-\sustech@validate@key{degree}
-\LoadClass[a4paper,UTF8,scheme=chinese,zihao=-4,twoside]{ctexart}
-\ifsustech@master
-  \ClassError{sustechthesis}{NotImplementedError}
-\fi
-\ifsustech@doctor
-  \ClassError{sustechthesis}{NotImplementedError}
-\fi
 
 \newif\ifsustech@chinese
 \newif\ifsustech@english
@@ -55,7 +46,7 @@
 \RequirePackage{hologo}
 \RequirePackage{etoolbox}
 
-%添加绘制三线表的必要依赖
+% 添加绘制三线表的必要依赖
 \RequirePackage{multirow}
 \RequirePackage{threeparttable}
 
@@ -66,11 +57,11 @@
   BoldFont = *bd ,
   ItalicFont = *i ,
   BoldItalicFont = *bi
-]{times} %英文默认为Times New Roman
+]{times} % 英文默认为 Times New Roman
 
-%取消标题空行
+% 取消标题空行
 \RequirePackage{titlesec}
-%第一层标题段前空一行
+% 第一层标题段前空一行
 \titlespacing{\section}{0pt}{15.6pt}{.3ex plus .0ex}
 \titlespacing{\subsection}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
 
@@ -102,7 +93,7 @@
   \xeCJKsetup{EmboldenFactor=3} % 伪粗体等级
   % 宋体
   \renewcommand{\songti}{\CJKfontspec[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold]{simsun.ttc}}
-  \setCJKmainfont[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold]{simsun.ttc} % 中文默认为宋体,小四在\documentclass处设置
+  \setCJKmainfont[Path=fonts/,FallBack=simsunb.ttf,AutoFakeBold]{simsun.ttc} % 中文默认为宋体，小四在 \documentclass 处设置
   \newcommand{\宋体}{\songti}
   % 黑体
   \renewcommand{\heiti}{\CJKfontspec[Path=fonts/]{simhei.ttf}}
@@ -120,7 +111,7 @@
   \newcommand{\斜体}{\itshape}
   % 设置章节样式
   \ctexset{
-    % 需要使用ctexart文类，否则报错键不存在
+    % 需要使用 ctexart 文类，否则报错键不存在
     section = {
       name={{},.},
       format={\黑体\三号},
@@ -164,7 +155,7 @@
   font        = floatfont,
 }
 
-\renewcommand{\baselinestretch}{1.72} %调整正文为1.5倍行距
+\renewcommand{\baselinestretch}{1.72} % 调整正文为 1.5 倍行距
 \RequirePackage[MSWordLineSpacingMultiple=1.5]{zhlineskip}
   % 行距设置
   \newenvironment{行距}[1]%
@@ -203,7 +194,7 @@
   \信息中英键{副标题}
   \信息中英键{姓名}
   \信息中英键{学号}
-  \信息中英键{系别}
+  \信息中英键{院系}
   \信息中英键{专业}
   \信息中英键{指导老师}
   \信息中英键{时间}
@@ -224,17 +215,17 @@
   \def\contentsname{目录}%
   \def\bibtitle{参考文献}%
   \def\appendixname{附录}%
-  \def\sustech@acknowledgement@name{致谢}%
+  \def\sustech@acknowledgments@name{致谢}%
   \def\sustech@abstract@name{摘要}%
-  \def\sustech@honesty@name{诚信承诺书}%
+  \def\sustech@honesty@name{诚信承诺}%
 \else
   \def\contentsname{Contents}%
   % 用bibname这个变量会被莫名其妙覆盖，改成bibtitle
   \def\bibtitle{References}%
   \def\appendixname{Appendix}%
-  \def\sustech@acknowledgement@name{Acknowledgement}%
+  \def\sustech@acknowledgments@name{Acknowledgments}%
   \def\sustech@abstract@name{Abstract}%
-  \def\sustech@honesty@name{Commitment of Honesty}%
+  \def\sustech@honesty@name{COMMITMENT OF HONESTY}%
 \fi
 \setcounter{tocdepth}{3}
 
@@ -248,10 +239,10 @@
 }
 \RequirePackage{fancyhdr}
   \pagestyle{fancy}
-    \lhead{}\chead{}\rhead{}\lfoot{}\rfoot{}%除了页脚页码之外,什么也没有
-    \cfoot{\五号\thepage} %页脚居中、阿拉伯数字（五号新罗马体）连续编码
-    \renewcommand{\headrulewidth}{0bp} %改为0bp即可去掉页眉下面的横线
-    \renewcommand{\footrulewidth}{0bp} %改为0bp即可去掉页脚上面的横线
+    \lhead{}\chead{}\rhead{}\lfoot{}\rfoot{} % 除了页脚页码之外，什么也没有
+    \cfoot{\五号\thepage} % 页脚居中、阿拉伯数字（五号新罗马体）连续编码
+    \renewcommand{\headrulewidth}{0bp} % 改为 0bp 即可去掉页眉下面的横线
+    \renewcommand{\footrulewidth}{0bp} % 改为 0bp 即可去掉页脚上面的横线
 % 设置标题页
 \RequirePackage{listofitems}
 \RequirePackage{xeCJKfntef}
@@ -272,12 +263,12 @@
     % \renewcommand\arraystretch{1.3} % 应该只是对可能会换行的英文 item 生效。
     \bfseries
     \IfBooleanTF{#1}
-    {%有星号
+    {% 有星号
       \IfValueTF{#4}
       {\sustech@info@multiline[#4]{#5}}
       {\sustech@info@multiline[15em]{#5}}
     }
-    {%没星号
+    {% 没星号
       \IfValueTF{#4}
       {\sustech@info@singleline[#4]{#5}}
       {\sustech@info@singleline[15em]{#5}}
@@ -312,32 +303,37 @@
   \thispagestyle{empty}
   \begin{center}
     \begin{tabular}{llr}
-        分类号  \下划线[2.3cm]{\分类号@中}       \hspace{0.45\textwidth} & 编号\下划线[2.3cm]{\编号@中} \\[5pt]
+        分类号  \下划线[2.3cm]{\分类号@中}       \hspace{0.45\textwidth} & 编号\下划线[2.3cm]{\编号@中} \\[15pt]
         U\hfill D\hfill C\下划线[2.3cm]{\UDC@中} \hspace{0.45\textwidth} & 密级\下划线[2.3cm]{\密级@中}
     \end{tabular}
-    \vskip 1.35cm
-    \includegraphics[width=0.85\textwidth]{figures/logo/SUSTech-zh.pdf}
-    \vskip 0.5cm
+    \vskip 1.05cm
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.75\textwidth]{figures/logo/SUSTech-zh.pdf}
+    \end{figure}
+    \vskip 1.05cm
     {\粗体\宋体\小初 \thesis@subject}
-    \vskip 3.5cm
+    \vskip 2.25cm
     {\粗体\宋体\三号
-      \begin{tabular}{lc}
-        \sustech@info@item*[5em]{题目：}[9.15cm]{\题目@中}\\[9pt]
+      \begin{tabular}{rl}
+        \sustech@info@item*[5em]{题目：}[9cm]{\题目@中}\\[6pt]
         \ifdefempty{\副标题@中}%
         {% empty
-          \relax
+          \\[20pt] % 按照最新模板，题目的 2 行和姓名之间还有 1 个空行，
         }{% not empty
-          \sustech@info@item[5em]{}[9cm]{\副标题@中}\\[9pt]
+          \sustech@info@item[5em]{}[9cm]{\副标题@中}\\[20pt]
         }%
-        \sustech@info@item[5em]{姓名：}[9cm]{\姓名@中}\\[9pt]
-        \sustech@info@item[5em]{学号：}[9cm]{\学号@中}\\[9pt]
-        \sustech@info@item*[5em]{系别：}[9cm]{\系别@中}\\[9pt]
-        \sustech@info@item*[5em]{专业：}[9cm]{\专业@中}\\[9pt]
-        \sustech@info@item[5em]{指导教师：}[9cm]{\指导老师@中 \space \职称@中}\\[9pt]
+
+        \sustech@info@item[5em]{姓名：}[9cm]{\姓名@中}\\[16pt]
+        \sustech@info@item[5em]{学号：}[9cm]{\学号@中}\\[16pt]
+        \sustech@info@item*[5em]{院系：}[9cm]{\院系@中}\\[16pt]
+        \sustech@info@item*[5em]{专业：}[9cm]{\专业@中}\\[16pt]
+        \sustech@info@item[5em]{指导教师：}[9cm]{\指导老师@中}\\[16pt]
       \end{tabular}
     }
-    \vskip 3.14cm
-    {\宋体\三号\时间@中}
+    % 2025.06 消息，封面的时间字段将删除
+    % \vskip 3.14cm
+    % {\宋体\三号\时间@中}
   \end{center}
   \clearpage
   \restoregeometry
@@ -356,23 +352,23 @@
     {\小初 \thesis@subject@en}
     \vskip 2.7cm
     {\粗体\三号
-      \begin{tabular}{rr}
-        \sustech@info@item*{Thesis Title:}[9.92cm]{\题目@英}\\[9pt]
+      \begin{tabular}{rl}
+        \sustech@info@item*{Thesis Title:}[9cm]{\题目@英}\\[12pt]
         \ifdefempty{\副标题@英}%
         {% empty
-          \relax
+          \\[15pt] % 按照最新模板，题目的 2 行和姓名之间还有 1 个空行，
         }{% not empty
-          \sustech@info@item{}[9cm]{\副标题@英}\\[9pt]
+          \sustech@info@item{}[9cm]{\副标题@英}\\[15pt]
         }%
-        \sustech@info@item{Student Name:}[9cm]{\姓名@英}\\[9pt]
-        \sustech@info@item{Student ID:}[9cm]{\学号@英}\\[9pt]
-        \sustech@info@item*{Department:}[9cm]{\系别@英}\\[9pt]
-        \sustech@info@item*{Program:}[9cm]{\专业@英}\\[9pt]
-        \sustech@info@item{Thesis Advisor:}[9cm]{\职称@英 \space \指导老师@英}\\[10pt]
+        \sustech@info@item{Student Name:}[9cm]{\姓名@英}\\[12pt]
+        \sustech@info@item{Student ID:}[9cm]{\学号@英}\\[12pt]
+        \sustech@info@item*{Department:}[9cm]{\院系@英}\\[12pt]
+        \sustech@info@item*{Program:}[9cm]{\专业@英}\\[12pt]
+        \sustech@info@item{Thesis Advisor:}[9cm]{\指导老师@英}\\[12pt]
       \end{tabular}
     }
-    \vskip 2.1cm
-    \三号 Date: \时间@英
+    % \vskip 2.1cm
+    % \三号 Date: \时间@英
   \end{center}
   \clearpage\restoregeometry
 }
@@ -383,12 +379,13 @@
     left=3.17cm,right=3.17cm}
   \thispagestyle{empty}
   \begin{center}
-    {\黑体\二号 \bfseries \sustech@honesty@name}
+    {\bfseries\黑体\二号 \sustech@honesty@name}
   \end{center}
   \vskip 1.65cm
   \begin{spacing}{1.85}\宋体\四号
     1.本人郑重承诺所呈交的毕业设计（论文），是在导师的指导下，独立进行研究工作所取得的成果，所有数据、图片资料均真实可靠。\par
-    2.除文中已经注明引用的内容外，本论文不包含任何其他人或集体已经发表或撰写过的作品或成果。对本论文的研究作出重要贡献的个人和集体，均已在文中以明确的方式标明。\par
+    2.除文中已经注明引用的内容外，本论文不包含任何其他人或集体已经发表或撰写过的作品或成果。
+    对本论文的研究作出重要贡献的个人和集体，均已在文中以明确的方式标明。\par
     3.本人承诺在毕业论文（设计）选题和研究内容过程中没有抄袭他人研究成果和伪造相关数据等行为。\par
     4.在毕业论文（设计）中对侵犯任何方面知识产权的行为，由本人承担相应的法律责任。
 
@@ -412,10 +409,21 @@
   \begin{spacing}{2.24}
     {\fontsize{14bp}{14bp} \selectfont
     \begin{enumerate}[wide, labelwidth=!, labelindent=0pt, nolistsep]
-      \item I solemnly promise that the paper presented comes from my \linebreak independent research work under my supervisor's supervision. All \linebreak statistics and images are real and reliable.
-      \item Except for the annotated reference, the paper contents no other \linebreak published work or achievement by person or group. All people making \linebreak important contributions to the study of the paper have been indicated \linebreak clearly in the paper.
-      \item I promise that I did not plagiarize other people's research achievement \linebreak or forge related data in the process of designing topic and research \linebreak content.
-      \item If there is violation of any intellectual property right, I will take legal \linebreak responsibility myself.
+      \item I solemnly promise that the paper presented comes from my \linebreak
+      independent research work under my supervisor's supervision. All \linebreak
+      statistics and images are real and reliable.
+      
+      \item Except for the annotated reference, the paper contents no other \linebreak
+      published work or achievement by person or group. All people making \linebreak
+      important contributions to the study of the paper have been indicated \linebreak
+      clearly in the paper.
+
+      \item I promise that I did not plagiarize other people's research achievement \linebreak
+      or forge related data in the process of designing topic and research \linebreak
+      content.
+      
+      \item If there is violation of any intellectual property right, I will take legal \linebreak
+      responsibility myself.
     \end{enumerate}
     \vskip 3.25cm
     \begin{flushright}
@@ -434,7 +442,7 @@
     \ifsustech@chinese
       \黑体\二号\题目@中
     \else
-      \黑体\二号\题目@英
+      \二号\题目@英
     \fi
     \\
     
@@ -444,12 +452,17 @@
       {% empty
         \relax
       }{% not empty
-        \hspace*{\fill} \小二 ——\副标题@中\\
+        \ifsustech@chinese
+          \hspace*{\fill} \黑体\小二 ——\副标题@中\\
+        \else
+          % 按需使用英文副标题
+          \hspace*{\fill} \小二 ---\副标题@英\\
+        \fi
       }%
 
       \vskip 1cm
       \宋体\四号\姓名@中 \\[9pt]
-      （\楷书\小四{\系别@中 \quad 指导教师： \指导老师@中}）
+      （\楷书\小四{\院系@中 \quad 指导教师： \指导老师@中}）
     \fi
   \end{center}
   \vskip 1.5cm
@@ -457,7 +470,7 @@
 \newenvironment{中文摘要}[1]%
   {\setsepchar{；}\readlist\args{#1}
     \begin{spacing}{1.45}
-      \noindent\黑体\三号[摘要]：
+      \noindent\黑体\三号 [摘要]：
       \宋体\四号}%
   {\vfill
       \noindent\黑体\三号 [关键词]：
@@ -473,10 +486,10 @@
 \newenvironment{英文摘要}[1]%
   {\setsepchar{{, }}\readlist\args{#1}
     \begin{spacing}{1.45}
-      \noindent\三号 [\textbf{ABSTRACT}]:
+      \noindent\三号 [ABSTRACT]:
       \四号}%
   {\vfill
-      \noindent\三号 [\textbf{Key words}]:
+      \noindent\三号 [Keywords]:
       \四号
       \foreachitem\word\in\args{
         \word
@@ -488,7 +501,7 @@
     \vfill\clearpage}
 % 参考文献
 \newcommand{\参考文献}{
-  % 或者可以将refname置空, 按照附录的样式修改.
+  % 或者可以将 refname 置空，按照附录的样式修改
   \phantomsection
   \addcontentsline{toc}{section}{\bibtitle}
   \sectionmark{\bibtitle}
@@ -501,7 +514,7 @@
             andincite         = {和},
             andincitecn       = {和},
             andothersincitecn = {等人},
-            andothersincite   = {等人},%adddot才能避开标点追踪
+            andothersincite   = {等人}, % adddot 才能避开标点追踪
     }
   }
 \fi
@@ -526,9 +539,9 @@
 % 致谢
 \newcommand{\致谢}{
   \phantomsection
-  \addcontentsline{toc}{section}{\sustech@acknowledgement@name}
-  \sectionmark{\sustech@acknowledgement@name}
-  \section*{\centerline{\sustech@acknowledgement@name}}
+  \addcontentsline{toc}{section}{\sustech@acknowledgments@name}
+  \sectionmark{\sustech@acknowledgments@name}
+  \section*{\centerline{\sustech@acknowledgments@name}}
 }
 % 设定元数据
 \ifsustech@chinese
