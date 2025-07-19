@@ -10,14 +10,15 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{sustechthesis}
-  [2025/04/26 v1.3.7 SUSTech Thesis Template]
+  [2025/07/19 v1.3.9 SUSTech Thesis Template]
 \RequirePackage{ifxetex,ifluatex,ifthen}
   \ifthenelse{\boolean{xetex}\OR\boolean{luatex}}{}{
     \ClassError{sustechthesis}{You Should Use XeLaTeX or LuaLaTeX To Compile.}}
 
 \hyphenation{SUSTech-Thesis}
 \newcommand{\sustechthesis}{SUSTechThesis}
-\newcommand{\version}{1.3.7}
+\newcommand{\version}{1.3.9}
+
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{
   family=sustech,
@@ -128,15 +129,27 @@
   \DeclareCaptionLabelFormat{rightBracket}{#2)}
   \ifsustech@chinese
     \renewcommand{\captionfont}{\bfseries\songti\五号} %表题,图题用五号宋体加黑
-    \ctexset{figurename = {图}, tablename  = {表},}%
     \captionsetup[subfigure]{labelformat=rightBracket, labelsep=enspace}% 子图a,b,c外没有括号
     \captionsetup[table]{labelsep=enspace} %表序表题之间没有标点,而是一个空格,默认前缀为表
     \captionsetup[figure]{labelsep=enspace} %图序图题之间没有标点,而是一个空格，默认前缀为图
+    \ctexset{
+      figurename = {图},
+      tablename  = {表},
+      listfigurename = {插图},
+      listtablename = {表格},
+      proofname = {证明},
+    }%
   \else
-      \renewcommand{\captionfont}{\五号} %表题,图题用五号
-      \captionsetup[table]{labelsep=period, labelfont=bf} %图序图题之间用.分割， 加粗
-      \captionsetup[figure]{labelsep=period, labelfont=bf} %图序图题之间用.分割， 加粗
-    \ctexset{figurename = {Figure}, tablename  = {Table},}%
+    \renewcommand{\captionfont}{\五号} %表题,图题用五号
+    \captionsetup[table]{labelsep=period, labelfont=bf} %图序图题之间用.分割， 加粗
+    \captionsetup[figure]{labelsep=period, labelfont=bf} %图序图题之间用.分割， 加粗
+    \ctexset{
+      figurename = {Figure},
+      tablename  = {Table},
+      listfigurename = {List of Figures},
+      listtablename = {List of Tables},
+      proofname = {Proof},
+    }%
   \fi
 
 % 设定浮动体内字体大小
