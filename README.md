@@ -1,6 +1,6 @@
 # 南方科技大学本科学位论文模板 sustechthesis
 
-[![Actions Status](https://github.com/Iydon/sustechthesis/actions/workflows/compile.yaml/badge.svg)](https://github.com/Iydon/sustechthesis/actions/workflows/compile.yaml)
+[![Actions Status](https://github.com/Iydon/sustechthesis/actions/workflows/verify-compile.yaml/badge.svg)](https://github.com/Iydon/sustechthesis/actions/workflows/verify-compile.yaml)
 [![GitHub downloads](https://img.shields.io/github/downloads/Iydon/sustechthesis/total)](https://github.com/Iydon/sustechthesis/releases)
 [![Download Analysis](https://img.shields.io/badge/Download-Analysis-blue.svg)](https://qii404.me/github-release-statistics/?repo=/Iydon/sustechthesis/)
 [![GitHub commits](https://img.shields.io/github/commits-since/Iydon/sustechthesis/latest)](https://github.com/Iydon/sustechthesis/commits/master)
