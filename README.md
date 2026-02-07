@@ -17,6 +17,10 @@ Southern University of Science and Technology Template for bachelor's thesis.
 
 使用 [Liii STEM](https://www.liiistem.cn/install.html)，进行编辑。
 * `SUSTech-thesis-undergraduate-v20260123.tmu`: 主文档。
+* 下载软件即可打开tmu文件进行编辑，软件内可直接pdf导出。
+* 使用指南可参考 [官方文档](https://liiistem.cn/docs/welcome.html)。
+
+如遇问题请加入 [南科大 墨干/Liii STEM 社区：775378763](https://qm.qq.com/q/uY6BssNdkW) 进行反馈！
 
 ## 3. LaTeX 模板
 
