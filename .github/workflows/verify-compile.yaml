@@ -10,7 +10,7 @@ jobs:
         # 版本号选自：https://github.com/xu-cheng/latex-action?tab=readme-ov-file#environment-configuration
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: true
 
