@@ -31,6 +31,9 @@ Changelog 维护应保持最新版本在文件上面的原则，日期格式按�
 
 ## [Unreleased](https://github.com/iydon/sustechthesis/compare/v1.4.0...HEAD)
 
+### Changed
+- 将 GitHub Actions 更新至 Node.js 24 兼容版本，并增加 TeX Live 2023–2026 的编译验证。
+
 ## [1.4.0](https://github.com/iydon/sustechthesis/compare/v1.3.9...v1.4.0) - 2026-08-15
 
 ### Added

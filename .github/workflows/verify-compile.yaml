@@ -4,8 +4,9 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        texlive: [latest, 2024, 2023]
+        texlive: [latest, 2026, 2025, 2024, 2023]
         # 多版本 TexLive 兼容性测试
         # 版本号选自：https://github.com/xu-cheng/latex-action?tab=readme-ov-file#environment-configuration
     steps:
@@ -30,7 +31,7 @@ jobs:
           texlive_version: ${{ matrix.texlive }}
 
       - name: Publish PDF as actions assets
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Example-PDFs-texlive-${{ matrix.texlive }}
           path: |
