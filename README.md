@@ -13,12 +13,13 @@ Southern University of Science and Technology Template for bachelor's thesis.
 * 发布版：[GitHub Release](https://github.com/Iydon/sustechthesis/releases/latest)
 * 开发版：直接 Git clone，或者点击绿色 `Code` 下载 ZIP 压缩包。此版本不保证稳定性，提供给有经验的 TeX 用户使用。
 
-## 2. Liii STEM 模版
+## 2. Liii STEM 模板
 
-使用 [Liii STEM](https://www.liiistem.cn/install.html)，进行编辑。
-* `SUSTech-thesis-undergraduate-version.tmu`: 主文档。
-* 下载软件即可打开tmu文件进行编辑，软件内可直接pdf导出。
-* 使用指南可参考 [官方文档](https://liiistem.cn/docs/welcome.html)。
+使用 [Liii STEM](https://www.liiistem.cn/install.html) 编辑该模板：
+
+* [`SUSTech-thesis-undergraduate-v20260308.tmu`](SUSTech-thesis-undergraduate-v20260308.tmu)：模板文件。
+* 安装软件后即可打开 TMU 文件进行编辑，并在软件内直接导出 PDF。
+* 详细操作请参考 [Liii STEM 官方文档](https://liiistem.cn/docs/welcome.html)。
 
 如遇问题请加入 [南科大 墨干/Liii STEM 社区：775378763](https://qm.qq.com/q/uY6BssNdkW) 进行反馈！
 
@@ -43,7 +44,7 @@ Southern University of Science and Technology Template for bachelor's thesis.
 
 ### 3.3 使用 LaTeX 在线编辑器
 
-* 使用 [南科大 ShareLaTeX](https://sharelatex.cra.ac.cn/)（[校外地址](https://sharelatex-ext.cra.ac.cn/login)），使用方式与Overleaf相同，上传 zip 压缩包后，更改编译器为 `XeLaTeX`。
+* 使用 [南科大 ShareLaTeX](https://sharelatex.cra.ac.cn/)（[校外地址](https://sharelatex-ext.cra.ac.cn/login)），使用方式与 Overleaf 相同，上传 ZIP 压缩包后，更改编译器为 `XeLaTeX`。
 * 使用 [LoongTeX](https://www.loongtex.com/)，使用方式与 VS Code 类似，上传 zip 压缩包后，选择编译的主文档，并将编译选项设置为 `XeLaTeX`。
 * 使用 [TeXPage](https://www.texpage.com/)，使用方式与 Overleaf 类似，上传 zip 压缩包后，选择编译的主文档，并将编译选项设置为 `XeLaTeX`。
 * 使用 [Overleaf](https://www.overleaf.com/)（需要科学上网保证稳定使用），上传 zip 压缩包后，更改编译器为 `XeLaTeX`。
@@ -60,18 +61,19 @@ Southern University of Science and Technology Template for bachelor's thesis.
 
 ## 6. 正式版本发布流程
 
-1. 手动更新 `CHANGELOG.md`
-2. 手动更新 `sustechthesis.cls` 中定义的版本号 `\version`
-3. 使用 git 命令行工具，打 tag 并推送到远端仓库
+1. 将 `CHANGELOG.md` 中待发布的内容归档到新版本，并填写发布日期。
+2. 同步更新 `sustechthesis.cls` 中 `\ProvidesClass` 的日期、版本号，以及 `\version` 的版本号。
+3. 确认所有发布修改已经提交，并且中文论文、英文论文和幻灯片均可正常编译。
+4. 创建与类文件版本号一致的 tag，并推送到远端仓库。GitHub Actions 将自动构建并创建 Release。
 
 ```shell
-# 标记本地 tag
-git tag v1.2.0
-# 推送本地 tag 到远程
-git push origin v1.2.0
+VERSION=v1.4.0
 
-# 删除本地 tag
-git tag -d v1.2.0
-# 删除远程 tag
-git push --delete origin v1.2.0
+# 创建并推送 tag
+git tag -a "$VERSION" -m "$VERSION"
+git push origin "$VERSION"
+
+# 如需撤销尚未正式发布的 tag
+git tag -d "$VERSION"
+git push --delete origin "$VERSION"
 ```

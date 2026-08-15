@@ -29,12 +29,29 @@ Changelog 维护应保持最新版本在文件上面的原则，日期格式按�
 - 预发布版本使用形如 "`[1.0.2-rc.1] - 2021-06-11`" 作为二级标题，
 - 正式发布版本使用形如 "`[1.0.1] - 2020-07-25`" 作为二级标题。
 
-## [Unreleased](https://github.com/iydon/sustechthesis/compare/v1.3.7...HEAD)
+## [Unreleased](https://github.com/iydon/sustechthesis/compare/v1.4.0...HEAD)
 
-## [1.3.7](https://github.com/iydon/sustechthesis/compare/v1.3.6...v1.3.7) - 2025-07-19
+## [1.4.0](https://github.com/iydon/sustechthesis/compare/v1.3.9...v1.4.0) - 2026-08-15
+
+### Added
+- 增加 Liii STEM 本科毕业论文模板及使用说明。
 
 ### Changed
-- 更新英文模板。
+- 将 Liii STEM 模板更新至 2026-03-08 版本。
+- 优化 README 的结构、措辞及在线编辑器说明。
+- 更新 GitHub Actions 使用的 `actions/checkout` 版本。
+
+## [1.3.9](https://github.com/iydon/sustechthesis/compare/v1.3.6...v1.3.9) - 2025-07-19
+
+### Added
+- 增加完整的英文论文模板及示例。
+
+### Changed
+- 根据 2025 年规范更新封面布局和论文信息字段。
+- 更新中英文排版、示例文档、构建脚本及持续集成配置。
+
+### Fixed
+- 修复双面排版、空副标题及多项英文排版问题。
 
 ## [1.3.6](https://github.com/iydon/sustechthesis/compare/v1.3.5...v1.3.6) - 2024-02-28
 
